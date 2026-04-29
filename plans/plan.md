@@ -187,7 +187,7 @@
 - [x] **35 unit tests PASS** + **2 ETE tests** (require GROQ_API_KEY)
 - [x] **ETE evidence** (`ete-evidence/ete-run-002.json`) — quality_score=7.5/10, step="filled", 11/11 DOCX checks pass
 - [x] **README.en.md** — bản dịch tiếng Anh, link từ README.md
-- [x] **Xóa toàn bộ commit history cũ (2026-04-30)** — squash 228 commits → 1 commit orphan mới (`9b83642`); loại bỏ Groq API key (`gsk_ctk8...`) và LangSmith PAT (`lsv2_pt_1e233...`) khỏi git history hoàn toàn; force push thành công lên `origin/master`.
+- [x] **Xóa toàn bộ commit history cũ, squash thành 1 commit "v1 code" (2026-04-30)** — lần 1: squash 228 → 1 commit `9b83642` (loại bỏ secrets); lần 2: squash lại → 1 commit duy nhất `4221dc8 v1 code`; force push thành công. Remote `master` hiện chỉ có 1 commit.
 
 ## Đang làm / TODO
 
@@ -197,8 +197,7 @@
 
 ## Notes — LC Application Agent (current, 2026-04-30)
 
-- **Git history**: squash thành 1 commit `9b83642` (2026-04-30). Không còn secrets trong history.
-- **Rebuild commit (gốc)**: `df598f9` — đã bị squash vào commit mới. Old code: `reference/`
+- **Git history**: 1 commit duy nhất `4221dc8 v1 code` (2026-04-30). Không còn secrets trong history. Old code: `reference/`
 - **ETE evidence**: `ete-evidence/ete-run-002.json` — 7.5/10, 4.1s, 11/11 DOCX checks pass. Checkboxes: `■ Irrevocable`, `■ Telex/SWIFT`. Insurance cert: 110%, ICC A all risks.
 - **Wingdings checkbox quirk**: Template dùng Wingdings `` (U+F06F) cho unchecked, không phải `□` (U+25A1). Fill bằng `■` (U+25A0). Xem `src/utils/docx_filler.py:_select_checkbox()`.
 - **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM). `get_judge_llm()` → `openai/gpt-oss-20b` (8K TPM, max_tokens=2048). Không dùng qwen3-32b cho extraction (6K TPM — quá nhỏ).
