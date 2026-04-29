@@ -1,3 +1,7 @@
+# Git
+Khi ở master hoặc main thì không commit và push mà tạo nhánh mới.
+Khi ở nhánh khác master và main thì không cần tạo nhánh mới mà pull code master, fix conflict ưu tiên code master, rồi có thay đổi sẽ commit và push.
+
 # Models đang dùng (Groq Free Tier)
 
 ## Rate limits
