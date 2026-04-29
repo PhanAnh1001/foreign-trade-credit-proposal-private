@@ -1,0 +1,35 @@
+# **THUYẾT MINH BÁO CÁO TÀI CHÍNH HỢP NHẤT (TIẾP)**
+
+(Các thuyết minh này là bộ phận hợp thành và cần được đọc đồng thời với Báo cáo tài chính hợp nhất)
+
+Nếu công ty con, công ty liên doanh, liên kết là đối tượng lập Báo cáo tài chính hợp nhất thì cần cứ để xác định dự phòng tổn thất là Báo cáo tài chính hợp nhất.
+
+Tăng, giảm số dự phòng tổn thất đầu tư vào công ty con, công ty liên doanh, liên kết cần phải trích lập tại ngày khóa sổ lập báo cáo tài chính được ghi nhận vào chi phí tài chính.
+
+Đầu tư vào công cụ vốn của đơn vị khác
+
+Đầu tư vào công cụ vốn của đơn vị khác bao gồm các khoản đầu tư vào công cụ vốn nhưng Công ty không có quyền kiểm soát, đồng kiểm soát hoặc có ảnh hưởng đáng kể đối với bên được đầu tư.
+
+Các khoản đầu tư vào công cụ vốn của đơn vị khác được ghi nhận ban đầu theo giá gốc, bao gồm giá mua hoặc khoản góp vốn cộng các chi phí trực tiếp liên quan đến hoạt động đầu tư. Cổ tức và lợi nhuận của các kỳ trước khi khoản đầu tư được mua được hạch toán giảm giá trị của chính khoản đầu tư đó. Ghi nhận doanh thu. Cổ tức được nhận bằng cổ phiếu chỉ được theo dõi lượng cổ phiếu tăng thêm, không ghi nhận giá trị cổ phiếu nhận được/ghi nhận theo mệnh giá (trừ công ty nhà nước thực hiện theo quy định hiện hành của pháp luật).
+
+Dự phòng tổn thất cho các khoản đầu tư vào công cụ vốn của đơn vị khác được trích lập tại thời điểm lập Báo cáo tài chính riêng khi các khoản đầu tư có sự suy giảm so với giá gốc thì Công ty thực hiện trích lập dự phòng như sau:
+
+- **Đối với khoản đầu tư vào cổ phiếu niêm yết hoặc giá trị hợp lý khoản đầu tư được xác định tin cậy**, việc lập dự phòng được dựa trên giá trị thị trường của cổ phiếu.
+
+- **Đối với khoản đầu tư không xác định được giá trị hợp lý tại thời điểm báo cáo**, dự phòng được trích lập với mức trích bằng chênh lệch giữa vốn góp thực tế của các bên tại đơn vị khác và vốn chủ sở hữu thực tế của các bên tại đơn vị khác.
+
+Tăng, giảm số dự phòng tổn thất đầu tư vào công cụ vốn của đơn vị khác cần phải trích lập tại ngày khóa sổ lập báo cáo tài chính được ghi nhận vào chi phí tài chính.
+
+## **3.5 CÁC KHOẢN PHẢI THU**
+
+Các khoản nợ phải thu được trình bày theo giá trị ghi sổ trừ các khoản dự phòng phải thu khó đòi.
+
+Việc phân loại các khoản phải thu được thực hiện theo nguyên tắc sau:
+
+- **Phải thu của khách hàng** phản ánh các khoản phải thu mang tính chất thương mại phát sinh từ giao dịch có tính chất mua - bán giữa Công ty và người mua là đơn vị độc lập với Công ty, bao gồm cả các khoản phải thu về tiền bán hàng xuất khẩu ủy thác cho đơn vị khác.
+
+- **Phải thu khác** phản ánh các khoản phải thu không có tính thương mại, không liên quan đến giao dịch mua - bán.
+
+Dự phòng nợ phải thu khó đòi được Công ty trích lập đối với các khoản nợ phải thu đã quá hạn thanh toán ghi trong hợp đồng kinh tế, bản cam kết hợp đồng hoặc cam kết giữa các bên. Doanh nghiệp đã đòi nhiều lần nhưng vẫn chưa thu hồi được; việc xác định thời gian quá hạn của khoản nợ phải thu được xác định căn cứ vào thời gian trả nợ gốc theo hợp đồng mua, bán ban đầu, không tính đến việc gia hạn nợ giữa các bên; hoặc đối với các khoản nợ phải thu chưa đến hạn thanh toán nhưng đã rơi vào tình trạng phá sản hoặc đang làm thủ tục giải thể, mất tích, bỏ trốn và được hoàn nhập khi thu hồi được nợ.
+
+Sự tăng hoặc giảm khoản dự phòng phải thu khó đòi tại ngày khóa sổ lập báo cáo tài chính được hạch toán vào chi phí quản lý doanh nghiệp.

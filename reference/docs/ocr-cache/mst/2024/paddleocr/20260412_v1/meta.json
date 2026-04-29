@@ -1,0 +1,15 @@
+{
+  "company": "mst",
+  "year": 2024,
+  "strategy": "paddleocr",
+  "date": "20260412",
+  "version": 1,
+  "pdf_path": null,
+  "pdf_hash": null,
+  "status": "completed",
+  "elapsed_s": 1.5,
+  "total_pages": 44,
+  "ocr_pages": [
+    1
+  ]
+}

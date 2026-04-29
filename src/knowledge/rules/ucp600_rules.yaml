@@ -1,0 +1,119 @@
+# UCP 600 — Uniform Customs and Practice for Documentary Credits
+# ICC Publication No. 600 (2007)
+# Key articles for LC application filling
+
+article_2:
+  title: Definitions
+  definitions:
+    credit: >
+      Any arrangement, however named or described, that is irrevocable
+      and thereby constitutes a definite undertaking of the issuing bank
+      to honour a complying presentation.
+    complying_presentation: >
+      A presentation that is in accordance with the terms and conditions
+      of the credit, the applicable provisions of these rules and
+      international standard banking practice.
+
+article_6:
+  title: Availability, Expiry Date and Place for Presentation
+  key_points:
+    - A credit must state the bank with which it is available or whether
+      it is available with any bank.
+    - The expiry date must be stated as a date.
+    - The place for presentation for documents is the place of the bank
+      with which the credit is available.
+    - A credit available with the issuing bank expires at the place of
+      the issuing bank.
+  expiry_place_default: "At the counter of Issuing Bank"
+
+article_7:
+  title: Issuing Bank Undertaking
+  note: >
+    An irrevocable credit constitutes a definite undertaking of the
+    issuing bank to honour a complying presentation.
+
+article_9:
+  title: Advising of Credits and Amendments
+  note: >
+    A credit and any amendment may be advised to a beneficiary through
+    an advising bank.
+
+article_14:
+  title: Standard for Examination of Documents
+  key_points:
+    - Nominated bank/issuing bank has maximum 5 banking days after
+      presentation to determine compliance.
+    - Documents not specified in the credit will be disregarded.
+    - A document may be dated prior to the issuance date of the credit
+      but must not be dated later than the date of presentation.
+  article_14c:
+    title: Latest date for presentation
+    presentation_period_days: 21
+    description: >
+      A presentation including one or more originals of a transport
+      document covered under articles 19–25 must be made by or on the
+      expiry date of the credit or within 21 calendar days after the
+      date of shipment, whichever is earlier, but in any event no later
+      than the expiry date of the credit.
+
+article_20:
+  title: Bill of Lading
+  requirements:
+    - Must indicate the name of the carrier and be signed by the carrier
+      or a named agent.
+    - Must indicate that goods have been shipped on board a named vessel
+      at the port of loading stated in the credit.
+    - Must indicate the port of loading and port of discharge stated in
+      the credit.
+    - Must be the sole original or, if issued in more than one original,
+      the full set (all originals).
+  clean_bol: >
+    A clean transport document is one bearing no clause or notation
+    expressly declaring a defective condition of the goods or packaging.
+
+article_27:
+  title: Clean Transport Document
+  requirement: >
+    Banks accept a clean transport document only. A transport document
+    bearing no clause or notation expressly declaring a defective
+    condition of the goods or packaging is considered clean.
+
+article_28:
+  title: Insurance Document and Coverage
+  requirements:
+    - Must be issued and signed by an insurance company, underwriter,
+      or their agents or proxies.
+    - Insurance coverage must be expressed in the same currency as the
+      credit.
+    - Minimum coverage: invoice value plus 10% (110% of invoice).
+    - The insurance document must be dated no later than the date of
+      shipment.
+  coverage_minimum_percent: 110
+  applicable_to:
+    - CIF
+    - CIP
+
+article_38:
+  title: Transferable Credits
+  note: >
+    A bank is under no obligation to transfer a credit except to the
+    extent and in the manner expressly consented to by that bank.
+
+lc_types:
+  irrevocable:
+    description: Cannot be amended or cancelled without agreement of all parties.
+    default: true
+    ucp600_basis: "Article 3 — all credits are irrevocable"
+  transferable:
+    description: >
+      Allows the beneficiary to instruct the bank to make the credit
+      available in whole or in part to one or more other beneficiaries.
+    requires_explicit_statement: true
+  confirmed:
+    description: >
+      Another bank (confirming bank) adds its own definite undertaking
+      to honour the credit.
+    requires_explicit_statement: true
+
+default_lc_type: "Irrevocable"
+default_issuance_method: "SWIFT"

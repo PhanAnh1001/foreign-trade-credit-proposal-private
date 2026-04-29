@@ -1,0 +1,394 @@
+=== Trang 7 ===
+**BÁO CÁO KIỂM TOÁN ĐỘC LẬP**  
+**Về Báo cáo tài chính kết thúc ngày 31 tháng 12 năm 2023**  
+**của Công ty Cổ phần Đầu tư MST**  
+
+**Số : 194/BCKT/TC**  
+
+**Kính gửi:**  
+Quý cổ đông, Hội đồng Quản trị và Ban Tổng Giám đốc  
+Công ty Cổ phần Đầu tư MST  
+
+Chúng tôi, Công ty TNHH Kiểm toán TTP đã kiểm toán Báo cáo tài chính của Công ty Cổ phần Đầu tư MST được lập ngày 29 tháng 03 năm 2024 gồm: Bảng cân đối kế toán tại ngày 31 tháng 12 năm 2023, Báo cáo kết quả hoạt động kinh doanh, Báo cáo lưu chuyển tiền tệ và Bản thuyết minh Báo cáo tài chính cho năm tài chính kết thúc ngày 31 tháng 12 năm 2023 được trình bày từ trang 07 đến trang 43 kèm theo.  
+
+**Trách nhiệm của Ban Điều hành Công ty**  
+
+Ban Điều hành Công ty chịu trách nhiệm về việc lập và trình bày trung thực và hợp lý Báo cáo tài chính của Công ty theo chuẩn mực kế toán, chế độ kế toán doanh nghiệp Việt Nam và các quy định pháp lý có liên quan đến việc lập và trình bày Báo cáo tài chính và chịu trách nhiệm về kiểm soát nội bộ mà Ban Điều hành công ty xác định là cần thiết để đảm bảo cho việc lập và trình bày Báo cáo tài chính không có sai sót trọng yếu do gian lận hoặc nhầm lẫn.  
+
+**Trách nhiệm của Kiểm toán viên**  
+
+Trách nhiệm của chúng tôi là đưa ra ý kiến về Báo cáo tài chính dựa trên kết quả của cuộc kiểm toán.  
+Chúng tôi đã tiến hành kiểm toán theo các chuẩn mực kiểm toán Việt Nam. Các chuẩn mực này yêu cầu chúng tôi tuân thủ chuẩn mực và các quy định về đạo đức nghề nghiệp, lập kế hoạch và thực hiện cuộc kiểm toán để đạt được sự đảm bảo hợp lý về việc liệu báo cáo tài chính của Công ty có còn sai sót trọng yếu hay không.  
+
+
+**Địa chỉ:** Tầng 12 Tháp Tây, Tòa nhà Hancorp Plaza, Số 72 Trần Đăng Ninh, Cầu Giấy, Hà Nội  
+**Add:** Floor 12 West Tower, Hancorp Plaza Building, 72 Tran Dang Ninh, Cau Giay, Ha Noi  
+**Tel:** (024) 37425 888 - **Fax:** (024) 37578 666  
+**Website:** http://kiemtoanttp.com - http://kiemtoanttp.vn  
+**Email:** ttp@kiemtoanttp.com
+
+=== Trang 8 ===
+## **Nội dung văn bản từ hình ảnh báo cáo tài chính**
+
+### **Công việc kiểm toán bao gồm thực hiện các thủ tục nhằm thu thập các bằng chứng kiểm toán về các số liệu và thuyết minh trên báo cáo tài chính.**  
+Các thủ tục kiểm toán được lựa chọn dựa trên xét đoán của kiểm toán viên, bao gồm đánh giá rủi ro có sai sót trọng yếu trong báo cáo tài chính do gian lận hoặc nhầm lẫn. Khi thực hiện đánh giá các rủi ro này, kiểm toán viên đã xem xét kiểm soát nội bộ của Công ty liên quan đến việc lập và trình bày báo cáo tài chính trung thực, hợp lý nhằm thiết kế các thủ tục kiểm toán phù hợp với tình hình thực tế, tuy nhiên không nhằm mục đích đưa ra ý kiến về hiệu quả của kiểm soát nội bộ của đơn vị. Công việc kiểm toán cũng bao gồm đánh giá tính thích hợp của các chính sách kế toán được áp dụng và tính hợp lý của các ước tính kế toán của Ban Tổng Giám đốc cũng như đánh giá việc trình bày tổng thể báo cáo tài chính.
+
+Chúng tôi tin tưởng rằng các bằng chứng kiểm toán mà chúng tôi đã thu thập được là đầy đủ và thích hợp cho cơ sở ý kiến kiểm toán ngoại trừ của chúng tôi.
+
+### **Cơ sở ý kiến kiểm toán ngoại trừ**  
+Trong năm đơn vị thực hiện thu hồi ủy thác đầu tư của các cá nhân bằng tiền mặt tổng số tiền là **96.072.463.478 VND**. Bằng các thủ tục thay thế, chúng tôi không thể thu thập được đầy đủ bằng chứng kiểm toán thích hợp để đưa ra ý kiến về giao dịch thu hồi lãi và gốc ủy thác đầu tư bằng tiền mặt nêu trên.
+
+### **Ý kiến kiểm toán ngoại trừ**  
+Theo ý kiến của chúng tôi, ngoại trừ ảnh hưởng của vấn đề nêu tại đoạn **Cơ sở ý kiến kiểm toán ngoại trừ**; Báo cáo tài chính đã phản ánh trung thực và hợp lý trên các khía cạnh trọng yếu tình hình tài chính của **Công ty Cổ phần Đầu tư MST** tại ngày **31 tháng 12 năm 2023**, cũng như kết quả kinh doanh và tình hình lưu chuyển tiền tệ trong năm tài chính kết thúc cùng ngày, phù hợp với **Chuẩn mực kế toán, Chế độ kế toán doanh nghiệp Việt Nam hiện hành** và các quy định pháp lý có liên quan về việc lập và trình bày Báo cáo tài chính.
+
+### **Vấn đề khác**  
+Báo cáo tài chính của Công ty Cổ phần Đầu tư MST cho năm tài chính kết thúc ngày 31/12/2022 đã được kiểm toán bởi kiểm toán viên và doanh nghiệp kiểm toán khác. Kiểm toán viên này đã đưa ra ý kiến chấp nhận toàn phần đối với Báo cáo tài chính này tại ngày **05 tháng 04 năm 2023**.
+
+### **Thông tin xác nhận**  
+Hà Nội, ngày **29 tháng 03 năm 2024**
+
+**CÔNG TY TNHH KIỂM TOÁN TTP**  
+
+**Phó Tổng Giám đốc**  
+*Con dấu và chữ ký*  
+**Hoàng Kim Thúy**  
+Số Giấy CN ĐKKN Kiểm toán: **1464-2023-133-1**  
+
+**Kiểm toán viên**  
+*Chữ ký*  
+**Phùng Văn Lữ**  
+Số Giấy CN ĐKKN Kiểm toán: **4075-2022-133-1**
+
+=== Trang 9 ===
+# **BÁO CÁO TÀI CHÍNH**  
+## **CÔNG TY CỔ PHẦN ĐẦU TƯ MST**  
+**Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, H. Đan Phượng, TP. Hà Nội**  
+**Cho năm tài chính kết thúc ngày 31/12/2023**  
+
+### **BẢNG CÂN ĐỐI KẾ TOÁN**  
+**Tại ngày 31 tháng 12 năm 2023**  
+**Đơn vị tính: VND**  
+
+| Mã số | TÀI SẢN | Thuyết minh | Số cuối năm | Số đầu năm |
+|--------|----------|------------|-------------|-------------|
+| **100** | **A - TÀI SẢN NGẮN HẠN** |  | **203.326.790.310** | **243.409.090.019** |
+| **110** | I. Tiền và các khoản tương đương tiền | 3 | **1.622.802.579** | **1.215.292.804** |
+| 111 | 1. Tiền |  | **1.622.802.579** | **1.215.292.804** |
+| 112 | 2. Các khoản tương đương tiền |  | - | - |
+| **120** | II. Đầu tư tài chính ngắn hạn |  | - | - |
+| **130** | III. Các khoản phải thu ngắn hạn |  | **195.378.548.373** | **221.660.350.326** |
+| 131 | 1. Phải thu ngắn hạn của khách hàng | 5 | **33.736.149.043** | **18.994.726.560** |
+| 132 | 2. Trả trước cho người bán ngắn hạn | 6 | **26.711.867.342** | **61.841.168.270** |
+| 135 | 3. Phải thu cho vay ngắn hạn | 7 | **12.048.357.500** | **13.500.000.000** |
+| 136 | 4. Phải thu ngắn hạn khác | 8a | **151.134.224.288** | **127.324.455.496** |
+| 137 | 5. Dự phòng phải thu ngắn hạn khó đòi (*) | 9 | **(28.252.049.800)** | - |
+| **140** | IV. Hàng tồn kho | 10 | **6.223.728.006** | **20.510.985.916** |
+| 141 | 1. Hàng tồn kho |  | **6.223.728.006** | **20.510.985.916** |
+| 149 | 2. Dự phòng giảm giá hàng tồn kho (*) |  | - | - |
+| **150** | V. Tài sản ngắn hạn khác |  | **101.711.352** | **22.460.973** |
+| 151 | 1. Chi phí trả trước ngắn hạn | 12a | **8.060.225** | **18.144.406** |
+| 152 | 2. Thuế GTGT được khấu trừ |  | **93.651.127** | - |
+| 153 | 3. Thuế và các khoản khác phải thu Nhà nước | 16 | - | **4.316.567** |
+| **200** | **B - TÀI SẢN DÀI HẠN** |  | **1.015.635.166.314** | **940.124.729.767** |
+| **210** | I. Các khoản phải thu dài hạn |  | **120.000.000.000** | **325.810.670.860** |
+| 216 | 1. Phải thu dài hạn khác | 8b | **120.000.000.000** | **325.810.670.860** |
+| **220** | II. Tài sản cố định |  | **712.455.423** | **4.212.781.911** |
+| 221 | 1. Tài sản cố định hữu hình | 11 | **712.455.423** | **4.212.781.911** |
+| 222 | - Nguyên giá |  | **4.722.115.932** | **8.449.890.477** |
+| 223 | - Giá trị hao mòn lũy kế (*) |  | **(4.009.660.509)** | **(4.237.108.566)** |
+| **230** | III. Bất động sản đầu tư |  | - | - |
+| **240** | IV. Tài sản dở dang dài hạn |  | - | - |
+| **250** | V. Đầu tư tài chính dài hạn | 4 | **894.888.131.088** | **609.989.854.166** |
+| 251 | 1. Đầu tư vào công ty con |  | - | **200.000.000** |
+| 252 | 2. Đầu tư vào công ty liên doanh, liên kết |  | **550.639.854.166** | **450.639.854.166** |
+| 253 | 3. Đầu tư góp vốn vào đơn vị khác |  | **357.633.300.000** | **159.150.000.000** |
+| 254 | 4. Dự phòng đầu tư tài chính dài hạn (*) |  | **(13.385.023.078)** | - |
+| **260** | VI. Tài sản dài hạn khác |  | **34.579.803** | **111.422.830** |
+| 261 | 1. Chi phí trả trước dài hạn | 12b | **34.579.803** | **111.422.830** |
+| **270** | **TỔNG CỘNG TÀI SẢN** |  | **1.218.961.956.624** | **1.183.533.819.786** |
+
+=== Trang 10 ===
+# **BÁO CÁO TÀI CHÍNH**  
+## **CÔNG TY CỔ PHẦN ĐẦU TƯ MST**  
+**Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, H. Đan Phượng, TP. Hà Nội**  
+**Cho năm tài chính kết thúc ngày 31/12/2023**  
+
+### **BẢNG CÂN ĐỐI KẾ TOÁN**  
+**Tại ngày 31 tháng 12 năm 2023 (Tiếp theo)**  
+
+## **NGUỒN VỐN**  
+
+| Mã số | Thuyết minh | **Số cuối năm** | **Số đầu năm** |  
+|--------|-------------|-----------------|----------------|  
+| 300    | **C - NỢ PHẢI TRẢ** | **387.116.871.000** | **419.983.952.462** |  
+| 310    | I. Nợ ngắn hạn |  |  |  
+| 311    | 1. Phải trả người bán ngắn hạn | **151.043.543.353** | **84.168.054.593** |  
+| 312    | 2. Người mua trả tiền trước ngắn hạn | **54.642.980.848** | **90.203.323.861** |  
+| 313    | 3. Thuế và các khoản phải nộp Nhà nước | **25.916.811.136** | **13.058.683.419** |  
+| 314    | 4. Phải trả người lao động | **107.463.563** | **107.346.281** |  
+| 315    | 5. Chi phí phải trả ngắn hạn | **21.648.780.848** | **4.866.026.871** |  
+| 319    | 6. Phải trả ngắn hạn khác | **9.270.756.150** | **35.169.348.099** |  
+| 320    | 7. Vay và nợ thuê tài chính ngắn hạn | **4.168.786.068** | **191.272.105.835** |  
+| 330    | II. Nợ dài hạn |  |  |  
+| 338    | 1. Vay và nợ thuê tài chính dài hạn | **120.317.749.034** | **1.139.063.503** |  
+| 400    | **D - VỐN CHỦ SỞ HỮU** | **831.845.085.624** | **763.549.867.324** |  
+| 410    | I. Vốn chủ sở hữu |  |  |  
+| 411    | 1. Vốn góp của chủ sở hữu | **760.043.010.000** | **681.406.910.000** |  
+| 412    | 2. Thặng dư vốn cổ phần | - | - |  
+| 414    | 3. Vốn khác của chủ sở hữu | - | - |  
+| 418    | 4. Quỹ đầu tư phát triển | - | - |  
+| 421    | 5. Lợi nhuận sau thuế chưa phân phối | **71.802.075.624** | **82.142.957.324** |  
+| 421a   | - LNST chưa phân phối lũy kế đến cuối kỳ trước | **3.506.857.324** | **45.508.205.692** |  
+| 421b   | - LNST chưa phân phối kỳ này | **68.295.218.300** | **36.634.751.632** |  
+| 440    | **TỔNG CỘNG NGUỒN VỐN** | **1.218.961.956.624** | **1.183.533.819.786** |  
+
+**Người lập biểu: Phạm Thị Ngọc Thư**  
+**Kế toán trưởng: Nguyễn Đăng Kiên**  
+**Giám đốc: Phan Duy Dũng**  
+**Hà Nội, ngày 29 tháng 03 năm 2024**
+
+=== Trang 11 ===
+# **BÁO CÁO KẾT QUẢ KINH DOANH**
+## **Năm 2023**
+
+### **Thông tin công ty:**
+- **Tên công ty:** CÔNG TY CỔ PHẦN ĐẦU TƯ MST  
+- **Địa chỉ:** Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, H. Đan Phượng, TP. Hà Nội  
+- **Báo cáo tài chính cho năm tài chính kết thúc ngày 31/12/2023**
+
+
+### **Bảng báo cáo kết quả kinh doanh:**
+
+| **Mã số** | **Chỉ tiêu**                                                 | **Thuyết minh** | **Năm nay (VND)** | **Năm trước (VND)** |
+|------------|--------------------------------------------------------------|-----------------|---------------------|-----------------------|
+| 01         | 1. Doanh thu bán hàng và cung cấp dịch vụ                   | 20              | 1.207.223.328.653   | 343.899.097.436      |
+| 02         | 2. Các khoản giảm trừ                                         | -               | -                   | -                     |
+| 10         | 3. Doanh thu thuần bán hàng và cung cấp dịch vụ (10 = 01 - 02) | -               | 1.207.223.328.653   | 343.899.097.436      |
+| 11         | 4. Giá vốn hàng bán                                           | 21              | 1.201.211.246.936   | 319.971.059.867      |
+| 20         | 5. Lợi nhuận gộp về bán hàng và cung cấp dịch vụ (20 = 10 - 11) | -               | 6.012.081.717       | 23.928.037.569       |
+| 21         | 6. Doanh thu hoạt động tài chính                              | 22              | 24.332.369.712      | 53.965.571.361       |
+| 22         | 7. Chi phí tài chính                                          | 23              | 36.817.267.793      | 28.606.220.784       |
+| 23         | - Trong đó: Chi phí lãi vay                                   | -               | 17.536.687.713      | 27.089.672.839       |
+| 24         | 8. Chi phí bán hàng                                           | -               | -                   | 3.913.192.836        |
+| 25         | 9. Chi phí quản lý doanh nghiệp                               | 24              | 31.879.604.565      | -                     |
+| 30         | 10. Lợi nhuận thuần từ hoạt động kinh doanh {30 = 20 + (21 - 22) - (24 + 25)} | -               | (38.352.420.929)    | 45.374.195.310       |
+| 31         | 11. Thu nhập khác                                             | 25              | 142.628.400.926     | 1                     |
+| 32         | 12. Chi phí khác                                              | 26              | 14.144.425.545      | 304.901.761          |
+| 40         | 13. Lợi nhuận khác (40 = 31 - 32)                             | -               | 128.483.975.381     | (304.901.760)        |
+| 50         | 14. Tổng lợi nhuận kế toán trước thuế (50 = 30 + 40)         | -               | 90.131.554.452      | 45.069.293.550       |
+| 51         | 15. Chi phí thuế TNDN hiện hành                               | 27              | 21.836.336.152      | 8.434.541.918        |
+| 52         | 16. Chi phí thuế TNDN hoãn lại                                | -               | -                   | 36.634.751.632       |
+| 60         | 17. Lợi nhuận sau thuế TNDN (60 = 50 - 51 - 52)              | -               | 68.295.218.300      | -                     |
+| 70         | 18. Lãi cơ bản trên cổ phiếu                                   | 28              | 955,30               | 537,63                |
+
+### **Chữ ký xác nhận:**
+- **Người lập biểu:** Phạm Thị Ngọc Thư  
+- **Kế toán trưởng:** Nguyễn Đăng Kiên  
+- **Tổng Giám đốc:** Phan Duy Dũng  
+
+Hà Nội, ngày 29 tháng 03 năm 2024
+
+=== Trang 12 ===
+# CÔNG TY CỔ PHẦN ĐẦU TƯ MST
+## Báo cáo tài chính
+### Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, H. Đan Phượng, TP. Hà Nội
+#### Báo cáo tài chính
+#### Cho năm tài chính kết thúc ngày 31/12/2023
+
+## BÁO CÁO LƯU CHUYỂN TIỀN TỆ
+### Phương pháp gián tiếp
+### Năm 2023
+
+| Mã số | CHỈ TIÊU                                   | Năm nay          | Năm trước         |
+|--------|---------------------------------------------|------------------|-------------------|
+|        | I. Lưu chuyển tiền từ hoạt động kinh doanh |                  |                   |
+| 01     | 1. Lợi nhuận trước thuế                     | 90.131.554.452   | 45.069.293.550    |
+| 02     | 2. Điều chỉnh cho các khoản                 |                  |                   |
+|        | - Khấu hao tài sản cố định                  | 493.946.951      | 519.400.776      |
+| 03     | - Các khoản dự phòng                         | 41.637.072.878   |                   |
+| 04     | - (Lãi)/lỗ do hoạt động đầu tư              | (22.767.634.101) |                   |
+| 05     | - Chi phí lãi vay                           | 17.536.687.713   | 28.606.220.784    |
+| 06     |                                            |                  |                   |
+| 08     | 3. Lợi nhuận/(lỗ)/từ hoạt động kinh doanh trước thay đổi vốn lưu động | 127.031.627.893 | 20.229.343.749    |
+| 09     | (Tăng)/giảm các khoản phải thu             | (82.697.018.561) | 362.403.683.149  |
+| 10     | (Tăng)/giảm hàng tồn kho                   | 14.287.257.910   | 11.074.493.698    |
+| 11     | Tăng/(giảm) các khoản phải trả (không kể lãi vay phải trả, thuế TNDN phải nộp) | 13.544.390.381 | (174.223.545.734) |
+| 12     | (Tăng)/giảm chi phí phải trả trước          | 86.927.208       | 110.763.861       |
+| 13     |                                            |                  |                   |
+| 14     | - Tiền lãi vay đã trả                       | (10.341.924.397) | (29.818.741.261)  |
+| 15     | - Thuế thu nhập doanh nghiệp đã nộp         | (7.517.937.075)  | (4.571.609.886)   |
+| 16     | - Tiền chi khác cho hoạt động kinh doanh    |                  |                   |
+| 17     | - Tiền chi khác                              |                  |                   |
+| 18     |                                            |                  |                   |
+| 19     | - Tiền chỉ khác cho hoạt động kinh doanh   |                  |                   |
+| 20     | Lưu chuyển tiền thuần từ hoạt động kinh doanh | 54.393.323.359   | 185.204.387.576   |
+|        |                                            |                  |                   |
+| **II. Lưu chuyển tiền từ hoạt động đầu tư** |                  |                   |
+| 21     | 1. Tiền chi để mua sắm, xây dựng TSCĐ và các TSDH khác | (3.682.320.000)  | (3.682.320.000)   |
+| 22     | 2. Tiền thu từ thanh lý, nhượng bán TSCĐ và TSDH khác | 2.080.281.018    |                   |
+| 23     | 3. Tiền chi cho vay và mua các công cụ nợ của đơn vị khác | (893.864.334.245) | (51.500.000.000)  |
+| 24     | 4. Tiền thu hồi cho vay, bán lại các công cụ nợ của đơn vị khác | 1.194.712.441.259 | 73.300.000.000    |
+| 25     | 5. Tiền chi đầu tư góp vốn vào đơn vị khác | (298.283.300.000) | (159.350.000.000) |
+| 26     | 6. Tiền thu hồi đầu tư góp vốn vào đơn vị khác | 33.720.000.000   |                   |
+| 27     | 7. Tiền thu lãi cho vay, cổ tức và lợi nhuận được chia | 9.293.732.620    | 20.375.685.634    |
+| 30     | Lưu chuyển tiền thuần từ hoạt động đầu tư   | 13.938.820.652   | (87.136.634.366)  |
+
+=== Trang 13 ===
+# CÔNG TY CỔ PHẦN ĐẦU TƯ MST
+Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, H. Đan Phượng, TP. Hà Nội
+
+## BÁO CÁO LƯU CHUYỂN TIỀN TỆ  
+(Tiếp theo)  
+Phương pháp gián tiếp  
+Năm 2023
+
+### Đơn vị tính: VND
+
+| Mã số | CHỈ TIÊU | Năm nay | Năm trước |
+|--------|----------|---------|-----------|
+| III. Lưu chuyển tiền từ hoạt động tài chính |  |  |  |
+| 31 | 1. Tiền thu từ phát hành cổ phiếu, nhận vốn góp của CSH |  |  |
+| 32 | 2. Tiền chi trả vốn góp cho các chủ sở hữu, mua lại cổ phiếu của doanh nghiệp đã phát hành | (223.035.424.446) | (281.900.572.327) |
+| 33 | 3. Tiền vay ngắn hạn, dài hạn nhận được | 155.110.790.210 | 173.210.000.000 |
+| 34 | 4. Tiền chi trả nợ gốc vay |  |  |
+| 35 | 5. Tiền chi trả nợ thuế tài chính |  |  |
+| 36 | 6. Cổ tức, lợi nhuận đã trả cho chủ sở hữu |  |  |
+| 40 | Lưu chuyển tiền thuần từ hoạt động tài chính | (67.924.634.236) | (108.690.572.327) |
+| 50 | Lưu chuyển tiền thuần trong năm | 407.509.775 | (10.622.819.117) |
+| 60 | Tiền và tương đương tiền đầu năm | 1.215.292.804 | 11.838.111.921 |
+| 70 | Tiền và tương đương tiền cuối năm | 1.622.802.579 | 1.215.292.804 |
+
+## Người lập biểu: Phạm Thị Ngọc Thư  
+## Kế toán trưởng: Nguyễn Đăng Kiên  
+Hà Nội, ngày 29 tháng 03 năm 2024  
+## Tổng Giám đốc: Phan Duy Dũng
+
+=== Trang 14 ===
+# **THUYẾT MINH BÁO CÁO TÀI CHÍNH  
+Cho năm tài chính kết thúc ngày 31/12/2023  
+(Các thuyết minh này là một bộ phận và được đọc cùng Báo cáo tài chính)**
+
+## **1. ĐẶC ĐIỂM HOẠT ĐỘNG CỦA DOANH NGHIỆP**
+
+### **Hình thức sở hữu vốn**  
+Công ty Cổ phần Đầu tư MST được thành lập và hoạt động theo Giấy chứng nhận đăng ký kinh doanh số 0103983390 do Sở Kế hoạch và Đầu tư thành phố Hà Nội cấp lần đầu ngày 18 tháng 06 năm 2009, thay đổi lần thứ 31 ngày 01 tháng 03 năm 2024.  
+
+Trụ sở chính của Công ty tại: Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, Huyện Đan Phượng, TP. Hà Nội, Việt Nam.  
+
+Số cán bộ công nhân viên tại thời điểm 31/12/2023 là: 15 nhân viên.  
+
+Vốn điều lệ thực góp theo Giấy chứng nhận đăng ký kinh doanh của Công ty đến ngày 31/12/2023 là 760.043.010.000 đồng tương đương 76.004.301 cổ phần, mệnh giá mỗi cổ phần là: 10.000 VND/CP.  
+
+Lĩnh vực kinh doanh: Xây lắp, thương mại và dịch vụ.
+
+### **Ngành nghề kinh doanh**  
+Theo Giấy xác nhận của Sở Kế hoạch và Đầu tư thành phố Hà Nội ngày 14 tháng 08 năm 2023, hoạt động chính của Công ty là:  
+- Xây dựng nhà để ở;  
+- Xây dựng nhà không để ở;  
+- Xây dựng công trình đường sắt, công trình đường bộ, công trình điện, công trình cấp, thoát nước, công trình viễn thông, thông tin liên lạc, công trình thủy, công trình công ích khác, công trình khai khoáng, công trình chế biến, chế tạo, công trình kỹ thuật dân dụng khác;  
+- Cho thuê máy móc, thiết bị và đồ dùng hữu hình khác không kèm người điều khiển  
+  - Chi tiết: Cho thuê máy móc, thiết bị xây dựng không kèm người điều khiển;  
+- Bán buôn kim loại và quặng kim loại  
+  - Chi tiết: Bán buôn quặng kim loại; bán buôn sắt, thép; Bán buôn kim loại khác;  
+- Bán buôn chuyên doanh khác chưa được phân vào đâu  
+  - Chi tiết: Bán buôn chất độ ăn gia súc (Hạt, bột, bột nhão, hạt nhựa...);  
+- Bán buôn vật liệu, thiết bị lắp đặt khác trong xây dựng;  
+- Hoạt động kiến trúc và tư vấn kỹ thuật có liên quan. Hoạt động do địa bản đồ; Hoạt động tư vấn kỹ thuật có liên quan khác (không bao gồm thiết kế công trình);  
+  - Thiết kế kiến trúc công trình; Thiết kế kết cấu công trình dân dụng - công nghiệp; Thiết kế cơ - điện công trình; Thiết kế cấp - thoát nước công trình; Thiết kế xây dựng công trình giao thông;
+
+=== Trang 15 ===
+# **BÁO CÁO TÀI CHÍNH**  
+## **CÔNG TY CP ĐẦU TƯ MST**  
+**Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, H. Đan Phượng, TP. Hà Nội**  
+**Cho năm tài chính kết thúc ngày 31/12/2023**
+
+### **Lĩnh vực hoạt động:**  
+- Tăng kỹ thuật; Giám sát công tác xây dựng công trình giao thông; Giám sát công tác xây dựng công trình nông nghiệp và phát triển nông thôn; Tư vấn thiết kế.
+
+### **Chu kỳ sản xuất, kinh doanh thông thường**  
+- Chu kỳ sản xuất, kinh doanh thông thường của Công ty được thực hiện trong thời gian không quá 12 tháng.
+
+### **Cấu trúc doanh nghiệp**
+
+| **Tên Công ty liên doanh, liên kết** | **Nơi thành lập và hoạt động** | **Tỷ lệ lợi ích** | **Tỷ lệ quyền biểu quyết** |
+|--------------------------------------|----------------------------------|-------------------|---------------------------|
+| Công ty Cổ phần Xăng dầu Hưng Yên    | Thôn Lam Sơn, Xã Thiện Phiến, Huyện Tiên Lữ, Tỉnh Hưng Yên | 33,33%          | 33,33%                   |
+| Công ty Cổ phần Đầu tư và Xây dựng Vina2 | Tầng 2 - 4, tòa nhà B - KDTM Kim Văn - Kim Lũ, Phường Đại Kim, Quận Hoàng Mai, Thành phố Hà Nội | 37,01%          | 37,01%                   |
+| Công ty Cổ phần Xây dựng Hạ tầng Đô thị Và Giao thông | Tầng 2, Tòa nhà La Bonita số 215 Nguyễn Gia Trí, Phường 25, Quận Bình Thạnh, Thành phố Hồ Chí Minh | 49,64%          | 49,64%                   |
+
+---
+
+## **2. CHẾ ĐỘ VÀ CHÍNH SÁCH KẾ TOÁN ÁP DỤNG TẠI CÔNG TY**
+
+### **2.1. Kỳ kế toán, đơn vị tiền tệ sử dụng trong kế toán**  
+- Kỳ kế toán năm của Công ty theo năm dương lịch bắt đầu từ ngày 01/01 và kết thúc vào ngày 31/12 hàng năm.  
+- Đơn vị tiền tệ sử dụng trong ghi chép kế toán là **Đồng Việt Nam (VND)**.
+
+### **2.2. Chuẩn mực và chế độ kế toán áp dụng**
+
+#### **Chế độ kế toán áp dụng**  
+- Công ty áp dụng **Chế độ Kế toán doanh nghiệp** ban hành theo **Thông tư 200/2014/TT-BTC** ngày 22/12/2014 của Bộ Tài chính và **Thông tư số 53/2016/TT-BTC** ngày 21/03/2016 của Bộ Tài chính về việc sửa đổi, bổ sung một số điều của Thông tư số 200/2014/TT-BTC.  
+
+#### **Tuyên bố về việc tuân thủ Chuẩn mực kế toán và Chế độ kế toán**  
+- Công ty đã áp dụng các **Chuẩn mực kế toán Việt Nam** và các văn bản hướng dẫn. Các Báo cáo tài chính được lập và trình bày theo đúng quy định của từng chuẩn mực, thông tư hướng dẫn thực hiện chuẩn mực và Chế độ kế toán hiện hành đang áp dụng.
+
+=== Trang 16 ===
+# **CÔNG TY CP ĐẦU TƯ MST**  
+Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, H. Đan Phượng, TP. Hà Nội  
+
+**Báo cáo tài chính**  
+**Cho năm tài chính kết thúc ngày 31/12/2023**  
+
+## **2.3. Công cụ tài chính**  
+
+### **Ghi nhận ban đầu**  
+
+#### **Tài sản tài chính**  
+Tài sản tài chính của Công ty bao gồm tiền và các khoản tương đương tiền, các khoản phải thu khách hàng và phải thu khác, các khoản đầu tư ngắn hạn và dài hạn. Tại thời điểm ghi nhận ban đầu, tài sản tài chính được xác định theo giá mua/chi phí phát hành cộng các chi phí phát sinh khác liên quan trực tiếp đến việc mua, phát hành tài sản tài chính đó.  
+
+#### **Nợ phải trả tài chính**  
+Nợ phải trả tài chính của Công ty bao gồm các khoản vay, các khoản phải trả người bán và phải trả khác, chi phí phải trả. Tại thời điểm ghi nhận ban đầu, các khoản nợ phải trả tài chính được xác định theo giá phát hành cộng các chi phí phát sinh liên quan trực tiếp đến việc phát hành nợ phải trả tài chính đó.  
+
+#### **Giá trị sau ghi nhận ban đầu**  
+Hiện tại chưa có các quy định về đánh giá lại công cụ tài chính sau ghi nhận ban đầu.  
+
+## **2.4. Tiền và các khoản tương đương tiền**  
+
+Tiền bao gồm tiền mặt tại quỹ, tiền gửi ngân hàng không kỳ hạn, vàng tiền tệ sử dụng với các chức năng cất trữ giá trị không bao gồm các loại vàng được phân loại là hàng tồn kho sử dụng với mục đích là nguyên vật liệu để sản xuất sản phẩm hoặc hàng hóa để bán.  
+
+Các khoản tương đương tiền là các khoản đầu tư ngắn hạn có thời gian đáo hạn không quá 03 tháng, có tính thanh khoản cao, có khả năng chuyển đổi dễ dàng thành các lượng tiền xác định và không có nhiều rủi ro trong chuyển đổi thành tiền.  
+
+## **2.5. Các khoản đầu tư tài chính**  
+
+Chứng khoán kinh doanh được ghi sổ kế toán theo giá gốc, bao gồm: Giá mua cộng các chi phí mua (nếu có) như chi phí môi giới, giao dịch, cung cấp thông tin, thuế, lệ phí và phí ngân hàng. Giá gốc của chứng khoán kinh doanh được xác định theo giá trị hợp lý của các khoản thanh toán tại thời điểm giao dịch phát sinh.  
+
+Các khoản đầu tư nắm giữ đến ngày đáo hạn bao gồm: Các khoản tiền gửi ngân hàng có kỳ hạn (bao gồm cả các loại tín phiếu, kỳ phiếu), trái phiếu, phiếu ưu đãi được bên phát hành bắt buộc phải mua lại tại thời điểm nhất định trong tương lai và các khoản cho vay nắm giữ đến ngày đáo hạn với mục đích thu lãi hàng kỳ và các khoản đầu tư nắm giữ đến ngày đáo hạn khác.  
+
+Giá trị ghi sổ của các khoản đầu tư vào các công ty con, công ty liên doanh liên kết được xác định theo giá gốc.
+
+=== Trang 17 ===
+# CÔNG TY CP ĐẦU TƯ MST  
+**Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, H. Đan Phượng, TP. Hà Nội**  
+**Báo cáo tài chính**  
+**Cho năm tài chính kết thúc ngày 31/12/2023**  
+
+Giá trị ghi nhận của các khoản đầu tư vào công cụ vốn của đơn vị khác không có quyền kiểm soát hoặc có ảnh hưởng đáng kể đối với bên được đầu tư được xác định theo giá gốc nếu là đầu tư bằng tiền hoặc giá đánh giá lại nếu là đầu tư bằng tài sản phi tiền tệ.  
+
+Cổ tức nhận bằng cổ phiếu chỉ thực hiện ghi nhận số lượng cổ phiếu được nhận, không ghi nhận tăng giá trị khoản đầu tư và doanh thu hoạt động tài chính.  
+
+Cổ phiếu hoán đổi được xác định giá trị theo giá trị hợp lý tại ngày trao đổi. Giá trị hợp lý đối với cổ phiếu của công ty niêm yết là giá đóng cửa của niêm yết trên thị trường chứng khoán, đối với cổ phiếu chưa niêm yết giao dịch trên sàn UPCOM là giá giao dịch đóng cửa trên sàn UPCOM, đối với cổ phiếu chưa niêm yết khác là giá thoả thuận theo hợp đồng hoặc giá trị sổ sách tại thời điểm trao đổi.  
+
+Dự phòng giảm giá các khoản đầu tư được lập vào thời điểm cuối năm cụ thể như sau:  
+- **Đối với các khoản đầu tư chứng khoán kinh doanh**: căn cứ trích lập dự phòng là số chênh lệch giữa giá gốc của các khoản đầu tư được hạch toán trên sổ kế toán lớn hơn giá trị thị trường của chứng tại thời điểm lập dự phòng.  
+- **Đối với khoản đầu tư nắm giữ lâu dài (không phân loại là chứng khoán kinh doanh) và không có ảnh hưởng đáng kể đối với bên được đầu tư**: nếu khoản đầu tư vào cổ phiếu niêm yết hoặc giá trị hợp lý của khoản đầu tư không xác định được giá trị hợp lý tại thời điểm báo cáo thì việc lập dự phòng căn cứ vào Báo cáo tài chính tại thời điểm trích lập dự phòng của bên được đầu tư.  
+- **Đối với các khoản đầu tư giữ đến ngày đáo hạn** được đánh giá khả năng thu hồi để lập dự phòng phải thu khó đòi theo quy định của pháp luật.  
+
+## 2.6. Các khoản nợ phải thu  
+
+Các khoản phải thu được theo dõi chi tiết theo kỳ hạn phải thu, đối tượng phải thu, loại nguyên tệ phải thu, và các yếu tố khác theo nhu cầu quản lý của Công ty.  
+
+Dự phòng nợ phải thu khó đòi được trích lập cho các khoản: nợ phải thu quá hạn thanh toán ghi trong hợp đồng kinh tế, các khế ước vay nợ, cam kết hợp đồng hoặc cam kết nợ và nợ phải thu chưa đến hạn thanh toán nhưng khó có khả năng thu hồi. Trong đó, việc trích lập dự phòng nợ phải thu quá hạn thanh toán được căn cứ vào thời gian trả nợ gốc theo hợp đồng mua bán ban đầu, không tính đến việc gia hạn nợ giữa các bên và nợ phải thu chưa đến hạn thanh toán nhưng khách nợ đã lâm vào tình trạng phá sản hoặc đang làm thủ tục giải thể, mất tích, bỏ trốn.  
+
+## 2.7. Hàng tồn kho  
+
+Hàng tồn kho được ghi nhận theo giá gốc. Trường hợp giá trị thuần có thể thực hiện được thấp hơn giá gốc thì hàng tồn kho được ghi nhận theo giá trị thuần có thể thực hiện được. Giá gốc hàng tồn kho bao gồm chi phí mua, chi phí chế biến và các chi phí liên quan trực tiếp khác phát sinh để có được hàng tồn kho.

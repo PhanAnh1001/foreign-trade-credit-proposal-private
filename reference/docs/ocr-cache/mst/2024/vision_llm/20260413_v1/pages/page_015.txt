@@ -1,0 +1,33 @@
+# **CÔNG TY CỔ PHẦN ĐẦU TƯ MST**  
+## **THUYẾT MINH BÁO CÁO TÀI CHÍNH (Tiếp theo)**  
+### **3.3. Các khoản đầu tư tài chính**  
+
+#### **Chứng khoán kinh doanh**  
+Chứng khoán kinh doanh là các khoản chứng khoán được Công ty nắm giữ với mục đích kinh doanh. Chứng khoán kinh doanh được ghi nhận bắt đầu từ ngày Công ty có quyền sở hữu và được xác định giá trị ban đầu theo giá trị hợp lý của các khoản thanh toán tại thời điểm giao dịch phát sinh cộng các chi phí liên quan đến giao dịch mua chứng khoán kinh doanh.  
+
+Tại các năm tài chính tiếp theo, các khoản đầu tư chứng khoán được xác định theo giá gốc trừ các khoản giảm giá chứng khoán kinh doanh.  
+
+Dự phòng giảm giá chứng khoán kinh doanh được trích lập theo các quy định kế toán hiện hành.  
+
+#### **Các khoản đầu tư nắm giữ đến ngày đáo hạn**  
+Các khoản đầu tư nắm giữ đến ngày đáo hạn bao gồm các khoản đầu tư mà Công ty có định và khả năng giữ đến ngày đáo hạn. Các khoản đầu tư nắm giữ đến ngày đáo hạn bao gồm: các khoản tiền gửi ngân hàng có kỳ hạn (bao gồm các loại phiếu, kỳ phiếu), trái phiếu, cổ phiếu ưu đãi bên phát hành bắt buộc phải mua lại trong một thời điểm nhất định trong tương lai và các khoản cho vay nắm giữ đến ngày đáo hạn với mục đích thu lãi hàng kỳ và các khoản đầu tư nắm giữ đến ngày đáo hạn khác.  
+
+Các khoản đầu tư nắm giữ đến ngày đáo hạn được ghi nhận bắt đầu từ ngày ngày mua và được xác định giá trị ban đầu theo giá mua và các chi phí liên quan đến giao dịch mua các khoản đầu tư. Thu nhập lãi của các khoản đầu tư nắm giữ đến ngày đáo hạn sau mua được ghi nhận trên Báo cáo kết quả hoạt động kinh doanh trong khi Công ty nắm giữ. Lãi được hưởng trước khi Công ty nắm giữ được ghi giảm trừ vào giá gốc tại thời điểm mua.  
+
+Các khoản đầu tư nắm giữ đến ngày đáo hạn được xác định theo giá gốc trừ đi dự phòng phải thu khó đòi.  
+
+Dự phòng phải thu khó đòi của các khoản đầu tư nắm giữ đến ngày đáo hạn được trích lập theo các quy định kế toán hiện hành.  
+
+#### **Công ty liên kết**  
+Công ty liên kết là một công ty mà Công ty có ảnh hưởng đáng kể nhưng không phải là công ty con hay công ty liên doanh của Công ty. Ảnh hưởng đáng kể được thể hiện qua quyền tham gia vào việc đưa ra các quyết định về chính sách tài chính hoặc hoạt động của bên nhận đầu tư nhưng không có ảnh hưởng trực tiếp hoặc gián tiếp tới việc kiểm soát hoặc đồng kiểm soát những chính sách này.  
+
+Công ty ghi nhận ban đầu khoản đầu tư vào công ty con, công ty liên doanh, liên kết theo giá gốc. Công ty hạch toán vào thu nhập trong Báo cáo kết quả hoạt động kinh doanh khoản được chia là lợi nhuận thuần lũy kế của bên nhận đầu tư phát sinh sau ngày đầu tư. Các khoản khác mà Công ty nhận được ngoài lợi nhuận được chia được coi là phần thu hồi các khoản đầu tư và được ghi nhận là khoản giảm trừ giá gốc đầu tư.  
+
+Các khoản đầu tư vào công ty con, công ty liên doanh, công ty liên kết được trình bày trong Bảng cân đối kế toán theo giá gốc trừ các khoản dự phòng giảm giá (nếu có). Dự phòng giảm giá của các khoản đầu tư được trích lập khi có bằng chứng chắc chắn cho thấy sự suy giảm giá trị của các khoản đầu tư này tại ngày kết thúc năm tài chính.  
+
+### **3.4. Các khoản phải thu**  
+Nợ phải thu là số tiền có thể thu hồi của khách hàng hoặc các đối tượng khác. Nợ phải thu được trình bày theo giá trị ghi sổ trừ đi các khoản dự phòng phải thu khó đòi.  
+
+Dự phòng phải thu khó đòi được lập cho từng khoản nợ phải thu khó đòi căn cứ vào thời nợ quá hạn của các khoản nợ hoặc dự kiến mức tổn thất có thể xảy ra.  
+
+**Trang số: 12**

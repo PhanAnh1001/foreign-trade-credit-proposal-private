@@ -1,0 +1,25 @@
+{
+  "company": "mst",
+  "year": 2022,
+  "strategy": "vision_llm",
+  "date": "20260413",
+  "version": 1,
+  "pdf_path": "docs/company-input/mst/financial-statements/pdf/2022/00021008403361344537cng-ty-cp-u-t-mst07042023-142116.pdf",
+  "pdf_hash": "ab451a99aa0d",
+  "status": "completed",
+  "elapsed_s": 115.11,
+  "total_pages": 44,
+  "ocr_pages": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ]
+}

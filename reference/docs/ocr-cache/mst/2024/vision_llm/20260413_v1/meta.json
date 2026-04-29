@@ -1,0 +1,25 @@
+{
+  "company": "mst",
+  "year": 2024,
+  "strategy": "vision_llm",
+  "date": "20260413",
+  "version": 1,
+  "pdf_path": "/var/folders/m_/qnv9drln0d95nl8sgmnrr43m0000gn/T/tmpvr_b14eu/2024/MST_24CN_BCTC_KT_04042025040604.pdf",
+  "pdf_hash": "9365c39d0415",
+  "status": "completed",
+  "elapsed_s": 120.61,
+  "total_pages": 44,
+  "ocr_pages": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ]
+}

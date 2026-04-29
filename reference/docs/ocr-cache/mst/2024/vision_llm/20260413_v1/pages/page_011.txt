@@ -1,0 +1,47 @@
+# CÔNG TY CỔ PHẦN ĐẦU TƯ MST
+Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, Huyện Đan Phượng, Thành phố Hà Nội    Mẫu số B03 - DN
+
+## BÁO CÁO LƯU CHUYỂN TIỀN TỆ
+### Cho năm tài chính kết thúc ngày 31 tháng 12 năm 2024
+### (Theo phương pháp gián tiếp)
+
+### CHỈ TIÊU
+
+| CHỈ TIÊU | Mã số | Năm nay (VND) | Năm trước (VND) |
+|----------|--------|---------------|----------------|
+## I. LƯU CHUYỂN TIỀN TỪ HOẠT ĐỘNG KINH DOANH
+
+1. **Lợi nhuận trước thuế** | 01 | 22.431.597.008 | 90.131.554.452 |
+2. **Điều chỉnh cho các khoản** |  |  |  |
+   - Khấu hao tài sản cố định, bất động sản đầu tư | 02 | 168.703.632 | 493.946.951 |
+   - Các khoản dự phòng | 03 | (15.730.489.470) | 41.637.072.878 |
+   - Lãi từ lỗ hoạt động đầu tư | 05 | (28.995.480.375) | (22.767.634.101) |
+   - Chi phí lãi vay | 06 | 28.478.088.602 | 17.536.687.713 |
+3. **Lợi nhuận từ hoạt động kinh doanh trước thay đổi vốn lưu động** | 08 | 6.352.419.397 | 127.031.627.893 |
+   - Tăng, giảm các khoản phải thu | 09 | (478.258.387.900) | (82.697.018.561) |
+   - Tăng, giảm hàng tồn kho | 10 | 4.795.843.683 | 14.287.257.910 |
+   - Tăng, giảm các khoản phải trả (Không kể lãi vay phải trả, thuế thu nhập doanh nghiệp phải nộp) | 11 | 327.199.742.912 | 13.544.390.381 |
+   - Tăng, giảm chi phí trả trước | 12 | (25.316.908.546) | 86.927.208 |
+   - Tiền lãi vay đã trả | 14 | (19.506.785.546) | (10.341.924.397) |
+   - Thuế thu nhập doanh nghiệp đã nộp | 15 | (4.099.123.889) | (7.517.937.075) |
+4. **Lưu chuyển tiền thuần từ hoạt động kinh doanh** | 20 | **(163.541.608.251)** | **54.393.323.359** |
+
+## II. LƯU CHUYỂN TIỀN TỪ HOẠT ĐỘNG ĐẦU TƯ
+
+1. **Thu từ thanh lý, nhượng bán TSCĐ và các TSDH khác** | 22 | - | 2.080.281.018 |
+2. **Tiền chi cho vay, mua các công cụ nợ của đơn vị khác** | 23 | (49.107.259.927) | (893.864.334.245) |
+3. **Thu hồi gốc vay, bán lại các công cụ nợ khác** | 24 | 16.135.357.500 | 1.194.712.441.259 |
+4. **Tiền chi đầu tư góp vốn vào đơn vị khác** | 25 | (21.000.000.000) | (298.283.300.000) |
+5. **Tiền thu hồi đầu tư góp vốn vào đơn vị khác** | 26 | 42.000.000.000 | - |
+6. **Tiền thu lãi cho vay, cổ tức và lợi nhuận được chia** | 27 | 7.157.498 | 9.293.732.620 |
+ 
+**Lưu chuyển tiền thuần từ hoạt động đầu tư** | 30 | **(11.964.744.929)** | **13.938.820.652** |
+
+## III. LƯU CHUYỂN TIỀN TỪ HOẠT ĐỘNG TÀI CHÍNH
+
+1. **Tiền thu từ đi vay** | 33 | 194.900.911.102 | 155.110.790.210 |
+2. **Tiền trả nợ gốc vay** | 34 | (17.792.332.201) | (223.035.424.446) |
+
+**Lưu chuyển tiền thuần từ hoạt động tài chính** | 40 | **177.108.578.901** | **(67.924.634.236)** |
+
+*Các thuyết minh kèm theo là một bộ phận hợp thành của Báo cáo tài chính này* |  |  |  |

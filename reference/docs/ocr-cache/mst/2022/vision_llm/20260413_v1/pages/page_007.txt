@@ -1,0 +1,68 @@
+# **BÁO CÁO TÀI CHÍNH HỢP NHẤT**  
+## **Cho năm tài chính kết thúc ngày 31/12/2022**  
+
+### **BẢNG CÂN ĐỐI KẾ TOÁN HỢP NHẤT**  
+**Tại ngày 31/12/2022**  
+
+## **TÀI SẢN**  
+
+### **TÀI SẢN NGẮN HẠN**  
+- **Tiền và các khoản tương đương tiền**  
+  - **Tiền**  
+  - **Các khoản tương đương tiền**  
+
+- **Các khoản phải thu ngắn hạn**  
+  - **Phải thu ngắn hạn của khách hàng**  
+  - **Trả trước cho người bán ngắn hạn**  
+  - **Phải thu về cho vay ngắn hạn**  
+  - **Phải thu ngắn hạn khác**  
+  - **Dự phòng phải thu ngắn hạn khó đòi**  
+
+- **Hàng tồn kho**  
+  - **Hàng tồn kho**  
+
+- **Tài sản ngắn hạn khác**  
+  - **Chi phí trả trước ngắn hạn**  
+  - **Thuế GTGT được khấu trừ**  
+  - **Thuế và các khoản phải thu nhà nước**  
+
+### **TÀI SẢN DÀI HẠN**  
+- **Các khoản phải thu dài hạn**  
+  - **Phải thu dài hạn khác**  
+
+- **Tài sản cố định**  
+  - **Tài sản cố định hữu hình**  
+    - **Nguyên giá**  
+    - **Giá trị hao mòn lũy kế**  
+
+- **Tài sản dở dang dài hạn**  
+  - **Chi phí xây dựng cơ bản dở dang**  
+
+- **Đầu tư tài chính dài hạn**  
+  - **Đầu tư vào công ty liên doanh, liên kết**  
+  - **Đầu tư góp vốn vào đơn vị khác**  
+
+- **Tài sản dài hạn khác**  
+  - **Chi phí trả trước dài hạn**  
+  - **Lợi thế thương mại**  
+
+## **TỔNG CỘNG TÀI SẢN**  
+
+
+## **Chi tiết số liệu:**  
+
+### **31/12/2022 (VND)**  
+- **Tiền và các khoản tương đương tiền:** 291.161.338.673  
+- **Các khoản phải thu ngắn hạn:** 267.063.850.326  
+- **Hàng tồn kho:** 20.510.985.916  
+- **Tài sản ngắn hạn khác:** 22.743.609  
+- **Tài sản dài hạn:** 1.010.374.118.925  
+- **TỔNG CỘNG TÀI SẢN:** 1.301.535.457.598  
+
+### **01/01/2022 (VND)**  
+- **Tiền và các khoản tương đương tiền:** 1.038.054.597.727  
+- **Các khoản phải thu ngắn hạn:** 956.002.087.683  
+- **Hàng tồn kho:** 52.594.376.437  
+- **Tài sản ngắn hạn khác:** 1.505.971.688  
+- **Tài sản dài hạn:** 735.948.919.399  
+- **TỔNG CỘNG TÀI SẢN:** 1.774.003.517.126

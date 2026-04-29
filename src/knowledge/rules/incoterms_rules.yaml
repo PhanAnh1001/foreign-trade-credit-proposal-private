@@ -1,0 +1,132 @@
+# Incoterms — International Commercial Terms
+# Covers: Incoterms 2000, 2010, 2020 (ICC)
+# Key rules for LC document requirements and insurance obligations
+
+version_coverage:
+  "2000":
+    publication: "ICC Publication 560"
+    year: 2000
+  "2010":
+    publication: "ICC Publication 715"
+    year: 2011
+    changes: "Added FCA, DAP, DAT replacing DAF, DES, DEQ, DDU"
+  "2020":
+    publication: "ICC Publication 723"
+    year: 2020
+    changes: >
+      FCA updated to allow on-board B/L. DAT renamed DAP with loading.
+      Insurance requirements tightened for CIP (All Risks).
+
+terms:
+  FOB:
+    full_name: "Free on Board"
+    risk_transfer: "At port of loading, when goods pass ship's rail"
+    seller_arranges: ["Export customs", "Delivery to port", "Loading onto vessel"]
+    buyer_arranges: ["Main carriage (ocean freight)", "Insurance", "Import customs"]
+    insurance_required_from_seller: false
+    typical_transport: "Sea or inland waterway"
+    available_versions: ["2000", "2010", "2020"]
+
+  CIF:
+    full_name: "Cost, Insurance and Freight"
+    risk_transfer: "At port of loading, when goods pass ship's rail"
+    seller_arranges: ["Export customs", "Loading", "Main carriage", "Marine insurance"]
+    buyer_arranges: ["Import customs", "Delivery from port"]
+    insurance_required_from_seller: true
+    insurance_minimum_coverage: 110
+    insurance_type: "Minimum cover (Institute Cargo Clauses C / 2000 rules)"
+    insurance_type_2020: "Minimum cover (Institute Cargo Clauses C)"
+    typical_transport: "Sea or inland waterway"
+    available_versions: ["2000", "2010", "2020"]
+    note: >
+      For CIF, seller must insure for at minimum 110% of invoice value.
+      Under Incoterms 2020, minimum cover is Institute Cargo Clauses (C).
+
+  CIP:
+    full_name: "Carriage and Insurance Paid To"
+    risk_transfer: "When goods are handed to first carrier"
+    seller_arranges: ["Export customs", "Main carriage", "Insurance to named destination"]
+    buyer_arranges: ["Import customs", "Final delivery"]
+    insurance_required_from_seller: true
+    insurance_minimum_coverage: 110
+    insurance_type: "All Risks (Institute Cargo Clauses A / 2020)"
+    typical_transport: "Any mode including multimodal"
+    available_versions: ["2000", "2010", "2020"]
+    note: >
+      CIP under Incoterms 2020 requires All Risks cover (ICC A), a
+      more comprehensive requirement than CIF.
+
+  CFR:
+    full_name: "Cost and Freight"
+    risk_transfer: "At port of loading"
+    seller_arranges: ["Export customs", "Loading", "Main carriage (freight)"]
+    buyer_arranges: ["Insurance", "Import customs"]
+    insurance_required_from_seller: false
+    typical_transport: "Sea or inland waterway"
+    available_versions: ["2000", "2010", "2020"]
+
+  EXW:
+    full_name: "Ex Works"
+    risk_transfer: "At seller's premises"
+    seller_arranges: ["Make goods available at named place"]
+    buyer_arranges: ["All transport", "Export customs", "Insurance", "Import customs"]
+    insurance_required_from_seller: false
+    typical_transport: "Any mode"
+    available_versions: ["2000", "2010", "2020"]
+
+  FCA:
+    full_name: "Free Carrier"
+    risk_transfer: "When goods handed to carrier at named place"
+    seller_arranges: ["Export customs", "Delivery to carrier at named place"]
+    buyer_arranges: ["Main carriage", "Insurance", "Import customs"]
+    insurance_required_from_seller: false
+    typical_transport: "Any mode including multimodal"
+    available_versions: ["2000", "2010", "2020"]
+    note_2020: >
+      Under Incoterms 2020, if the buyer instructs their carrier to
+      issue an on-board B/L to the seller, the carrier must do so.
+
+  CPT:
+    full_name: "Carriage Paid To"
+    risk_transfer: "When goods handed to first carrier"
+    seller_arranges: ["Export customs", "Main carriage to destination"]
+    buyer_arranges: ["Insurance", "Import customs", "Final delivery"]
+    insurance_required_from_seller: false
+    typical_transport: "Any mode including multimodal"
+    available_versions: ["2000", "2010", "2020"]
+
+  DAP:
+    full_name: "Delivered at Place"
+    risk_transfer: "At named destination, ready for unloading"
+    seller_arranges: ["All transport and export customs", "Delivery to named place"]
+    buyer_arranges: ["Unloading", "Import customs", "Import duties"]
+    insurance_required_from_seller: false
+    typical_transport: "Any mode"
+    available_versions: ["2010", "2020"]
+
+  DDP:
+    full_name: "Delivered Duty Paid"
+    risk_transfer: "At buyer's named place after import clearance"
+    seller_arranges: ["All costs including import duties"]
+    buyer_arranges: ["Unloading if not included"]
+    insurance_required_from_seller: false
+    typical_transport: "Any mode"
+    available_versions: ["2000", "2010", "2020"]
+
+  DEFAULT:
+    insurance_required_from_seller: false
+    typical_transport: "Any mode"
+
+# Terms requiring ocean/sea-specific B/L
+sea_terms: ["FOB", "CIF", "CFR", "FAS", "DEQ", "DES"]
+# Terms suitable for any transport mode
+multimodal_terms: ["EXW", "FCA", "CPT", "CIP", "DAP", "DAT", "DDP"]
+
+insurance_rule_summary:
+  required_from_seller: ["CIF", "CIP"]
+  not_required_from_seller: ["FOB", "CFR", "EXW", "FCA", "CPT", "DAP", "DDP"]
+  note: >
+    When insurance is not required from the seller, the buyer typically
+    arranges insurance independently. The LC should not require an
+    insurance document from the beneficiary unless the Incoterms term
+    obligates the seller to provide it.

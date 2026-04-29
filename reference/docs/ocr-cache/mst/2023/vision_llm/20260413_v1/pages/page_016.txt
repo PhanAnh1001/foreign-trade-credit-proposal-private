@@ -1,0 +1,32 @@
+# **CÔNG TY CP ĐẦU TƯ MST**  
+Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, H. Đan Phượng, TP. Hà Nội  
+
+**Báo cáo tài chính**  
+**Cho năm tài chính kết thúc ngày 31/12/2023**  
+
+## **2.3. Công cụ tài chính**  
+
+### **Ghi nhận ban đầu**  
+
+#### **Tài sản tài chính**  
+Tài sản tài chính của Công ty bao gồm tiền và các khoản tương đương tiền, các khoản phải thu khách hàng và phải thu khác, các khoản đầu tư ngắn hạn và dài hạn. Tại thời điểm ghi nhận ban đầu, tài sản tài chính được xác định theo giá mua/chi phí phát hành cộng các chi phí phát sinh khác liên quan trực tiếp đến việc mua, phát hành tài sản tài chính đó.  
+
+#### **Nợ phải trả tài chính**  
+Nợ phải trả tài chính của Công ty bao gồm các khoản vay, các khoản phải trả người bán và phải trả khác, chi phí phải trả. Tại thời điểm ghi nhận ban đầu, các khoản nợ phải trả tài chính được xác định theo giá phát hành cộng các chi phí phát sinh liên quan trực tiếp đến việc phát hành nợ phải trả tài chính đó.  
+
+#### **Giá trị sau ghi nhận ban đầu**  
+Hiện tại chưa có các quy định về đánh giá lại công cụ tài chính sau ghi nhận ban đầu.  
+
+## **2.4. Tiền và các khoản tương đương tiền**  
+
+Tiền bao gồm tiền mặt tại quỹ, tiền gửi ngân hàng không kỳ hạn, vàng tiền tệ sử dụng với các chức năng cất trữ giá trị không bao gồm các loại vàng được phân loại là hàng tồn kho sử dụng với mục đích là nguyên vật liệu để sản xuất sản phẩm hoặc hàng hóa để bán.  
+
+Các khoản tương đương tiền là các khoản đầu tư ngắn hạn có thời gian đáo hạn không quá 03 tháng, có tính thanh khoản cao, có khả năng chuyển đổi dễ dàng thành các lượng tiền xác định và không có nhiều rủi ro trong chuyển đổi thành tiền.  
+
+## **2.5. Các khoản đầu tư tài chính**  
+
+Chứng khoán kinh doanh được ghi sổ kế toán theo giá gốc, bao gồm: Giá mua cộng các chi phí mua (nếu có) như chi phí môi giới, giao dịch, cung cấp thông tin, thuế, lệ phí và phí ngân hàng. Giá gốc của chứng khoán kinh doanh được xác định theo giá trị hợp lý của các khoản thanh toán tại thời điểm giao dịch phát sinh.  
+
+Các khoản đầu tư nắm giữ đến ngày đáo hạn bao gồm: Các khoản tiền gửi ngân hàng có kỳ hạn (bao gồm cả các loại tín phiếu, kỳ phiếu), trái phiếu, phiếu ưu đãi được bên phát hành bắt buộc phải mua lại tại thời điểm nhất định trong tương lai và các khoản cho vay nắm giữ đến ngày đáo hạn với mục đích thu lãi hàng kỳ và các khoản đầu tư nắm giữ đến ngày đáo hạn khác.  
+
+Giá trị ghi sổ của các khoản đầu tư vào các công ty con, công ty liên doanh liên kết được xác định theo giá gốc.

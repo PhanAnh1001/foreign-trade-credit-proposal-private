@@ -1,0 +1,25 @@
+{
+  "company": "mst",
+  "year": 2023,
+  "strategy": "vision_llm",
+  "date": "20260413",
+  "version": 1,
+  "pdf_path": "docs/company-input/mst/financial-statements/pdf/2023/0004776021080368906cng-ty-cp-u-t-mst29032024-000000.pdf",
+  "pdf_hash": "0ed6841ddb0e",
+  "status": "completed",
+  "elapsed_s": 108.49,
+  "total_pages": 45,
+  "ocr_pages": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ]
+}

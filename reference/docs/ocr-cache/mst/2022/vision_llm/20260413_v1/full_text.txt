@@ -1,0 +1,471 @@
+=== Trang 6 ===
+# Dưới đây là nội dung văn bản của ảnh:
+
+BÁO CÁO KIỂM TOÁN ĐỘC LẬP (tiếp theo)
+
+Vấn đề khác
+
+Báo cáo tài chính hợp nhất của Công ty Cổ phần Đầu tư MST cho năm tài chính kết thúc ngày 31/12/2021 đã được kiểm toán bởi Công ty Kiểm toán khác và Công ty Kiểm toán này đã đưa ra ý kiến chấp nhận toàn phần đối với báo cáo tài chính hợp nhất này tại ngày 22/3/2022.
+
+**Đặng Minh Đức**                                                  **Trần Hồng Giang**  
+Giám đốc                                                          Kiểm toán viên  
+Giấy CNĐKKN kiểm toán số: 4885-2020-112-1                  Giấy ĐKKN kiểm toán số: 3893-2022-112-1
+
+Thay mặt và đại diện cho  
+CHI NHÁNH HÀ NỘI - CÔNG TY TNHH KIỂM TOÁN VÀ TƯ VẤN UHY  
+Hà Nội, ngày 17 tháng 04 năm 2023
+
+=== Trang 7 ===
+# **BÁO CÁO TÀI CHÍNH HỢP NHẤT**  
+## **Cho năm tài chính kết thúc ngày 31/12/2022**  
+
+### **BẢNG CÂN ĐỐI KẾ TOÁN HỢP NHẤT**  
+**Tại ngày 31/12/2022**  
+
+## **TÀI SẢN**  
+
+### **TÀI SẢN NGẮN HẠN**  
+- **Tiền và các khoản tương đương tiền**  
+  - **Tiền**  
+  - **Các khoản tương đương tiền**  
+
+- **Các khoản phải thu ngắn hạn**  
+  - **Phải thu ngắn hạn của khách hàng**  
+  - **Trả trước cho người bán ngắn hạn**  
+  - **Phải thu về cho vay ngắn hạn**  
+  - **Phải thu ngắn hạn khác**  
+  - **Dự phòng phải thu ngắn hạn khó đòi**  
+
+- **Hàng tồn kho**  
+  - **Hàng tồn kho**  
+
+- **Tài sản ngắn hạn khác**  
+  - **Chi phí trả trước ngắn hạn**  
+  - **Thuế GTGT được khấu trừ**  
+  - **Thuế và các khoản phải thu nhà nước**  
+
+### **TÀI SẢN DÀI HẠN**  
+- **Các khoản phải thu dài hạn**  
+  - **Phải thu dài hạn khác**  
+
+- **Tài sản cố định**  
+  - **Tài sản cố định hữu hình**  
+    - **Nguyên giá**  
+    - **Giá trị hao mòn lũy kế**  
+
+- **Tài sản dở dang dài hạn**  
+  - **Chi phí xây dựng cơ bản dở dang**  
+
+- **Đầu tư tài chính dài hạn**  
+  - **Đầu tư vào công ty liên doanh, liên kết**  
+  - **Đầu tư góp vốn vào đơn vị khác**  
+
+- **Tài sản dài hạn khác**  
+  - **Chi phí trả trước dài hạn**  
+  - **Lợi thế thương mại**  
+
+## **TỔNG CỘNG TÀI SẢN**  
+
+
+## **Chi tiết số liệu:**  
+
+### **31/12/2022 (VND)**  
+- **Tiền và các khoản tương đương tiền:** 291.161.338.673  
+- **Các khoản phải thu ngắn hạn:** 267.063.850.326  
+- **Hàng tồn kho:** 20.510.985.916  
+- **Tài sản ngắn hạn khác:** 22.743.609  
+- **Tài sản dài hạn:** 1.010.374.118.925  
+- **TỔNG CỘNG TÀI SẢN:** 1.301.535.457.598  
+
+### **01/01/2022 (VND)**  
+- **Tiền và các khoản tương đương tiền:** 1.038.054.597.727  
+- **Các khoản phải thu ngắn hạn:** 956.002.087.683  
+- **Hàng tồn kho:** 52.594.376.437  
+- **Tài sản ngắn hạn khác:** 1.505.971.688  
+- **Tài sản dài hạn:** 735.948.919.399  
+- **TỔNG CỘNG TÀI SẢN:** 1.774.003.517.126
+
+=== Trang 8 ===
+# **BÁO CÁO TÀI CHÍNH HỢP NHẤT**  
+## **Cho năm tài chính kết thúc ngày 31/12/2022**  
+
+### **BẢNG CÂN ĐỐI KẾ TOÁN HỢP NHẤT (Tiếp theo)**  
+**Tại ngày 31/12/2022**  
+
+## **NGUỒN VỐN**  
+
+### **NỢ PHẢI TRẢ**  
+
+| Mã số | Thuyết minh | 31/12/2022 (VND) | 01/01/2022 (VND) |
+|--------|-------------|-------------------|------------------|
+| 300    |             | **467.484.952.462** | **936.392.718.076** |
+| 310    | Nợ ngắn hạn  | **466.345.888.959** | **933.318.778.328** |
+| 311    | Phải trả người bán ngắn hạn | 84.168.054.593 | 245.487.273.390 |
+| 312    | Người mua trả tiền trước ngắn hạn | 137.703.323.861 | 228.094.705.450 |
+| 313    | Thuế và các khoản phải nộp Nhà nước | 13.058.683.419 | 15.036.330.039 |
+| 314    | Phải trả người lao động | 107.346.281 | 523.580.435 |
+| 315    | Chi phí phải trả ngắn hạn | 4.866.026.871 | 6.694.679.379 |
+| 319    | Phải trả ngắn hạn khác | 35.170.348.099 | 127.135.179.492 |
+| 320    | Vay và nợ thuê tài chính ngắn hạn | **191.272.105.835** | **310.347.030.143** |
+| 330    | Nợ dài hạn |  |  |
+| 338    | Vay và nợ thuê tài chính dài hạn | **1.139.063.503** | **3.073.939.748** |
+| 341    | Thuế thu nhập doanh nghiệp hoãn lại phải trả | - | 8.273.722 |
+
+### **VỐN CHỦ SỞ HỮU**  
+
+| Mã số | Thuyết minh | 31/12/2022 (VND) | 01/01/2022 (VND) |
+|--------|-------------|-------------------|------------------|
+| 400    |             | **834.050.505.136** | **837.610.799.050** |
+| 410    | Vốn chủ sở hữu | **834.050.505.136** | **837.610.799.050** |
+| 411    | Vốn góp của chủ sở hữu | 681.406.910.000 | 681.406.910.000 |
+| 411a   | Cổ phiếu phổ thông có quyền biểu quyết | **681.406.910.000** | **681.406.910.000** |
+| 421    | Lợi nhuận sau thuế chưa phân phối | **152.524.441.460** | **80.289.131.591** |
+| 421a   | LNST chưa phân phối lũy kế đến cuối năm trước | 80.247.387.847 | 3.975.552.657 |
+| 421b   | LNST chưa phân phối năm nay | **72.277.053.613** | **76.313.578.934** |
+| 429    | Lợi ích của cổ đông không kiểm soát | **119.153.676** | **75.914.757.459** |
+| 440    | **TỔNG CỘNG NGUỒN VỐN** | **1.301.535.457.598** | **1.774.003.517.126** |
+
+### **Người lập biểu:**  
+**Phạm Thị Ngọc Thư**  
+
+### **Kế toán trưởng:**  
+**Nguyễn Đăng Kiên**  
+
+### **Tổng Giám đốc:**  
+**Phan Duy Dũng**  
+
+**Hà Nội, ngày 17 tháng 04 năm 2023**  
+
+_Các Thuyết minh đính kèm là bộ phận hợp thành của Báo cáo tài chính hợp nhất._
+
+=== Trang 9 ===
+# **BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH HỢP NHẤT**  
+## **Cho năm tài chính kết thúc ngày 31 tháng 12 năm 2022**  
+
+### **Chỉ tiêu**
+| Chỉ tiêu                                      | Mã số | Thuyết minh | Năm 2022 (VND)       | Năm 2021 (VND)       |
+|------------------------------------------------|--------|-------------|----------------------|----------------------|
+| **Doanh thu bán hàng và cung cấp dịch vụ**    | 01     | 20          | **374.831.981.352**  | **465.276.910.442**  |
+| Các khoản giảm trừ doanh thu                 | 02     |             | -                    | -                    |
+| **Doanh thu thuần bán hàng và cung cấp dịch vụ** | 10     |             | **374.831.981.352**  | **465.276.910.442**  |
+| Giá vốn hàng bán                              | 11     | 21          | **342.179.784.888**  | **403.058.020.763**  |
+| **Lợi nhuận gộp về bán hàng và cung cấp dịch vụ** | 20     |             | **32.652.196.464**   | **62.218.889.679**   |
+| Doanh thu hoạt động tài chính                 | 21     | 22          | **78.250.466.415**   | **91.700.215.226**   |
+| Chi phí tài chính                             | 22     | 23          | **29.314.668.606**   | **86.102.520.406**   |
+| Trong đó: Chi phí lãi vay                     | 23     |             | **27.793.269.065**   | **84.538.613.763**   |
+| Phân lãi hoặc lỗ trong Công ty liên doanh, liên kết | 24     |             | **13.246.360.715**   | **39.400.875.363**   |
+| Chi phí bán hàng                              | 25     |             | -                    | -                    |
+| Chi phí quản lý doanh nghiệp                  | 26     | 24          | **13.627.040.766**   | **21.160.994.336**   |
+| **Lợi nhuận thuần từ hoạt động kinh doanh**   | 30     |             | **81.207.314.222**   | **86.056.465.526**   |
+| Thu nhập khác                                 | 31     | 25          | -                    | -                    |
+| Chi phí khác                                  | 32     | 26          | **341.499.004**      | **207.512.472**      |
+| **Lợi nhuận khác**                            | 40     |             | **(341.499.003)**    | **(14.512.217)**     |
+| **Tổng lợi nhuận kế toán trước thuế**         | 50     |             | **80.865.815.219**   | **86.041.953.309**   |
+| Chi phí thuế TNDN hiện hành                   | 51     | 27          | **8.500.952.583**    | **9.833.661.965**    |
+| Chi phí thuế TNDN hoãn lại                    | 52     |             | -                    | **(692.406.970)**    |
+| **Lợi nhuận sau thuế thu nhập doanh nghiệp** | 60     |             | **72.364.862.636**   | **76.900.698.314**   |
+| - Lợi nhuận sau thuế của Công ty mẹ           | 61     |             | **72.299.495.284**   | **76.313.578.934**   |
+| - Lợi nhuận sau thuế của Cổ đông không kiểm soát | 62     |             | **65.367.352**       | **587.119.380**      |
+| Lãi cơ bản trên cổ phiếu                     | 70     | 28          | **1.061**            | **1.288**            |
+
+
+### **Thông tin chữ ký và xác nhận:**
+- **Người lập biểu:** *Phạm Thị Ngọc Thư*  
+- **Kế toán trưởng:** *Nguyễn Đăng Kiên*  
+- **Tổng Giám đốc:** *Phạm Duy Dũng*  
+
+Hà Nội, ngày **17 tháng 04 năm 2023**  
+Các Thuyết minh đính kèm là bộ phận hợp thành của Báo cáo tài chính hợp nhất.
+
+=== Trang 10 ===
+# CÔNG TY CỔ PHẦN ĐẦU TƯ MST
+Ngõ 159 Phố Tây Sơn, Thị trấn Phùng, Huyện Đan Phượng,  
+Thành phố Hà Nội, Việt Nam
+
+# BÁO CÁO LƯU CHUYỂN TIỀN TỆ HỢP NHẤT  
+## (Theo phương pháp gián tiếp)  
+### Cho năm tài chính kết thúc ngày 31 tháng 12 năm 2022
+
+| Mã số | Thuyết minh | Năm 2022 (VND) | Năm 2021 (VND) |
+|--------|------------|----------------|----------------|
+|        |            |                |                |
+
+## Lưu chuyển tiền từ hoạt động kinh doanh  
+Lợi nhuận trước thuế                          | 01         | 80.865.815.219  | 86.041.953.309  |
+|        |            |                |                |
+
+### Điều chỉnh cho các khoản
+- Khấu hao TSCĐ và BĐSDT                      | 02         | 5.331.030.700   | 9.263.616.581   |
+|        |            |                |                |
+- Các khoản dự phòng                           | 03         | -                | 67.625.588      |
+|        |            |                |                |
+- (Lãi) hoạt động đầu tư                       | 05         | (93.519.393.295) | (131.101.090.589) |
+|        |            |                |                |
+- Chi phí lãi vay                              | 06         | 29.309.817.010   | 85.379.874.038   |
+|        |            |                |                |
+
+## Lợi nhuận từ hoạt động kinh doanh trước thay đổi vốn lưu động | 08 | 21.987.269.634  | 49.651.978.927  |
+
+- Tăng, giảm các khoản phải thu               | 09         | 287.132.406.685  | 16.699.627.643   |
+|        |            |                |                |
+- Tăng, giảm hàng tồn kho                     | 10         | (14.039.626.402) | 58.948.799.454   |
+|        |            |                |                |
+- Tăng, giảm các khoản phải trả (không kể lãi vay phải trả, thuế thu nhập doanh nghiệp phải nộp) | 11 | (75.913.531.104) | 213.533.615.573  |
+
+- Tăng, giảm chi phí trả trước                 | 12         | 136.956.988      | (1.501.218.310) |
+|        |            |                |                |
+- Tiền lãi vay đã trả                          | 14         | (30.522.337.487) | (80.380.153.563) |
+|        |            |                |                |
+- Thuế thu nhập doanh nghiệp đã nộp           | 15         | (4.571.679.744)  | (6.099.167.361)  |
+|        |            |                |                |
+
+## Lưu chuyển tiền thuần từ hoạt động kinh doanh | 20 | 184.209.458.570 | 250.853.482.363 |
+
+## Lưu chuyển tiền từ hoạt động đầu tư
+
+- Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác | 21 | (3.682.320.000)  | (8.584.229.091)  |
+|        |            |                |                |
+- Tiền chi cho vay, mua các công cụ nợ của đơn vị khác | 23 | (51.500.000.000) | 125.500.000.000  |
+|        |            |                |                |
+- Tiền thu hồi cho vay, bán lại các công cụ nợ của đơn vị khác | 24 | 73.300.000.000   | (96.700.000.000) |
+|        |            |                |                |
+- Tiền chi đầu tư góp vốn vào đơn vị khác      | 25         | (159.350.000.000) | (234.099.854.166) |
+|        |            |                |                |
+- Tiền thu hồi đầu tư góp vốn vào đơn vị khác  | 26         | 19.049.629.303   | -                |
+|        |            |                |                |
+- Tiền thu lãi vay, cổ tức và lợi nhuận được chia | 27 | 20.598.967.377   | 87.858.553.122   |
+
+## Lưu chuyển tiền thuần từ hoạt động đầu tư | 30 | (101.583.723.320) | (126.025.530.135) |
+
+## (Các thuyết minh đính kèm là bộ phận hợp thành của Báo cáo tài chính hợp nhất) 
+Trang 9
+
+=== Trang 11 ===
+# **BÁO CÁO LƯU CHUYỂN TIỀN TỆ HỢP NHẤT**  
+**(Tiếp theo)**  
+*(Theo phương pháp gián tiếp)*  
+**Cho năm tài chính kết thúc ngày 31 tháng 12 năm 2022**  
+
+## **Lưu chuyển tiền từ hoạt động tài chính**  
+- **Tiền thu từ phát hành cổ phiếu, nhận vốn góp của chủ sở hữu**  
+  - **31**  
+  - **300.000.000.000**  
+
+- **Tiền thu từ đi vay**  
+  - **33**  
+  - **342.620.517.452**  
+
+- **Tiền trả nợ gốc vay**  
+  - **34**  
+  - **(733.584.011.753)**  
+
+- **Cổ tức, lợi nhuận đã trả cho chủ sở hữu**  
+  - **36**  
+  - **(12.447.026.380)**  
+
+## **Lưu chuyển tiền thuần từ hoạt động tài chính**  
+- **40**  
+- **(103.410.520.681)**  
+
+## **Lưu chuyển tiền thuần trong năm**  
+- **50**  
+- **(24.388.403.097)**  
+
+## **Tiền và tương đương tiền đầu năm**  
+- **60**  
+- **4**  
+- **27.952.161.919**  
+
+## **Tiền và tương đương tiền cuối năm**  
+- **70**  
+- **4**  
+- **3.563.758.822**  
+
+## **Hà Nội, ngày 17 tháng 04 năm 2023**  
+
+### **Người lập biểu**  
+**Phạm Thị Ngọc Thư**  
+
+### **Kế toán trưởng**  
+**Nguyễn Đăng Kiên**  
+
+### **Tổng Giám đốc**  
+**Phan Duy Dũng**  
+
+> **Các Thuyết minh đính kèm là bộ phận hợp thành của Báo cáo tài chính hợp nhất**
+
+=== Trang 12 ===
+# **BÁO CÁO TÀI CHÍNH HỢP NHẤT**
+
+## **THUYẾT MINH BÁO CÁO TÀI CHÍNH HỢP NHẤT**  
+*(Các thuyết minh này là bộ phận hợp thành và cần được đọc đồng thời với Báo cáo tài chính hợp nhất)*
+
+### **1. ĐẶC ĐIỂM HOẠT ĐỘNG CỦA DOANH NGHIỆP**  
+
+#### **1.1. HÌNH THỨC SỞ HỮU VỐN**  
+Công ty Cổ phần Đầu tư MST (sau đây gọi tắt là “Công ty”) là Công ty cổ phần được thành lập và hoạt động theo Giấy chứng nhận đăng ký doanh nghiệp Công ty cổ phần số 0103983390 ngày 18/06/2009, đã được đăng ký thay đổi lần thứ 28 vào ngày 17/03/2023 do Sở Kế hoạch và Đầu tư Thành phố Hà Nội cấp.  
+
+Trụ sở chính của Công ty hiện đặt tại Ngõ 159 Phố Tây Sơn, Thị trấn Phùng, Huyện Đan Phượng, Thành phố Hà Nội, Việt Nam.  
+
+Vốn điều lệ thực góp theo Giấy chứng nhận đăng ký doanh nghiệp của Công ty đến ngày 31/12/2022 là **681.406.910.000 đồng**, chia thành **68.140.691 cổ phần** với mệnh giá cổ phần là **10.000 đồng/cổ phần**.
+
+#### **1.2. LĨNH VỰC KINH DOANH**  
+Hoạt động sản xuất kinh doanh chính của Công ty là xây lắp, thương mại, dịch vụ.
+
+#### **1.3. NGÀNH NGHỀ SẢN XUẤT KINH DOANH CHÍNH**  
+- Cho thuê xe có động cơ; Bán lẻ tivi; Bán buôn ô tô và xe có động cơ khác; Đại lý mua bán, ký gửi hàng hóa; Xuất nhập khẩu các mặt hàng Công ty kinh doanh; Xây dựng các công trình dân dụng, khu công nghiệp và khu đô thị, giao thông, đường bộ, đường sắt, đường thủy, thủy lợi, nông nghiệp, bệnh viện, trường học, khu vui chơi giải trí, điện chiếu sáng, năng lượng, các công trình hạ tầng kỹ thuật tăng cường; Quản lý dự án đầu tư xây dựng công trình, hạ tầng kỹ thuật tăng cường (không bao gồm hoạt động tư vấn pháp luật và tư vấn lập quy hoạch chi tiết); Tư vấn đầu tư các công trình dân dụng, công nghiệp, giao thông, thủy lợi, hạ tầng kỹ thuật; Tư vấn lập, thẩm định và quản lý dự án đầu tư (không bao gồm hoạt động tư vấn pháp luật và tư vấn tài chính); Tư vấn các công trình giao thông, công nghiệp (không bao gồm tư vấn lập quy hoạch chi tiết); Tư vấn lập, thẩm định các sản phẩm xây dựng, công nghiệp, thiết bị văn phòng, thiết bị phục vụ thiết kế; Mua bán, sản xuất vật liệu xây dựng, công nghiệp, thiết bị phục vụ ngành xây dựng, công nghiệp, thiết bị văn phòng, thiết bị phục vụ thiết kế; Mua bán, sản xuất nhựa tổng hợp, tổng, các sản phẩm từ nhựa; Khai thác khoáng sản (trừ các loại khoáng sản Nhà nước cấm).
+
+#### **1.4. CHU KỲ SẢN XUẤT, KINH DOANH THÔNG THƯỜNG**  
+Chu kỳ sản xuất, kinh doanh thông thường của Công ty được thực hiện trong thời gian không quá 12 tháng.
+
+#### **1.5. CẤU TRÚC DOANH NGHIỆP**  
+Công ty có các Công ty con được hợp nhất vào Báo cáo tài chính bao gồm:
+
+| **Tên Công ty con kiểm soát trực tiếp** | **Địa chỉ trụ sở chính** | **Hoạt động kinh doanh chính** | **Tỷ lệ lợi ích** | **Tỷ lệ quyền biểu quyết** |
+|--------------------|-------------------------|-------------------------------|--------------------|-----------------------------|
+| Công ty Cổ phần Tư vấn Đầu tư Xây dựng và Thương mại TQI | B24, Khu nhà ở bán, Phường Trung Văn, Quận Nam Từ Liêm, Thành phố Hà Nội | Trang trí, thiết kế nội thất | **62,5%** | **62,5%** |
+
+=== Trang 13 ===
+# CÔNG TY CỔ PHẦN ĐẦU TƯ MST
+## Ngõ 159 Phố Tây Sơn, Thị trấn Phùng, Huyện Đan Phượng, Thành phố Hà Nội, Việt Nam
+### BÁO CÁO TÀI CHÍNH HỢP NHẤT
+#### Cho năm tài chính kết thúc ngày 31/12/2022
+### THUYẾT MINH BÁO CÁO TÀI CHÍNH HỢP NHẤT (TIẾP)
+(Các thuyết minh này là bộ phận hợp thành và cần được đọc đồng thời với Báo cáo tài chính hợp nhất)
+
+Công ty có các Công ty liên doanh, liên kết được hợp nhất vào Báo cáo tài chính bao gồm:
+
+| **Tên Công ty liên doanh, liên kết** | **Địa chỉ trụ sở chính** | **Hoạt động kinh doanh chính** | **Tỷ lệ lợi ích** | **Tỷ lệ quyền biểu quyết** |
+|------------------------------------|--------------------------|--------------------------------|------------------|---------------------------|
+| Công ty Cổ phần Xăng dầu Hưng Yên   | thôn Lam Sơn, Xã Thiện Phiên, Huyện Hưng Lũm, Tỉnh Hưng Yên, Việt Nam | Mua bán, phân phối, sản xuất, quy chế, pha chế các sản phẩm dầu thô, xăng dầu, khí đốt, dầu nhớt và các sản phẩm hóa dầu | 33,33%           | 33,33%                   |
+| Công ty Cổ phần Đầu tư và Xây dựng Vina2 | Tăng 2-4, tòa nhà B - KĐT M Kim Văn - Kim Lũ, Đại Kim, Hoàng Mai, Hà Nội | Xây dựng nhà để ở, công trình dân dụng khác | 31,50%           | 31,50%                   |
+| Công ty Cổ phần Xây dựng Hạ tầng Đô thị và Giao thông | 48 Nguyễn Phi Khanh, Phường Tân Định, Quận 1, TP. Hồ Chí Minh, Việt Nam | Xây dựng nhà các loại; Tư vấn bất động sản; Kinh doanh bất động sản | 49,64%           | 49,64%                   |
+
+## 2. CƠ SỞ LẬP BÁO CÁO VÀ NĂM TÀI CHÍNH
+
+### 2.1 CƠ SỞ LẬP BÁO CÁO TÀI CHÍNH HỢP NHẤT
+
+Báo cáo tài chính hợp nhất kèm theo được trình bày bằng Đồng Việt Nam (VND) theo nguyên tắc giá gốc và phù hợp với chuẩn mực kế toán, chế độ kế toán doanh nghiệp Việt Nam (Thông tư số 200/2014/TT-BTC ngày 22/12/2014 của Bộ Tài chính hướng dẫn kế toán doanh nghiệp và Thông tư số 53/2016/TT-BTC sửa đổi một số điều của Thông tư số 200/2014/TT-BTC, Thông tư số 202/2014/TT-BTC ngày 22/12/2014 về hướng dẫn phương pháp lập và trình bày Báo cáo tài chính hợp nhất của Bộ Tài chính.
+
+### 2.2 CƠ SỞ HỢP NHẤT
+
+Báo cáo tài chính hợp nhất của Công ty được lập trên cơ sở hợp nhất Báo cáo tài chính Công ty của Công ty và các Công ty con do Công ty kiểm soát (Công ty con). Việc kiểm soát này đạt được khi Công ty có khả năng kiểm soát các chính sách tài chính và hoạt động của các Công ty nhận đầu tư nhằm thu được lợi ích từ hoạt động của các Công ty này.
+
+Tất cả các nghiệp vụ và số dư chủ yếu giữa Công ty và các Công ty con và giữa các Công ty con với nhau được loại bỏ khi hợp nhất Báo cáo tài chính.
+
+Lợi ích của cổ đông không kiểm soát tại Công ty con bao gồm lợi ích trực tiếp và gián tiếp có được thông qua Công ty con khác. Việc xác định lợi ích của các bên được căn cứ vào tỷ lệ góp vốn (trực tiếp hoặc gián tiếp) tương ứng của từng bên trong Công ty con, trừ khi có thỏa thuận khác. Trường hợp có sự khác biệt giữa tỷ lệ góp vốn theo giấy đăng ký kinh doanh và tỷ lệ vốn góp thực tế thì tỷ lệ lợi ích được xác định theo điều lệ doanh nghiệp hoặc theo sự thỏa thuận nhất trí giữa các bên.
+
+Lợi ích của cổ đông không kiểm soát trong tài sản thuần của Công ty con hợp nhất được trình bày trong Bảng cân đối kế toán hợp nhất thành chỉ tiêu hợp nhất thuộc phần vốn chủ sở hữu.
+
+Phần sở hữu của cổ đông không kiểm soát trong Báo cáo kết quả kinh doanh của Công ty cũng được trình bày thành chỉ tiêu hợp nhất riêng biệt trong Báo cáo kết quả kinh doanh hợp nhất.
+
+=== Trang 14 ===
+# CÔNG TY CỔ PHẦN ĐẦU TƯ MST
+Ngõ 159 Phố Tây Sơn, Thị trấn Phùng, Huyện Đan Phượng,  
+Thành phố Hà Nội, Việt Nam  
+**BÁO CÁO TÀI CHÍNH HỢP NHẤT**  
+Cho năm tài chính kết thúc ngày **31/12/2022**  
+**THUYẾT MINH BÁO CÁO TÀI CHÍNH HỢP NHẤT (TIẾP)**  
+(Các thuyết minh này là bộ phận hợp thành và cần được đọc đồng thời với Báo cáo tài chính hợp nhất)
+
+## **Lợi thế thương mại**  
+Lợi thế thương mại trên Báo cáo tài chính hợp nhất là phần phụ trội giữa mức giá phí hợp nhất kinh doanh với phân lợi ích của Công ty trong tổng giá trị hợp lý của tài sản, công nợ và công nợ tiềm tàng của Công ty con tại ngày thực hiện nghiệp vụ đầu tư. Lợi thế thương mại được coi là một loại tài sản vô hình, được tính khấu hao theo phương pháp đường thẳng trên thời gian hữu dụng ước tính của lợi thế kinh doanh là **10 năm**.  
+
+Khi bán công ty con giá trị còn lại của khoản lợi thế thương mại chưa khấu hao hết được tính vào các khoản lãi/lỗ do nghiệp vụ nhượng bán công ty tương ứng.
+
+## **2.2 NĂM TÀI CHÍNH**  
+Năm tài chính của Công ty bắt đầu từ ngày **01 tháng 01** và kết thúc vào ngày **31 tháng 12** năm Dương lịch.
+
+## **3. CÁC CHÍNH SÁCH KẾ TOÁN CHỦ YẾU**  
+Sau đây là những chính sách kế toán quan trọng được Công ty áp dụng trong việc lập Báo cáo tài chính hợp nhất này:
+
+### **3.1 ƯỚC TÍNH KẾ TOÁN**  
+Việc lập Báo cáo tài chính hợp nhất tuân thủ theo các Chuẩn mực Kế toán Việt Nam yêu cầu Ban Tổng Giám đốc phải có những ước tính và giá định ảnh hưởng đến số liệu báo cáo về các khoản công nợ, tài sản và việc trình bày các khoản công nợ và tài sản tiềm tàng tại ngày lập Báo cáo tài chính hợp nhất cũng như các số liệu báo cáo về doanh thu và chi phí hợp nhất trong suốt năm tài chính. Kết quả hoạt động kinh doanh hợp nhất thực tế có thể khác với các ước tính, giá định đặt ra.
+
+### **3.2 NGOẠI TỆ**  
+Tỷ giá để quy đổi các giao dịch phát sinh trong năm bằng ngoại tệ là tỷ giá giao dịch với Ngân hàng TMCP nơi Công ty có giao dịch tại thời điểm phát sinh.  
+
+Tỷ giá khi đánh giá lại các khoản mục tiền có gốc ngoại tệ tại thời điểm lập Báo cáo tài chính hợp nhất là tỷ giá công bố của Ngân hàng TMCP nơi mở tài khoản ngoại tệ đó tại thời điểm lập báo cáo tài chính.  
+
+Trong đó:  
+- Tỷ giá khi đánh giá lại các khoản mục có gốc ngoại tệ được phân loại là tài sản là tỷ giá mua vào của Ngân hàng TMCP nơi mở tài khoản ngoại tệ đó tại thời điểm lập báo cáo tài chính.  
+- Tỷ giá khi đánh giá lại các khoản mục có gốc ngoại tệ được phân loại là nợ phải trả là tỷ giá bán ra của Ngân hàng TMCP nơi mở tài khoản ngoại tệ đó tại thời điểm lập báo cáo tài chính.
+
+### **3.3 TIỀN VÀ CÁC KHOẢN TƯƠNG ĐƯƠNG TIỀN**  
+Tiền là chỉ tiêu tổng hợp phản ánh toàn bộ số tiền hiện có của doanh nghiệp tại thời điểm báo cáo, gồm tiền mặt tại quỹ của doanh nghiệp, tiền gửi ngân hàng không kỳ hạn, được ghi nhận và lập báo cáo theo đồng Việt Nam (VND), phù hợp với quy định tại Luật Kế toán số **88/2015/QH13** ngày **20/11/2015** có hiệu lực thi hành kể từ ngày **01/01/2017**.  
+
+Các khoản tương đương tiền là các khoản đầu tư ngắn hạn có thời hạn thu hồi không quá **3 tháng** kể từ ngày đầu tư, có khả năng chuyển đổi dễ dàng thành một lượng tiền xác định và không có rủi ro trong chuyển đổi thành tiền tại thời điểm báo cáo, phù hợp với quy định của Chuẩn mực kế toán Việt Nam số **24** - Báo cáo lưu chuyển tiền tệ.
+
+=== Trang 15 ===
+# CÔNG TY CỔ PHẦN ĐẦU TƯ MST
+Ngõ 159 Phố Tây Sơn, Thị trấn Phùng, Huyện Đan Phượng,  
+Thành phố Hà Nội, Việt Nam  
+
+## BÁO CÁO TÀI CHÍNH HỢP NHẤT  
+## Cho năm tài chính kết thúc ngày 31/12/2022  
+
+### THUYẾT MINH BÁO CÁO TÀI CHÍNH HỢP NHẤT (TIẾP)  
+*(Các thuyết minh này là bộ phận hợp thành và cần được đọc đồng thời với Báo cáo tài chính hợp nhất)*
+
+## 3.4 CÁC KHOẢN ĐẦU TƯ TÀI CHÍNH  
+
+### Các khoản cho vay  
+
+Các khoản cho vay  
+Các khoản cho vay được xác định theo giá gốc trừ đi các khoản dự phòng phải thu khó đòi.  
+Dự phòng phải thu khó đòi của các khoản cho vay được lập căn cứ vào dự kiến mức tổn thất có thể xảy ra.  
+
+### Góp vốn liên doanh  
+Các khoản góp vốn liên doanh là thỏa thuận trên cơ sở ký kết hợp đồng mà theo đó Công ty và các bên tham gia thực hiện hoạt động kinh doanh thông qua cơ sở đồng kiểm soát. Cơ sở đồng kiểm soát được hiểu là việc đưa ra các quyết định mang tính chiến lược liên quan đến các chính sách hoạt động và tài chính của đơn vị liên doanh phải có sự đồng thuận của các bên đồng kiểm soát.  
+
+Trong trường hợp một công ty thành viên trực tiếp thực hiện hoạt động kinh doanh theo các thỏa thuận liên doanh, khoản góp vốn vào liên doanh phải gánh chịu cùng với các bên góp vốn liên doanh khác tất cả các rủi ro và thu lợi từ hoạt động của liên doanh được hạch toán vào Báo cáo tài chính riêng của công ty tương ứng và được phân loại theo bản chất của nghiệp vụ kinh doanh phát sinh. Các khoản công nợ phát sinh có liên quan trực tiếp đến phần góp vốn trong phần tài sản đồng kiểm soát được hạch toán trên cơ sở đảm bảo các khoản thu nhập về việc bán hàng hoặc sử dụng phần sản phẩm được chia từ hoạt động của liên doanh và phần chi phí phát sinh phải gánh chịu được ghi nhận khi chắc chắn có đủ cơ sở để xác định được khoản lợi ích kinh doanh hoặc chi phí kinh doanh này được chuyển ra khỏi Công ty và các khoản lợi ích kinh doanh này được xác định một cách đáng tin cậy.  
+
+Các thỏa thuận góp vốn liên doanh liên quan đến việc thành lập một cơ sở kinh doanh độc lập trong đó có các bên tham gia góp vốn liên doanh được gọi là cơ sở kinh doanh đồng kiểm soát.  
+
+### Đầu tư vào công ty liên kết  
+Công ty liên kết là một công ty mà Công ty có ảnh hưởng đáng kể nhưng không có quyền kiểm soát đối với các chính sách tài chính và hoạt động và không phải là công ty con hay công ty liên doanh của Công ty. Ảnh hưởng đáng kể thể hiện ở quyền tham gia vào việc đưa ra các quyết định định về chính sách tài chính và hoạt động của cơ sở nhận đầu tư nhưng không có ảnh hưởng về mặt kiểm soát hoặc đồng kiểm soát các chính sách này.  
+
+Các khoản đầu tư vào công ty con, công ty liên doanh, liên kết được ghi nhận ban đầu theo giá gốc, bao gồm giá mua hoặc khoản góp vốn cộng các chi phí liên quan trực tiếp đến việc đầu tư. Trường hợp đầu tư bằng tài sản phi tiền tệ, giá trị khoản đầu tư được ghi nhận theo giá trị hợp lý của tài sản phi tiền tệ tại thời điểm phát sinh.  
+
+Cổ tức và lợi nhuận của các kỳ trước khi khoản đầu tư được mua được hạch toán giảm giá trị của chính khoản đầu tư đó. Cổ tức và lợi nhuận của các kỳ sau khi khoản đầu tư được mua được ghi nhận doanh thu. Cổ tức được nhận bằng cổ phiếu chỉ được ghi nhận khi số lượng cổ phiếu tăng thêm, không ghi nhận theo mệnh giá.  
+
+Dự phòng tổn thất cho các khoản đầu tư vào công ty con, công ty liên doanh, liên kết được trích lập tại thời điểm lập Báo cáo tài chính riêng khi các khoản đầu tư vào công ty con, công ty liên doanh, liên kết có sự suy giảm so với giá gốc thì Công ty thực hiện trích lập dự phòng như sau:  
+- Đối với khoản đầu tư vào công ty con, công ty liên doanh, liên kết có cổ phiếu niêm yết trên thị trường hoặc giá trị hợp lý khoản đầu tư được xác định tin cậy, việc trích lập dự phòng được thực hiện dựa trên giá trị thị trường của cổ phiếu.  
+- Đối với khoản đầu tư không xác định được giá trị hợp lý tại thời điểm báo cáo, dự phòng được trích lập với mức trích bằng chênh lệch giữa vốn góp thực tế của các bên tại công ty con, công ty liên doanh, liên kết và vốn chủ sở hữu thực tế nhân với tỷ lệ góp vốn của Công ty so với tổng số vốn góp thực tế của các bên tại công ty con, công ty liên doanh, liên kết.
+
+=== Trang 16 ===
+# **THUYẾT MINH BÁO CÁO TÀI CHÍNH HỢP NHẤT (TIẾP)**
+
+(Các thuyết minh này là bộ phận hợp thành và cần được đọc đồng thời với Báo cáo tài chính hợp nhất)
+
+Nếu công ty con, công ty liên doanh, liên kết là đối tượng lập Báo cáo tài chính hợp nhất thì cần cứ để xác định dự phòng tổn thất là Báo cáo tài chính hợp nhất.
+
+Tăng, giảm số dự phòng tổn thất đầu tư vào công ty con, công ty liên doanh, liên kết cần phải trích lập tại ngày khóa sổ lập báo cáo tài chính được ghi nhận vào chi phí tài chính.
+
+Đầu tư vào công cụ vốn của đơn vị khác
+
+Đầu tư vào công cụ vốn của đơn vị khác bao gồm các khoản đầu tư vào công cụ vốn nhưng Công ty không có quyền kiểm soát, đồng kiểm soát hoặc có ảnh hưởng đáng kể đối với bên được đầu tư.
+
+Các khoản đầu tư vào công cụ vốn của đơn vị khác được ghi nhận ban đầu theo giá gốc, bao gồm giá mua hoặc khoản góp vốn cộng các chi phí trực tiếp liên quan đến hoạt động đầu tư. Cổ tức và lợi nhuận của các kỳ trước khi khoản đầu tư được mua được hạch toán giảm giá trị của chính khoản đầu tư đó. Ghi nhận doanh thu. Cổ tức được nhận bằng cổ phiếu chỉ được theo dõi lượng cổ phiếu tăng thêm, không ghi nhận giá trị cổ phiếu nhận được/ghi nhận theo mệnh giá (trừ công ty nhà nước thực hiện theo quy định hiện hành của pháp luật).
+
+Dự phòng tổn thất cho các khoản đầu tư vào công cụ vốn của đơn vị khác được trích lập tại thời điểm lập Báo cáo tài chính riêng khi các khoản đầu tư có sự suy giảm so với giá gốc thì Công ty thực hiện trích lập dự phòng như sau:
+
+- **Đối với khoản đầu tư vào cổ phiếu niêm yết hoặc giá trị hợp lý khoản đầu tư được xác định tin cậy**, việc lập dự phòng được dựa trên giá trị thị trường của cổ phiếu.
+
+- **Đối với khoản đầu tư không xác định được giá trị hợp lý tại thời điểm báo cáo**, dự phòng được trích lập với mức trích bằng chênh lệch giữa vốn góp thực tế của các bên tại đơn vị khác và vốn chủ sở hữu thực tế của các bên tại đơn vị khác.
+
+Tăng, giảm số dự phòng tổn thất đầu tư vào công cụ vốn của đơn vị khác cần phải trích lập tại ngày khóa sổ lập báo cáo tài chính được ghi nhận vào chi phí tài chính.
+
+## **3.5 CÁC KHOẢN PHẢI THU**
+
+Các khoản nợ phải thu được trình bày theo giá trị ghi sổ trừ các khoản dự phòng phải thu khó đòi.
+
+Việc phân loại các khoản phải thu được thực hiện theo nguyên tắc sau:
+
+- **Phải thu của khách hàng** phản ánh các khoản phải thu mang tính chất thương mại phát sinh từ giao dịch có tính chất mua - bán giữa Công ty và người mua là đơn vị độc lập với Công ty, bao gồm cả các khoản phải thu về tiền bán hàng xuất khẩu ủy thác cho đơn vị khác.
+
+- **Phải thu khác** phản ánh các khoản phải thu không có tính thương mại, không liên quan đến giao dịch mua - bán.
+
+Dự phòng nợ phải thu khó đòi được Công ty trích lập đối với các khoản nợ phải thu đã quá hạn thanh toán ghi trong hợp đồng kinh tế, bản cam kết hợp đồng hoặc cam kết giữa các bên. Doanh nghiệp đã đòi nhiều lần nhưng vẫn chưa thu hồi được; việc xác định thời gian quá hạn của khoản nợ phải thu được xác định căn cứ vào thời gian trả nợ gốc theo hợp đồng mua, bán ban đầu, không tính đến việc gia hạn nợ giữa các bên; hoặc đối với các khoản nợ phải thu chưa đến hạn thanh toán nhưng đã rơi vào tình trạng phá sản hoặc đang làm thủ tục giải thể, mất tích, bỏ trốn và được hoàn nhập khi thu hồi được nợ.
+
+Sự tăng hoặc giảm khoản dự phòng phải thu khó đòi tại ngày khóa sổ lập báo cáo tài chính được hạch toán vào chi phí quản lý doanh nghiệp.

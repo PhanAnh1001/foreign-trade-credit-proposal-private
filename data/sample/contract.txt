@@ -1,0 +1,94 @@
+SALES CONTRACT
+
+Contract No.: VN-CN-2024-001
+Date: November 01, 2024
+Place: Hanoi, Vietnam
+
+PARTIES:
+
+SELLER (Beneficiary):
+Company Name: Shenzhen Advanced Electronics Co., Ltd.
+Address: No. 88 Technology Park Road, Nanshan District, Shenzhen, Guangdong 518055, P.R. China
+Tel: +86-755-8888-1234
+Fax: +86-755-8888-5678
+Bank: Bank of China, Shenzhen Nanshan Branch
+Bank Address: No. 12 Chuangye Road, Nanshan District, Shenzhen 518054, P.R. China
+Bank BIC/SWIFT Code: BKCHCNBJ510
+Bank Account No.: 6227 0036 8900 1234567
+
+BUYER (Applicant):
+Company Name: Viet Nam Technology Import-Export Joint Stock Company
+Vietnamese Name: Công ty Cổ phần Xuất Nhập Khẩu Công Nghệ Việt Nam
+Address: 123 Nguyen Thi Minh Khai Street, District 1, Ho Chi Minh City, Vietnam
+Tax Code: 0123456789
+Tel: +84-28-3820-1234
+Bank: Joint Stock Commercial Bank for Foreign Trade of Vietnam (Vietcombank)
+Bank Address: 198 Tran Quang Khai Street, Hoan Kiem District, Hanoi, Vietnam
+
+ARTICLE 1 – GOODS DESCRIPTION
+Commodity: Electronic Circuit Boards and Semiconductor Components
+HS Code: 8542.31.10 (Electronic integrated circuits: Processors and controllers)
+Specification:
+- Model: AEC-2024 Series Printed Circuit Board Assembly
+- Technical Standard: IPC-A-610 Class II
+- Country of Origin: China
+
+ARTICLE 2 – QUANTITY AND UNIT PRICE
+Quantity: 1,000 (One Thousand) units
+Unit Price: USD 450.00 (United States Dollars Four Hundred Fifty) per unit
+Total Contract Value: USD 450,000.00 (United States Dollars Four Hundred Fifty Thousand Only)
+
+ARTICLE 3 – DELIVERY TERMS
+Delivery Terms: CIF Ho Chi Minh City Port, Vietnam (INCOTERMS 2020)
+Port of Loading: Shekou Port, Shenzhen, Guangdong, China
+Port of Discharge: Cat Lai Port, Ho Chi Minh City, Vietnam
+
+ARTICLE 4 – PAYMENT TERMS
+Method of Payment: By Irrevocable Letter of Credit at Sight
+The Buyer shall open an Irrevocable Letter of Credit in favor of the Seller through a first-class bank acceptable to the Seller within 15 days after signing this Contract.
+Letter of Credit Expiry Date: February 28, 2025
+Letter of Credit Expiry Place: At the counter of the issuing bank (Vietcombank)
+Latest Shipment Date: January 31, 2025
+
+ARTICLE 5 – DOCUMENTS REQUIRED
+The Seller shall present the following documents for payment under the Letter of Credit:
+1. Commercial Invoice: 3 originals, signed by the Seller, describing the goods as per this Contract
+2. Full Set of Clean Shipped-on-Board Ocean Bills of Lading (3/3 originals), made out to order, notify Buyer, marked "Freight Prepaid" (CIF term), port of loading: Shekou Port, Shenzhen; port of discharge: Cat Lai Port, Ho Chi Minh City
+3. Packing List: 1 original + 2 copies, showing marks, numbers, quantity, gross weight, net weight, and dimensions of each package
+4. Certificate of Origin: 1 original issued by China Council for the Promotion of International Trade (CCPIT) or Chamber of Commerce, Form E (ASEAN-China FTA) preferred
+5. Insurance Certificate/Policy: 1 original, covering all risks for 110% of invoice value (CIF value), in USD, per Institute Cargo Clauses (A), dated not later than the date of shipment
+
+ARTICLE 6 – SHIPMENT
+Partial Shipment: Not Allowed
+Transhipment: Not Allowed
+Shipping Schedule: Goods shall be shipped no later than January 31, 2025
+
+ARTICLE 7 – PACKING
+All goods shall be packed in export-standard cartons, suitable for ocean transportation.
+Each carton shall be clearly marked with: Contract No., Item No., Quantity, Gross Weight, Net Weight, Dimensions, Country of Origin.
+
+ARTICLE 8 – INSPECTION
+Pre-shipment inspection by SGS or equivalent internationally recognized inspection company is required.
+Inspection Certificate: 1 copy acceptable.
+
+ARTICLE 9 – FORCE MAJEURE
+Neither party shall be held responsible for failure or delay in performance due to force majeure events.
+
+ARTICLE 10 – APPLICABLE LAW AND DISPUTE RESOLUTION
+This Contract is governed by the laws of the Socialist Republic of Vietnam.
+Disputes shall be resolved through negotiation; if unsuccessful, by arbitration at the Vietnam International Arbitration Centre (VIAC) in Hanoi.
+
+ARTICLE 11 – SPECIAL CONDITIONS
+1. The Letter of Credit shall be subject to the Uniform Customs and Practice for Documentary Credits, ICC Publication No. 600, latest version (UCP 600).
+2. All documents must be issued in English.
+3. The presentation period is 21 days after the date of shipment, but no later than the expiry date of the Letter of Credit.
+4. All banking charges outside Vietnam are for the account of the Beneficiary (Seller).
+5. All banking charges in Vietnam are for the account of the Applicant (Buyer).
+
+FOR AND ON BEHALF OF                    FOR AND ON BEHALF OF
+SHENZHEN ADVANCED ELECTRONICS CO., LTD.    VIET NAM TECHNOLOGY IMPORT-EXPORT JSC
+
+Authorized Signature: _______________    Authorized Signature: _______________
+Name: Mr. Zhang Wei                     Name: Mr. Nguyen Van An
+Title: General Director                  Title: General Director
+Date: November 01, 2024                 Date: November 01, 2024

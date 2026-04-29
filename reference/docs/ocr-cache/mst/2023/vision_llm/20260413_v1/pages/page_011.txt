@@ -1,0 +1,39 @@
+# **BÁO CÁO KẾT QUẢ KINH DOANH**
+## **Năm 2023**
+
+### **Thông tin công ty:**
+- **Tên công ty:** CÔNG TY CỔ PHẦN ĐẦU TƯ MST  
+- **Địa chỉ:** Số 2 ngõ 159 phố Tây Sơn, Thị trấn Phùng, H. Đan Phượng, TP. Hà Nội  
+- **Báo cáo tài chính cho năm tài chính kết thúc ngày 31/12/2023**
+
+
+### **Bảng báo cáo kết quả kinh doanh:**
+
+| **Mã số** | **Chỉ tiêu**                                                 | **Thuyết minh** | **Năm nay (VND)** | **Năm trước (VND)** |
+|------------|--------------------------------------------------------------|-----------------|---------------------|-----------------------|
+| 01         | 1. Doanh thu bán hàng và cung cấp dịch vụ                   | 20              | 1.207.223.328.653   | 343.899.097.436      |
+| 02         | 2. Các khoản giảm trừ                                         | -               | -                   | -                     |
+| 10         | 3. Doanh thu thuần bán hàng và cung cấp dịch vụ (10 = 01 - 02) | -               | 1.207.223.328.653   | 343.899.097.436      |
+| 11         | 4. Giá vốn hàng bán                                           | 21              | 1.201.211.246.936   | 319.971.059.867      |
+| 20         | 5. Lợi nhuận gộp về bán hàng và cung cấp dịch vụ (20 = 10 - 11) | -               | 6.012.081.717       | 23.928.037.569       |
+| 21         | 6. Doanh thu hoạt động tài chính                              | 22              | 24.332.369.712      | 53.965.571.361       |
+| 22         | 7. Chi phí tài chính                                          | 23              | 36.817.267.793      | 28.606.220.784       |
+| 23         | - Trong đó: Chi phí lãi vay                                   | -               | 17.536.687.713      | 27.089.672.839       |
+| 24         | 8. Chi phí bán hàng                                           | -               | -                   | 3.913.192.836        |
+| 25         | 9. Chi phí quản lý doanh nghiệp                               | 24              | 31.879.604.565      | -                     |
+| 30         | 10. Lợi nhuận thuần từ hoạt động kinh doanh {30 = 20 + (21 - 22) - (24 + 25)} | -               | (38.352.420.929)    | 45.374.195.310       |
+| 31         | 11. Thu nhập khác                                             | 25              | 142.628.400.926     | 1                     |
+| 32         | 12. Chi phí khác                                              | 26              | 14.144.425.545      | 304.901.761          |
+| 40         | 13. Lợi nhuận khác (40 = 31 - 32)                             | -               | 128.483.975.381     | (304.901.760)        |
+| 50         | 14. Tổng lợi nhuận kế toán trước thuế (50 = 30 + 40)         | -               | 90.131.554.452      | 45.069.293.550       |
+| 51         | 15. Chi phí thuế TNDN hiện hành                               | 27              | 21.836.336.152      | 8.434.541.918        |
+| 52         | 16. Chi phí thuế TNDN hoãn lại                                | -               | -                   | 36.634.751.632       |
+| 60         | 17. Lợi nhuận sau thuế TNDN (60 = 50 - 51 - 52)              | -               | 68.295.218.300      | -                     |
+| 70         | 18. Lãi cơ bản trên cổ phiếu                                   | 28              | 955,30               | 537,63                |
+
+### **Chữ ký xác nhận:**
+- **Người lập biểu:** Phạm Thị Ngọc Thư  
+- **Kế toán trưởng:** Nguyễn Đăng Kiên  
+- **Tổng Giám đốc:** Phan Duy Dũng  
+
+Hà Nội, ngày 29 tháng 03 năm 2024

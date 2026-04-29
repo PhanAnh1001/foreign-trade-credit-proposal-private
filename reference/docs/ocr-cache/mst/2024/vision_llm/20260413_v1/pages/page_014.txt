@@ -1,0 +1,40 @@
+# CÔNG TY CỔ PHẦN ĐẦU TƯ MST
+## THUYẾT MINH BÁO CÁO TÀI CHÍNH (Tiếp theo)
+
+### 1.5. Cấu trúc Doanh nghiệp
+
+| Tên công ty | Nơi thành lập và hoạt động | Tỷ lệ phần trăm sở hữu % | Tỷ lệ quyền biểu quyết nắm giữ % | Hoạt động chính |
+|-------------|---------------------------|---------------------------|-------------------------------|------------------|
+| **Các Công ty liên doanh, liên kết** |  |  |  |  |
+| Công ty Cổ phần Xây dựng Hà Tăng Đô thị và Giao thông | TP. Hồ Chí Minh | 49,64% | 49,64% | Xây dựng nhà các loại, tư vấn bất động sản, kinh doanh bất động sản |
+| Công ty Cổ phần Đầu tư và Xây dựng Vina2 | TP. Hà Nội | 36,16% | 36,16% | Xây dựng nhà để ở, công trình dân dụng khác |
+
+### 1.6. Tuyên bố về khả năng so sánh thông tin trên Báo cáo tài chính
+
+Số liệu trình bày trong Báo cáo tài chính của năm tài chính kết thúc ngày 31 tháng 12 năm 2024 so sánh được với số liệu tương ứng của năm trước.
+
+## 2. CƠ SỞ LẬP BÁO CÁO TÀI CHÍNH VÀ NĂM TÀI CHÍNH
+
+### 2.1. Cơ sở lập Báo cáo tài chính
+
+Báo cáo tài chính kèm theo được trình bày bằng Đồng Việt Nam (VND), theo nguyên tắc giá gốc và phù hợp với chuẩn mực kế toán, chế độ kế toán doanh nghiệp Việt Nam và các quy định pháp lý có liên quan đến việc lập và trình bày báo cáo tài chính.
+
+Báo cáo tài chính kèm theo không nhằm phản ánh tình hình tài chính tổng hợp, kết quả hoạt động kinh doanh và tình hình lưu chuyển tiền tệ tổng hợp theo các nguyên tắc và thông lệ kế toán được chấp nhận chung tại các nước khác ngoài Việt Nam.
+
+### 2.2. Giả định hoạt động liên tục
+
+Không có bất kỳ sự kiện nào gây ra sự nghi ngờ lớn về khả năng hoạt động liên tục và Công ty không có định cũng như buộc phải ngừng hoạt động, hoặc phải thu hẹp đáng kể quy mô hoạt động của mình.
+
+### 2.3. Năm tài chính
+
+Năm tài chính của Công ty bắt đầu từ ngày 01 tháng 01 và kết thúc vào ngày 31 tháng 12 hàng năm.
+
+## 3. TÓM TẮT CÁC CHÍNH SÁCH KẾ TOÁN CHỦ YẾU
+
+### 3.1. Ước tính kế toán
+
+Việc lập Báo cáo tài chính tuân thủ theo chuẩn mực kế toán, chế độ kế toán doanh nghiệp Việt Nam và các quy định pháp lý có liên quan đến việc lập và trình bày Báo cáo tài chính yêu cầu Ban Tổng Giám đốc phải có những ước tính và giả định ảnh hưởng đến số liệu báo cáo về công nợ, tài sản các số liệu báo cáo về doanh thu và chi phí trong suốt năm tài chính. Mặc dù các ước tính kế toán được lập bằng tất cả sự hiểu biết của Ban Tổng Giám đốc, số thực tế phát sinh có thể khác với các ước tính, giả định đặt ra.
+
+### 3.2. Tiền và các khoản tương đương tiền
+
+Tiền và các khoản tương đương tiền bao gồm tiền mặt tại quỹ, các khoản tiền gửi không kỳ hạn, các khoản đầu tư ngắn hạn, có khả năng thanh khoản cao, dễ dàng chuyển đổi thành tiền và ít rủi ro liên quan đến việc biến động giá trị.

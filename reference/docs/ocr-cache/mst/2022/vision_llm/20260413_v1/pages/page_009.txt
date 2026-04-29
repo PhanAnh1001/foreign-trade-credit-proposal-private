@@ -1,0 +1,37 @@
+# **BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH HỢP NHẤT**  
+## **Cho năm tài chính kết thúc ngày 31 tháng 12 năm 2022**  
+
+### **Chỉ tiêu**
+| Chỉ tiêu                                      | Mã số | Thuyết minh | Năm 2022 (VND)       | Năm 2021 (VND)       |
+|------------------------------------------------|--------|-------------|----------------------|----------------------|
+| **Doanh thu bán hàng và cung cấp dịch vụ**    | 01     | 20          | **374.831.981.352**  | **465.276.910.442**  |
+| Các khoản giảm trừ doanh thu                 | 02     |             | -                    | -                    |
+| **Doanh thu thuần bán hàng và cung cấp dịch vụ** | 10     |             | **374.831.981.352**  | **465.276.910.442**  |
+| Giá vốn hàng bán                              | 11     | 21          | **342.179.784.888**  | **403.058.020.763**  |
+| **Lợi nhuận gộp về bán hàng và cung cấp dịch vụ** | 20     |             | **32.652.196.464**   | **62.218.889.679**   |
+| Doanh thu hoạt động tài chính                 | 21     | 22          | **78.250.466.415**   | **91.700.215.226**   |
+| Chi phí tài chính                             | 22     | 23          | **29.314.668.606**   | **86.102.520.406**   |
+| Trong đó: Chi phí lãi vay                     | 23     |             | **27.793.269.065**   | **84.538.613.763**   |
+| Phân lãi hoặc lỗ trong Công ty liên doanh, liên kết | 24     |             | **13.246.360.715**   | **39.400.875.363**   |
+| Chi phí bán hàng                              | 25     |             | -                    | -                    |
+| Chi phí quản lý doanh nghiệp                  | 26     | 24          | **13.627.040.766**   | **21.160.994.336**   |
+| **Lợi nhuận thuần từ hoạt động kinh doanh**   | 30     |             | **81.207.314.222**   | **86.056.465.526**   |
+| Thu nhập khác                                 | 31     | 25          | -                    | -                    |
+| Chi phí khác                                  | 32     | 26          | **341.499.004**      | **207.512.472**      |
+| **Lợi nhuận khác**                            | 40     |             | **(341.499.003)**    | **(14.512.217)**     |
+| **Tổng lợi nhuận kế toán trước thuế**         | 50     |             | **80.865.815.219**   | **86.041.953.309**   |
+| Chi phí thuế TNDN hiện hành                   | 51     | 27          | **8.500.952.583**    | **9.833.661.965**    |
+| Chi phí thuế TNDN hoãn lại                    | 52     |             | -                    | **(692.406.970)**    |
+| **Lợi nhuận sau thuế thu nhập doanh nghiệp** | 60     |             | **72.364.862.636**   | **76.900.698.314**   |
+| - Lợi nhuận sau thuế của Công ty mẹ           | 61     |             | **72.299.495.284**   | **76.313.578.934**   |
+| - Lợi nhuận sau thuế của Cổ đông không kiểm soát | 62     |             | **65.367.352**       | **587.119.380**      |
+| Lãi cơ bản trên cổ phiếu                     | 70     | 28          | **1.061**            | **1.288**            |
+
+
+### **Thông tin chữ ký và xác nhận:**
+- **Người lập biểu:** *Phạm Thị Ngọc Thư*  
+- **Kế toán trưởng:** *Nguyễn Đăng Kiên*  
+- **Tổng Giám đốc:** *Phạm Duy Dũng*  
+
+Hà Nội, ngày **17 tháng 04 năm 2023**  
+Các Thuyết minh đính kèm là bộ phận hợp thành của Báo cáo tài chính hợp nhất.

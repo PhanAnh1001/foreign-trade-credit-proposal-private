@@ -1,0 +1,120 @@
+# ISBP 821 — International Standard Banking Practice
+# ICC Publication No. 821 (2013), for use with UCP 600
+# Key document preparation standards
+
+general:
+  A1: All documents must be dated.
+  A3: >
+    A requirement for a document to be 'original' will be satisfied by
+    a document that appears to have been produced by the original means,
+    or has an original signature, mark, stamp, or label of the issuer.
+  A10: >
+    UCP 600 Article 14(c): documents must be presented within 21 calendar
+    days after the date of shipment.
+
+commercial_invoice:
+  B1: >
+    An invoice must appear to have been issued by the beneficiary
+    (except in a transferable credit). It must be made out in the name
+    of the applicant.
+  B4: >
+    The description of the goods, services or performance in an invoice
+    must correspond with that appearing in the credit.
+  B5: An invoice must not describe goods in terms different from the credit.
+  B8: >
+    The amount shown on a signed invoice may include amounts not covered
+    by the credit.
+  standard_presentation: "3 originals"
+  language: "English"
+
+bill_of_lading:
+  E1: >
+    A bill of lading functions as a document of title. An original B/L
+    (or full set) must be presented unless the credit states otherwise.
+  E4: >
+    A bill of lading must indicate the name of the carrier and be signed
+    by the carrier or named agent for or on behalf of the carrier.
+  E6: >
+    'Shipped on board' means goods were actually loaded on board a
+    named vessel.
+  E14: Goods description on B/L must not conflict with the credit.
+  clean_requirement: >
+    The phrase 'clean on board' is not required to appear on a transport
+    document, even if the credit requires a 'clean on board' document.
+  standard_presentation: "Full set of 3/3 originals"
+
+packing_list:
+  standard_presentation: "1 original + 2 copies"
+  requirements:
+    - Must describe the goods consistently with the invoice.
+    - Should include: marks and numbers, description, quantity, gross/net weight.
+
+certificate_of_origin:
+  standard_presentation: "1 original"
+  note: >
+    If the credit requires a certificate of origin, it must be issued by
+    the beneficiary or a neutral party (e.g., Chamber of Commerce).
+
+insurance_document:
+  K1: >
+    An insurance policy or certificate is acceptable; a cover note issued
+    by a broker is not acceptable.
+  K3: >
+    Insurance documents must be issued and signed by an insurance company,
+    underwriter, or their agents or proxies.
+  K11: >
+    Unless the credit specifies otherwise, an insurance document must be
+    expressed in the same currency as the credit.
+  K14: >
+    An insurance document must cover at minimum 110% of the CIF or CIP
+    value of the goods (UCP 600 Article 28(f)(ii)).
+  minimum_coverage: 110
+  standard_presentation: "1 original"
+  required_for:
+    - CIF
+    - CIP
+
+document_checklist_by_incoterms:
+  note: >
+    The following is a standard checklist. The credit terms always take
+    precedence over these defaults.
+  CIF:
+    - "Commercial Invoice (3 originals)"
+    - "Full set of 3/3 original clean shipped on board ocean bills of lading"
+    - "Packing List (1 original + 2 copies)"
+    - "Certificate of Origin (1 original)"
+    - "Insurance Certificate/Policy for 110% of invoice value, covering all risks"
+  CIP:
+    - "Commercial Invoice (3 originals)"
+    - "Full set of 3/3 original clean shipped on board ocean bills of lading"
+    - "Packing List (1 original + 2 copies)"
+    - "Certificate of Origin (1 original)"
+    - "Insurance Certificate/Policy for 110% of invoice value, covering all risks"
+  FOB:
+    - "Commercial Invoice (3 originals)"
+    - "Full set of 3/3 original clean shipped on board ocean bills of lading"
+    - "Packing List (1 original + 2 copies)"
+    - "Certificate of Origin (1 original)"
+  CFR:
+    - "Commercial Invoice (3 originals)"
+    - "Full set of 3/3 original clean shipped on board ocean bills of lading"
+    - "Packing List (1 original + 2 copies)"
+    - "Certificate of Origin (1 original)"
+  EXW:
+    - "Commercial Invoice (3 originals)"
+    - "Packing List (1 original + 2 copies)"
+    - "Certificate of Origin (1 original)"
+  FCA:
+    - "Commercial Invoice (3 originals)"
+    - "Multimodal/Combined Transport Document or Air Waybill (Full set of originals)"
+    - "Packing List (1 original + 2 copies)"
+    - "Certificate of Origin (1 original)"
+  CPT:
+    - "Commercial Invoice (3 originals)"
+    - "Multimodal/Combined Transport Document (Full set of originals)"
+    - "Packing List (1 original + 2 copies)"
+    - "Certificate of Origin (1 original)"
+  DEFAULT:
+    - "Commercial Invoice (3 originals)"
+    - "Full set of original transport documents"
+    - "Packing List (1 original + 2 copies)"

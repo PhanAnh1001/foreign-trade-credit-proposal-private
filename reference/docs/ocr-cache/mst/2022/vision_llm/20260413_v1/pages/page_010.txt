@@ -1,0 +1,61 @@
+# CÔNG TY CỔ PHẦN ĐẦU TƯ MST
+Ngõ 159 Phố Tây Sơn, Thị trấn Phùng, Huyện Đan Phượng,  
+Thành phố Hà Nội, Việt Nam
+
+# BÁO CÁO LƯU CHUYỂN TIỀN TỆ HỢP NHẤT  
+## (Theo phương pháp gián tiếp)  
+### Cho năm tài chính kết thúc ngày 31 tháng 12 năm 2022
+
+| Mã số | Thuyết minh | Năm 2022 (VND) | Năm 2021 (VND) |
+|--------|------------|----------------|----------------|
+|        |            |                |                |
+
+## Lưu chuyển tiền từ hoạt động kinh doanh  
+Lợi nhuận trước thuế                          | 01         | 80.865.815.219  | 86.041.953.309  |
+|        |            |                |                |
+
+### Điều chỉnh cho các khoản
+- Khấu hao TSCĐ và BĐSDT                      | 02         | 5.331.030.700   | 9.263.616.581   |
+|        |            |                |                |
+- Các khoản dự phòng                           | 03         | -                | 67.625.588      |
+|        |            |                |                |
+- (Lãi) hoạt động đầu tư                       | 05         | (93.519.393.295) | (131.101.090.589) |
+|        |            |                |                |
+- Chi phí lãi vay                              | 06         | 29.309.817.010   | 85.379.874.038   |
+|        |            |                |                |
+
+## Lợi nhuận từ hoạt động kinh doanh trước thay đổi vốn lưu động | 08 | 21.987.269.634  | 49.651.978.927  |
+
+- Tăng, giảm các khoản phải thu               | 09         | 287.132.406.685  | 16.699.627.643   |
+|        |            |                |                |
+- Tăng, giảm hàng tồn kho                     | 10         | (14.039.626.402) | 58.948.799.454   |
+|        |            |                |                |
+- Tăng, giảm các khoản phải trả (không kể lãi vay phải trả, thuế thu nhập doanh nghiệp phải nộp) | 11 | (75.913.531.104) | 213.533.615.573  |
+
+- Tăng, giảm chi phí trả trước                 | 12         | 136.956.988      | (1.501.218.310) |
+|        |            |                |                |
+- Tiền lãi vay đã trả                          | 14         | (30.522.337.487) | (80.380.153.563) |
+|        |            |                |                |
+- Thuế thu nhập doanh nghiệp đã nộp           | 15         | (4.571.679.744)  | (6.099.167.361)  |
+|        |            |                |                |
+
+## Lưu chuyển tiền thuần từ hoạt động kinh doanh | 20 | 184.209.458.570 | 250.853.482.363 |
+
+## Lưu chuyển tiền từ hoạt động đầu tư
+
+- Tiền chi để mua sắm, xây dựng TSCĐ và các tài sản dài hạn khác | 21 | (3.682.320.000)  | (8.584.229.091)  |
+|        |            |                |                |
+- Tiền chi cho vay, mua các công cụ nợ của đơn vị khác | 23 | (51.500.000.000) | 125.500.000.000  |
+|        |            |                |                |
+- Tiền thu hồi cho vay, bán lại các công cụ nợ của đơn vị khác | 24 | 73.300.000.000   | (96.700.000.000) |
+|        |            |                |                |
+- Tiền chi đầu tư góp vốn vào đơn vị khác      | 25         | (159.350.000.000) | (234.099.854.166) |
+|        |            |                |                |
+- Tiền thu hồi đầu tư góp vốn vào đơn vị khác  | 26         | 19.049.629.303   | -                |
+|        |            |                |                |
+- Tiền thu lãi vay, cổ tức và lợi nhuận được chia | 27 | 20.598.967.377   | 87.858.553.122   |
+
+## Lưu chuyển tiền thuần từ hoạt động đầu tư | 30 | (101.583.723.320) | (126.025.530.135) |
+
+## (Các thuyết minh đính kèm là bộ phận hợp thành của Báo cáo tài chính hợp nhất) 
+Trang 9
