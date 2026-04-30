@@ -227,7 +227,7 @@
 ## Notes — LC Application Agent (current, 2026-04-30)
 
 - **Git history**: 1 commit duy nhất `4221dc8 v1 code` (2026-04-30). Không còn secrets trong history. Old code: `reference/`
-- **ETE evidence (latest)**: `ete-evidence/ete-run-005.json` — 9.5/10, **27/27 DOCX checks pass** (tăng từ 13 ở run-004). Bổ sung: T1R12 document checkboxes, T1R13 conditions, T1R14 charges, T3 upon-receipt, T6 fees table, P33/P34 contract reference, buyer→applicant/seller→beneficiary.
+- **ETE evidence (latest)**: `ete-evidence/ete-run-006.json` — `run_id=6e3942a1`, 9.5/10, 6.7s, 0 retries, **27/27 DOCX checks pass**. Full live pipeline run (LLM extract + validate + judge + fill). T1R12 doc checkboxes, T1R13 conditions, T1R14 charges, T3 upon-receipt, T6 fees, P33/P34 contract ref, buyer→applicant/seller→beneficiary all verified.
 - **Wingdings checkbox quirk**: Template dùng Wingdings `` (U+F06F) cho unchecked, không phải `□` (U+25A1). Fill bằng `■` (U+25A0). Xem `src/utils/docx_filler.py:_select_checkbox()`. **Split-run trap**: "21 days after shipment date" tách thành 8 runs → `_select_checkbox` không match được → `_fill_presentation_period` dùng Run-0 direct replace thay vì text search.
 - **Quality score**: 9.5/10 (2026-04-29, sau fix presentation period). completeness=10.0, compliance=9.5. Không retry.
 - **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM, Meta). `get_judge_llm()` → `qwen/qwen3-32b` (6K TPM, Alibaba, max_tokens=2048). `gpt-oss-20b` broken (trả empty response) — đã bỏ. qwen3-32b emits `<think>` blocks, handled bởi `strip_llm_json()` + `json_repair` fallback.
