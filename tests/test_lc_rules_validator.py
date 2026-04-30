@@ -1,9 +1,10 @@
-"""Tests for UCP600 / ISBP821 / Incoterms rules validator."""
+"""Tests for UCP600 / ISBP821 / Incoterms / Vietnam forex law rules validator."""
 import pytest
 from src.tools.lc_rules_validator import (
     apply_ucp600_defaults,
     apply_incoterms_rules,
     apply_isbp821_defaults,
+    apply_vietnam_forex_rules,
     validate_completeness,
     validate_and_enhance,
 )
@@ -30,10 +31,13 @@ def _base_data(**kwargs) -> dict:
         "amount_tolerance": "0",
         "issuing_bank_charges_for": "Applicant",
         "other_bank_charges_for": "Beneficiary",
+        "contract_number": "VN-CN-2024-001",
         "applicant_name": "Viet Nam Technology Import-Export JSC",
         "beneficiary_name": "Shenzhen Advanced Electronics Co., Ltd.",
         "description_of_goods": "Electronic Circuit Boards",
         "beneficiary_bank_name": "Bank of China",
+        "issuing_bank_name": "Joint Stock Commercial Bank for Foreign Trade of Vietnam (Vietcombank)",
+        "issuing_bank_bic": "BFTVVNVX",
         "documents": {
             "commercial_invoice": "3 originals",
             "bill_of_lading": "Full set of 3/3 originals",
@@ -140,6 +144,57 @@ class TestValidateCompleteness:
         data = _base_data(description_of_goods=None)
         result = validate_completeness(data)
         assert any("goods" in w.lower() for w in result["validation_warnings"])
+
+
+class TestVietnamForexRules:
+    def test_vn01_vnd_currency_warns(self):
+        data = _base_data(currency="VND")
+        result = apply_vietnam_forex_rules(data)
+        assert any("VN-01" in w and "VND" in w for w in result["validation_warnings"])
+
+    def test_vn01_usd_currency_ok(self):
+        data = _base_data(currency="USD")
+        result = apply_vietnam_forex_rules(data)
+        assert not any("VND" in w for w in result["validation_warnings"])
+        assert any("VN-01" in n and "✓" in n for n in result["compliance_notes"])
+
+    def test_vn01_uncommon_currency_notes(self):
+        data = _base_data(currency="CHF")
+        result = apply_vietnam_forex_rules(data)
+        assert any("CHF" in n for n in result["compliance_notes"])
+
+    def test_vn02_missing_contract_number_warns(self):
+        data = _base_data(contract_number=None)
+        result = apply_vietnam_forex_rules(data)
+        assert any("VN-02" in w for w in result["validation_warnings"])
+
+    def test_vn02_contract_number_present_ok(self):
+        data = _base_data(contract_number="VN-CN-2024-001")
+        result = apply_vietnam_forex_rules(data)
+        assert any("VN-02" in n and "✓" in n for n in result["compliance_notes"])
+
+    def test_vn03_vietcombank_authorized(self):
+        data = _base_data(
+            issuing_bank_name="Joint Stock Commercial Bank for Foreign Trade of Vietnam (Vietcombank)",
+            issuing_bank_bic="BFTVVNVX",
+        )
+        result = apply_vietnam_forex_rules(data)
+        assert any("VN-03" in n and "✓" in n for n in result["compliance_notes"])
+
+    def test_vn04_import_lc_permitted_note(self):
+        data = _base_data()
+        result = apply_vietnam_forex_rules(data)
+        assert any("VN-04" in n for n in result["compliance_notes"])
+
+    def test_vn06_regulated_goods_warns(self):
+        data = _base_data(description_of_goods="Industrial Chemicals and Solvents")
+        result = apply_vietnam_forex_rules(data)
+        assert any("VN-06" in w for w in result["validation_warnings"])
+
+    def test_vn06_normal_goods_ok(self):
+        data = _base_data(description_of_goods="Electronic Circuit Boards")
+        result = apply_vietnam_forex_rules(data)
+        assert any("VN-06" in n and "✓" in n for n in result["compliance_notes"])
 
 
 class TestValidateAndEnhance:

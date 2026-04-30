@@ -37,3 +37,21 @@ def get_presentation_period_default() -> int:
     """UCP600 Article 14(c): 21 calendar days after the date of shipment."""
     rules = load_ucp600_rules()
     return rules.get("article_14c", {}).get("presentation_period_days", 21)
+
+
+@lru_cache(maxsize=None)
+def load_vietnam_forex_law() -> dict:
+    with open(_RULES_DIR / "vietnam_forex_law.yaml", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+def get_authorized_forex_institutions() -> list[dict]:
+    """Return list of NHNN-authorized forex institutions with BIC codes."""
+    rules = load_vietnam_forex_law()
+    return rules.get("authorized_forex_institutions", [])
+
+
+def get_common_lc_currencies() -> list[str]:
+    """Return list of common foreign currencies used in import LCs in Vietnam."""
+    rules = load_vietnam_forex_law()
+    return rules.get("common_lc_currencies", ["USD", "EUR", "JPY", "GBP"])

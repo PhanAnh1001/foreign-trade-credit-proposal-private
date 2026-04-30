@@ -1,0 +1,37 @@
+{
+  "run_date": "2026-04-30",
+  "run_id": "ete-run-003",
+  "quality_score": 9.2,
+  "completeness": 10.0,
+  "compliance": 8.5,
+  "current_step": "filled",
+  "elapsed_s": 4.7,
+  "retries": 0,
+  "output_docx": "data/outputs/ete/LC-Application-contract.docx",
+  "output_size_kb": 27.5,
+  "docx_checks": {
+    "applicant": true,
+    "beneficiary": true,
+    "currency_amount": true,
+    "irrevocable": true,
+    "swift": true,
+    "bank_of_china": true,
+    "bic": true,
+    "goods": true,
+    "insurance_110": true,
+    "expiry_date": true,
+    "shipment_date": true,
+    "vietcombank": true
+  },
+  "all_checks_pass": true,
+  "judge_model": "qwen/qwen3-32b",
+  "extraction_model": "llama-3.3-70b-versatile",
+  "date_format": "dd/mm/yyyy",
+  "issuing_bank": "Vietcombank (BFTVVNVX)",
+  "top_issues": [
+    "B/L: 'Shipped on Board' wording from extracted contract (minor)",
+    "Insurance ICC(A) clause: extracted wording vs validator default (minor)",
+    "Presentation period: calendar vs banking days (minor)"
+  ],
+  "improvements_vs_prev": "8.0 → 9.2 (+1.2): date format fix, issuing bank, doc wording"
+}

@@ -188,6 +188,35 @@
 - [x] **ETE evidence** (`ete-evidence/ete-run-002.json`) — quality_score=7.5/10, step="filled", 11/11 DOCX checks pass
 - [x] **README.en.md** — bản dịch tiếng Anh, link từ README.md
 - [x] **Xóa toàn bộ commit history cũ, squash thành 1 commit "v1 code" (2026-04-30)** — lần 1: squash 228 → 1 commit `9b83642` (loại bỏ secrets); lần 2: squash lại → 1 commit duy nhất `4221dc8 v1 code`; force push thành công. Remote `master` hiện chỉ có 1 commit.
+- [x] **Cải thiện quality_score 8.0 → 9.2/10 (2026-04-30)** — 7 fix deterministic + 1 fix infrastructure:
+  1. Date format `yy/mm/dd` → `dd/mm/yyyy` (unambiguous, judge không misread nữa)
+  2. Issuing bank Vietcombank (BFTVVNVX) làm default trong validator — completeness 8→10
+  3. `other_documents: None` → `[]`
+  4. Presentation period: `"21"` → `"21 days after date of shipment"` (UCP600 Art.14c)
+  5. B/L: thêm `"Shipped on Board notation per UCP600 Art.20"` tường minh
+  6. Insurance: `"Institute Cargo Clauses (A) — All Risks, blank endorsed"` (UCP600 Art.28)
+  7. Judge LLM: `gpt-oss-20b` (broken, trả empty) → `qwen/qwen3-32b` (Alibaba, cross-vendor)
+  8. `json_repair` fallback cho truncated JSON từ qwen3-32b `<think>` blocks
+- [x] **Tạo lại output và ETE evidence mới (2026-04-30)** — `data/outputs/ete/LC-Application-contract.docx` (27.5 KB); `ete-evidence/ete-run-003.json`; **12/12 DOCX checks pass**; 9.2/10, 4.7s, 0 retries.
+- [x] **Fix presentation period checkbox — split-run Wingdings detection (2026-04-30)** — Root cause: "21 days after shipment date" bị tách thành 8 runs riêng biệt trong DOCX template, `_select_checkbox()` dùng exact per-run text match → không tìm được. Fix: `_fill_presentation_period()` thay vì gọi `_select_checkbox_in_cell()`, trực tiếp replace Run 0 (Wingdings char) trong paragraph đầu tiên của cell. Output: `■ 21 days after shipment date` thay vì `'' 21 days...`. Quality score tick lên **9.5/10** sau fix. Commit `a818e47`.
+- [x] **Tạo lại output + ETE evidence ete-run-004.json (2026-04-30)** — Pipeline chạy lại sau tất cả fixes; `data/outputs/LC-Application-contract.docx` (27.5 KB); `ete-evidence/ete-run-004.json`; **13/13 DOCX checks pass** (thêm `presentation_period_checked`); 9.5/10, 4.5s, 0 retries. 35 unit tests + 2 ETE tests đều PASS.
+- [x] **Bổ sung kiến thức pháp luật Việt Nam (2026-04-30)** — Commit `6fc9727`. 4 files mới/sửa:
+  - `src/knowledge/rules/vietnam_forex_law.yaml`: PL Ngoại hối 28/2005 (sửa đổi 06/2013), NĐ 70/2014/NĐ-CP, TT NHNN 32/2013 + 09/2023; 6 validation rules (VN-01..VN-06); danh sách TCTD được phép + common currencies
+  - `src/knowledge/loader.py`: thêm `load_vietnam_forex_law()`, `get_authorized_forex_institutions()`, `get_common_lc_currencies()`
+  - `src/tools/lc_rules_validator.py`: thêm `apply_vietnam_forex_rules()` — VN-01 (currency≠VND), VN-02 (contract_number bắt buộc), VN-03 (TCTD được phép), VN-04 (LC nhập khẩu = giao dịch vãng lai ✓), VN-05 (nhắc ký quỹ), VN-06 (hàng hóa quản lý); đưa vào pipeline bước 4
+  - `src/agents/node_quality.py`: judge prompt bổ sung context pháp luật VN
+  - `tests/test_lc_rules_validator.py`: 9 tests mới (`TestVietnamForexRules`); **44 unit tests PASS** (tăng từ 35)
+- [x] **Comprehensive DOCX checkbox fix + Wingdings char fix (2026-04-30)** — `src/utils/docx_filler.py` rewrite. 4 vấn đề user report: (1) nhiều checkbox chưa tích, (2) thiếu số/ngày hợp đồng, (3) buyer→the applicant, seller→the beneficiary ngoại trừ T1R11 goods description. **Root cause checkbox không hiện**: `_CHECKED='■'` (U+25A0 standard Unicode) render sai dưới Wingdings font → đổi sang `''` (U+F0FE Wingdings PUA filled box).
+  - 2 helpers mới: `_check_run0_in_para()` (tick Wingdings run0), `_select_nth_checkbox_in_cell()` (tick checkbox thứ n, tránh fragmented runs)
+  - Fix `_fill_shipment_options`: transhipment cell2 "Not allowed" split thành 3 runs → dùng nth positional (checkbox[1])
+  - Rewrite `_fill_documents`: tick run0 per paragraph (T1R12 para2-11) thay vì overwrite toàn bộ cell bằng "✓ text"
+  - Fix `_fill_additional_conditions`: tick T1R13 para1 + para2 (Documents in English, amount utilized)
+  - Fix `_fill_charges`: tick 4 checkbox positional trong T1R14 para2 (issuing/other × Applicant/Beneficiary)
+  - Thêm `_fill_upon_receipt`: T3R0 tick SWIFT checkbox + Documents checkbox
+  - Thêm `_fill_fees_table`: T6 tick Domestic/Overseas/Confirmation per charges_for field
+  - Fix `_fill_contract_reference`: thay thế trực tiếp run chứa `'..........……'` (P33 VN) và `'No…..'`/`'dated……'` (P34 EN)
+  - Thêm `_replace_buyer_seller`: per-run regex `\bbuyer\b`→`the applicant`, `\bseller\b`→`the beneficiary` toàn doc, skip T1R11
+  - **ETE evidence ete-run-005.json**: **27/27 DOCX checks pass** (tăng từ 13). 46 unit tests PASS.
 
 ## Đang làm / TODO
 
@@ -198,11 +227,14 @@
 ## Notes — LC Application Agent (current, 2026-04-30)
 
 - **Git history**: 1 commit duy nhất `4221dc8 v1 code` (2026-04-30). Không còn secrets trong history. Old code: `reference/`
-- **ETE evidence**: `ete-evidence/ete-run-002.json` — 7.5/10, 4.1s, 11/11 DOCX checks pass. Checkboxes: `■ Irrevocable`, `■ Telex/SWIFT`. Insurance cert: 110%, ICC A all risks.
-- **Wingdings checkbox quirk**: Template dùng Wingdings `` (U+F06F) cho unchecked, không phải `□` (U+25A1). Fill bằng `■` (U+25A0). Xem `src/utils/docx_filler.py:_select_checkbox()`.
-- **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM). `get_judge_llm()` → `openai/gpt-oss-20b` (8K TPM, max_tokens=2048). Không dùng qwen3-32b cho extraction (6K TPM — quá nhỏ).
+- **ETE evidence (latest)**: `ete-evidence/ete-run-007.json` — `run_id=492b9304`, 9.5/10, 8.6s, 0 retries. Fix `_CHECKED` U+25A0→**U+F0FE** (Wingdings PUA filled box — renders đúng trong Word). 51 ticked runs, compliance=10.0.
+- **Wingdings checkbox quirk**: Template dùng Wingdings `` (U+F06F) cho unchecked, không phải `□` (U+25A1). Fill bằng `■` (U+25A0). Xem `src/utils/docx_filler.py:_select_checkbox()`. **Split-run trap**: "21 days after shipment date" tách thành 8 runs → `_select_checkbox` không match được → `_fill_presentation_period` dùng Run-0 direct replace thay vì text search.
+- **Quality score**: 9.5/10 (2026-04-29, sau fix presentation period). completeness=10.0, compliance=9.5. Không retry.
+- **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM, Meta). `get_judge_llm()` → `qwen/qwen3-32b` (6K TPM, Alibaba, max_tokens=2048). `gpt-oss-20b` broken (trả empty response) — đã bỏ. qwen3-32b emits `<think>` blocks, handled bởi `strip_llm_json()` + `json_repair` fallback.
 - **Anti-hallucination**: LLM chỉ extract từ contract; UCP600 defaults + Incoterms insurance rules áp dụng bằng Python thuần (`lc_rules_validator.py`).
-- **Tests**: `python -m pytest tests/ --ignore=tests/test_ete.py` — 35 unit tests PASS (không cần API key). ETE: cần `GROQ_API_KEY`.
+- **Knowledge base coverage**: Thông lệ quốc tế ✅ (UCP600/ISBP821/Incoterms 2000/2010/2020). Pháp luật Việt Nam ✅ (PL Ngoại hối, NĐ 70/2014, TT NHNN 32/2013+09/2023) — 6 rules VN-01..VN-06 trong `lc_rules_validator.py`.
+- **Vietnam forex rules**: VN-01 currency≠VND, VN-02 contract_number bắt buộc, VN-03 TCTD được phép (Vietcombank ✓), VN-04 giao dịch vãng lai ✓, VN-05 nhắc ký quỹ, VN-06 hàng hóa quản lý.
+- **Tests**: `python -m pytest tests/ --ignore=tests/test_ete.py` — **44 unit tests PASS** (không cần API key). ETE: cần `GROQ_API_KEY`.
 - **Run pipeline**: `from src.agents.graph import run_lc_application; run_lc_application("data/sample/contract.txt", output_dir="data/outputs/ete")`
 
 ---
