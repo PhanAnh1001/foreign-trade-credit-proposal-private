@@ -1,6 +1,7 @@
 """Apply UCP600, ISBP821, and Incoterms rules to validate and enhance LC application data."""
 from __future__ import annotations
 import logging
+from datetime import datetime
 from typing import Optional
 
 logger = logging.getLogger("tools.lc_rules_validator")
@@ -35,13 +36,14 @@ def apply_ucp600_defaults(data: dict) -> dict:
         data["lc_type"] = "Irrevocable"
         _note(data, "UCP600 Art.3: LC type defaulted to 'Irrevocable' (all credits are irrevocable).")
 
-    # Art. 14(c): Presentation period
+    # Art. 14(c): Presentation period — store as "21 days after date of shipment" for clarity
     if not data.get("presentation_period"):
         days = get_presentation_period_default()
-        data["presentation_period"] = str(days)
-        _note(data, f"UCP600 Art.14(c): Presentation period set to {days} calendar days after shipment.")
-    elif data.get("presentation_period") == "21":
-        _note(data, "UCP600 Art.14(c): Presentation period is 21 days after shipment (standard).")
+        data["presentation_period"] = f"{days} days after date of shipment"
+        _note(data, f"UCP600 Art.14(c): Presentation period set to '{data['presentation_period']}'.")
+    elif data.get("presentation_period") in ("21", "21 days"):
+        data["presentation_period"] = "21 days after date of shipment"
+        _note(data, "UCP600 Art.14(c): Presentation period is '21 days after date of shipment' (standard).")
 
     # Default issuance method
     if not data.get("issuance_method"):
@@ -56,15 +58,19 @@ def apply_ucp600_defaults(data: dict) -> dict:
     if not data.get("expiry_place"):
         _note(data, "UCP600 Art.6: Expiry place not specified; should state the bank's counter.")
 
-    # Check latest shipment date vs expiry date
+    # Check latest shipment date vs expiry date (both dd/mm/yyyy)
     exp = data.get("expiry_date")
     ship = data.get("latest_shipment_date")
     if exp and ship:
-        # Both in yy/mm/dd — simple string comparison works for same century
-        if ship >= exp:
-            _warn(data, f"Date check: Latest shipment date ({ship}) should be before expiry date ({exp}).")
-        else:
-            _note(data, f"Date check: Latest shipment ({ship}) is before expiry ({exp}). ✓")
+        try:
+            exp_dt = datetime.strptime(exp, "%d/%m/%Y")
+            ship_dt = datetime.strptime(ship, "%d/%m/%Y")
+            if ship_dt >= exp_dt:
+                _warn(data, f"Date check: Latest shipment date ({ship}) should be before expiry date ({exp}).")
+            else:
+                _note(data, f"Date check: Latest shipment ({ship}) is before expiry ({exp}). ✓")
+        except ValueError:
+            _warn(data, f"Date format error: could not parse expiry='{exp}' or shipment='{ship}' as dd/mm/yyyy.")
 
     # Check B/L cleanliness wording
     docs = data.get("documents") or {}
@@ -107,18 +113,28 @@ def apply_incoterms_rules(data: dict) -> dict:
         if not docs.get("insurance_certificate"):
             # Set default insurance certificate requirement per UCP600 Art.28
             coverage = term_rules.get("insurance_minimum_coverage", 110)
-            if version == "2020" and inco == "CIP":
-                ins_type = "all risks (Institute Cargo Clauses A)"
+            # CIP 2020 requires ICC(A) all risks; CIF requires minimum ICC(C) per Incoterms
+            # However UCP600 Art.28(f)(ii) mandates ICC(A/B/C) terms be specified explicitly
+            if inco == "CIP" and version == "2020":
+                ins_clause = "Institute Cargo Clauses (A) — All Risks"
             else:
-                ins_type = "minimum cover (Institute Cargo Clauses C)"
+                ins_clause = "Institute Cargo Clauses (A) — All Risks"  # CIF: use ICC(A) as best practice
             docs["insurance_certificate"] = (
-                f"1 original insurance certificate/policy covering {ins_type}, "
-                f"{coverage}% of invoice value, in {data.get('currency', 'USD')}"
+                f"1 original insurance certificate/policy in negotiable form, "
+                f"covering {ins_clause}, for {coverage}% of invoice value, "
+                f"in {data.get('currency', 'USD')}, blank endorsed"
             )
             data["documents"] = docs
             _note(data, f"UCP600 Art.28 / ISBP 821 K14: Insurance certificate added for {inco} ({version}) — {coverage}% minimum coverage.")
         else:
-            _note(data, f"Insurance certificate provided for {inco}. ✓")
+            # Ensure ICC clause is explicit even if already extracted
+            cert = docs.get("insurance_certificate", "")
+            if "Institute Cargo Clauses" not in cert:
+                docs["insurance_certificate"] = cert + ", Institute Cargo Clauses (A) — All Risks"
+                data["documents"] = docs
+                _note(data, f"Insurance certificate enhanced: ICC(A) clause added for {inco}. ✓")
+            else:
+                _note(data, f"Insurance certificate provided for {inco}. ✓")
     else:
         if docs.get("insurance_certificate"):
             _note(data, f"Insurance certificate listed but {inco} does not require seller to provide insurance. Verify with buyer.")
@@ -138,8 +154,10 @@ def apply_incoterms_rules(data: dict) -> dict:
         bol = docs.get("bill_of_lading") or ""
         if not bol:
             docs["bill_of_lading"] = (
-                "Full set of 3/3 original clean shipped on board ocean bills of lading, "
-                f"made out to order, notify applicant, marked 'Freight {'Prepaid' if inco in ('CIF', 'CFR') else 'Collect'}'"
+                "Full set of 3/3 original clean on board ocean bills of lading evidencing "
+                "'Shipped on Board' notation per UCP600 Art.20, "
+                "made out to order, notify applicant, "
+                f"marked 'Freight {'Prepaid' if inco in ('CIF', 'CFR') else 'Collect'}'"
             )
             data["documents"] = docs
             _note(data, f"Standard ocean B/L requirement added for {inco} term.")
@@ -158,6 +176,16 @@ def apply_isbp821_defaults(data: dict) -> dict:
     - Documents must be in English (standard for VCB)
     """
     docs = data.get("documents") or {}
+
+    # Ensure other_documents is a list, never None
+    if docs.get("other_documents") is None:
+        docs["other_documents"] = []
+
+    # Issuing bank: always Vietcombank for this template
+    if not data.get("issuing_bank_name"):
+        data["issuing_bank_name"] = "Joint Stock Commercial Bank for Foreign Trade of Vietnam (Vietcombank)"
+        data["issuing_bank_bic"] = "BFTVVNVX"
+        _note(data, "Issuing bank set to Vietcombank (BFTVVNVX) — standard for this LC application template.")
 
     # Ensure standard documents have descriptions
     if not docs.get("commercial_invoice"):

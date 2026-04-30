@@ -11,8 +11,11 @@ logger = get_logger("node.quality")
 _JUDGE_SYSTEM = """You are an expert in international trade finance and documentary credits (UCP 600, ISBP 821).
 Review the extracted LC application data and score its quality.
 
+DATE FORMAT NOTE: All dates are in dd/mm/yyyy format (day/month/4-digit-year).
+Example: "31/01/2025" = January 31, 2025. "28/02/2025" = February 28, 2025.
+
 Evaluate:
-1. Completeness: Are all required LC fields present? (applicant, beneficiary, amount, dates, incoterms, documents)
+1. Completeness: Are all required LC fields present? (applicant, beneficiary, issuing bank, amount, dates, incoterms, documents)
 2. Accuracy: Are the extracted values sensible and internally consistent?
 3. Compliance: Are UCP600/ISBP821/Incoterms rules correctly applied?
 4. Documents: Are the required documents appropriate for the Incoterms term?
@@ -54,6 +57,8 @@ def quality_review_node(state: LCAgentState) -> dict:
         "documents": lc_data.get("documents"),
         "beneficiary_bank_name": lc_data.get("beneficiary_bank_name"),
         "beneficiary_bank_bic": lc_data.get("beneficiary_bank_bic"),
+        "issuing_bank_name": lc_data.get("issuing_bank_name"),
+        "issuing_bank_bic": lc_data.get("issuing_bank_bic"),
         "validation_warnings": lc_data.get("validation_warnings", []),
         "compliance_notes": lc_data.get("compliance_notes", []),
     }
@@ -70,7 +75,11 @@ def quality_review_node(state: LCAgentState) -> dict:
         response = invoke_with_retry(llm, messages)
         raw = response.content if hasattr(response, "content") else str(response)
         cleaned = strip_llm_json(raw)
-        result = json.loads(cleaned)
+        try:
+            result = json.loads(cleaned)
+        except json.JSONDecodeError:
+            from json_repair import repair_json
+            result = json.loads(repair_json(cleaned))
     except Exception as exc:
         logger.warning(f"quality_review_node LLM failed: {exc} — defaulting to score 7.5")
         result = {

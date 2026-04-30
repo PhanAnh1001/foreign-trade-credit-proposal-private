@@ -49,8 +49,10 @@ def get_smart_llm() -> ChatGroq:
 
 
 def get_judge_llm() -> ChatGroq:
-    """openai/gpt-oss-20b: independent judge (different vendor from extraction models)."""
-    return get_llm(model="openai/gpt-oss-20b", temperature=0.0, max_tokens=2048)
+    """qwen/qwen3-32b: independent judge (Alibaba, different vendor from Meta extraction).
+    Emits <think> blocks — use strip_llm_json(). Input ~730T + max_tokens=2048 = ~2778T < 6K TPM.
+    """
+    return get_llm(model="qwen/qwen3-32b", temperature=0.0, max_tokens=2048)
 
 
 _RETRY_AFTER_RE = re.compile(r"try again in ([\d.]+)s", re.IGNORECASE)

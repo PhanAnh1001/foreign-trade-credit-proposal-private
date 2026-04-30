@@ -16,8 +16,8 @@ def _base_data(**kwargs) -> dict:
         "issuance_method": "SWIFT",
         "currency": "USD",
         "amount": "450000.00",
-        "expiry_date": "25/02/28",
-        "latest_shipment_date": "25/01/31",
+        "expiry_date": "28/02/2025",
+        "latest_shipment_date": "31/01/2025",
         "incoterms": "CIF",
         "incoterms_version": "2020",
         "named_port": "Ho Chi Minh City Port",
@@ -59,7 +59,7 @@ class TestUCP600Defaults:
     def test_presentation_period_default(self):
         data = _base_data(presentation_period=None)
         result = apply_ucp600_defaults(data)
-        assert result["presentation_period"] == "21"
+        assert result["presentation_period"] == "21 days after date of shipment"
 
     def test_expiry_date_missing_warns(self):
         data = _base_data(expiry_date=None)
@@ -67,12 +67,12 @@ class TestUCP600Defaults:
         assert any("xpiry" in w for w in result["validation_warnings"])
 
     def test_shipment_before_expiry(self):
-        data = _base_data(latest_shipment_date="25/01/31", expiry_date="25/02/28")
+        data = _base_data(latest_shipment_date="31/01/2025", expiry_date="28/02/2025")
         result = apply_ucp600_defaults(data)
         assert any("Date check" in n and "✓" in n for n in result["compliance_notes"])
 
     def test_shipment_after_expiry_warns(self):
-        data = _base_data(latest_shipment_date="25/03/01", expiry_date="25/02/28")
+        data = _base_data(latest_shipment_date="01/03/2025", expiry_date="28/02/2025")
         result = apply_ucp600_defaults(data)
         assert any("shipment date" in w.lower() for w in result["validation_warnings"])
 

@@ -40,9 +40,9 @@ class LCApplicationData(BaseModel):
     amount_tolerance: str = "0"            # percentage, e.g. "0", "5", "10"
 
     # ── Dates ──────────────────────────────────────────────────────────────
-    expiry_date: Optional[str] = None       # yy/mm/dd per UCP600
+    expiry_date: Optional[str] = None       # dd/mm/yyyy
     expiry_place: Optional[str] = None      # e.g. "At Vietcombank, Ha Noi, Vietnam"
-    latest_shipment_date: Optional[str] = None  # yy/mm/dd
+    latest_shipment_date: Optional[str] = None  # dd/mm/yyyy
 
     # ── Shipping ───────────────────────────────────────────────────────────
     incoterms: Optional[str] = None         # FOB | CIF | CFR | EXW | FCA | CPT | CIP
@@ -67,6 +67,10 @@ class LCApplicationData(BaseModel):
         "Documents must be issued in English\n"
         "The amount utilized must be endorsed on the reverse of the original L/C."
     )
+
+    # ── Issuing bank (Vietcombank — fixed for this template) ───────────────
+    issuing_bank_name: str = "Joint Stock Commercial Bank for Foreign Trade of Vietnam (Vietcombank)"
+    issuing_bank_bic: str = "BFTVVNVX"
 
     # ── Charges ────────────────────────────────────────────────────────────
     issuing_bank_charges_for: str = "Applicant"    # "Applicant" | "Beneficiary"
