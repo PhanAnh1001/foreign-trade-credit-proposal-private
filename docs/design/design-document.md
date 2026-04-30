@@ -2,32 +2,35 @@
 
 ## 1. Problem Statement
 
-Given a foreign trade contract and any bank's LC application template (Vietcombank by default), automatically draft a Letter of Credit (LC) application conforming to UCP 600, ISBP 821, and Incoterms (2000/2010/2020).
+Given a foreign trade contract (TXT/PDF/DOCX) and a bank's LC application DOCX template, automatically draft a Letter of Credit application conforming to UCP 600, ISBP 821, and Incoterms (2000/2010/2020).
+
+**General-purpose by design**: the agent works with any bank and any company. Adding a new bank requires only placing its template DOCX in `data/templates/docx/{bank}/` — no code changes. The applicant company is identified automatically from the contract and used to organize output files.
 
 ## 2. Architecture
 
 ### Agent Topology (LangGraph)
 
 ```
-Contract (TXT/PDF/DOCX)
-          │
-    [extract_node]        ← LLM: llama-3.3-70b-versatile
-          │
-    [validate_node]       ← Pure Python: UCP600 + ISBP821 + Incoterms rules
-          │
-    [quality_review_node] ← LLM-as-Judge: openai/gpt-oss-20b
-          │
-     ┌────┴────┐
-     │  score? │
-   ≥7.0      <7.0 (retry once → extract_node)
-     │
-  [fill_node]             ← python-docx: fill bank-aware DOCX template
-          │
-   LC-Application.docx
+Foreign trade contract (TXT / PDF / DOCX)
+              │
+        [extract_node]          ← LLM: llama-3.3-70b-versatile
+              │                    ~30 fields: parties, amounts, dates,
+              │                    Incoterms, ports, documents
+        [validate_node]         ← Pure Python rule engine
+              │                    UCP600 + ISBP821 + Incoterms + VN forex law
+        [quality_review_node]   ← LLM-as-Judge: openai/gpt-oss-20b
+              │
+         ┌────┴────┐
+         │  score? │
+       ≥7.0      <7.0 (retry once → extract_node with feedback)
+         │
+        [fill_node]             ← python-docx: fill bank-aware DOCX template
+              │
+   data/outputs/{bank}/{company_slug}/LC-Application-{contract}.docx
 ```
 
 ### Memory
-- **Short-term**: `LCAgentState` (TypedDict) holds all inter-node data in the LangGraph execution context. Key fields include: `contract_text`, `lc_fields`, `validation_result`, `quality_score`, `bank`, `company_slug`.
+- **Short-term**: `LCAgentState` (TypedDict) holds all inter-node data. Key fields: `bank`, `company_slug`, `contract_path`, `lc_data`, `quality_score`, `quality_feedback`, `output_docx_path`.
 - **No long-term memory needed**: each run is fully self-contained from a single contract file.
 
 ### Planning
@@ -38,12 +41,12 @@ Contract (TXT/PDF/DOCX)
 | Tool | File | Purpose |
 |---|---|---|
 | `extract_contract_text` | `tools/contract_extractor.py` | PDF/DOCX/TXT → plain text |
-| `extract_lc_fields_from_contract` | `tools/contract_extractor.py` | LLM structured extraction |
-| `validate_and_enhance` | `tools/lc_rules_validator.py` | UCP600/ISBP821/Incoterms rule engine |
+| `extract_lc_fields_from_contract` | `tools/contract_extractor.py` | LLM structured extraction (~30 fields) |
+| `validate_and_enhance` | `tools/lc_rules_validator.py` | UCP600/ISBP821/Incoterms/VN forex rule engine |
 | `fill_lc_template` | `utils/docx_filler.py` | python-docx template filling |
-| `get_bank_template_path(bank)` | `config.py` | Bank-aware template path resolution |
-| `get_bank_output_dir(bank, slug)` | `config.py` | Bank + company-slugged output path |
-| `slugify_company(name)` | `config.py` | Company name → filesystem-safe slug |
+| `get_bank_template_path(bank)` | `config.py` | Resolve template path for any bank slug |
+| `get_bank_output_dir(bank, slug)` | `config.py` | Create and return `outputs/{bank}/{slug}/` |
+| `slugify_company(name)` | `config.py` | Company name → filesystem-safe slug (max 50 chars) |
 
 ## 4. Action Inventory
 
@@ -56,30 +59,34 @@ Contract (TXT/PDF/DOCX)
 
 ## 5. Key Design Decisions
 
+### General-purpose: any bank, any company
+
+The agent is designed to be bank-agnostic and company-agnostic from the ground up:
+
+- **Bank**: `run_lc_application()` takes a `bank` parameter (default: `BANK_DEFAULT = "vietcombank"`). Template lookup is `data/templates/docx/{bank}/Application-for-LC-issuance.docx`. Adding a new bank requires no code — only a template file.
+- **Company**: `applicant_name` is extracted from the contract and passed through `slugify_company()` (lowercase, underscores, max 50 chars) to produce `company_slug`. Output is organized as `data/outputs/{bank}/{company_slug}/` — files from different companies never collide.
+- **Contract format**: `extract_contract_text()` handles TXT, PDF (PyMuPDF + pdfplumber fallback), and DOCX transparently.
+
 ### No hallucination guarantee
+
 - LLM prompt explicitly states: "Only extract information explicitly stated in the contract. Do not infer or fabricate."
-- All financial figures (amount, dates) are extracted verbatim from contract text.
 - UCP600/ISBP821 rules (e.g., 21-day presentation period, 110% insurance for CIF) are applied by a deterministic rule engine, not the LLM.
+- The judge uses a cross-vendor model (OpenAI) to independently review extraction by a different vendor (Meta) — avoiding self-confirmation bias.
 
 ### Self-correction loop
-- If quality score < 7.0, the agent retries extraction once with the judge's feedback injected into the prompt — making the retry smarter than a blind re-run.
+
+- If quality score < 7.0, the agent retries extraction once with the judge's top issues injected into the prompt — targeted retry, not blind re-run.
 - After 1 retry, the agent proceeds with warnings rather than blocking output.
 
 ### Incoterms-aware document requirements
+
 - The validator automatically adds insurance certificate requirements for CIF and CIP terms.
 - Under Incoterms 2020, CIP requires "All Risks" (ICC A) rather than "minimum cover" (ICC C).
-
-### Multi-bank support
-- `run_lc_application()` accepts a `bank` parameter (default: `BANK_DEFAULT = "vietcombank"`).
-- Template lookup: `data/templates/docx/{bank}/Application-for-LC-issuance.docx`
-- Output path: `data/outputs/{bank}/{company_slug}/LC-Application-{contract}.docx`
-- `company_slug` is derived deterministically from `applicant_name` via `slugify_company()` — lowercase, underscores, max 50 chars.
-- Adding a new bank requires only: (a) place the template in the correct directory, (b) pass `bank=slug` to `run_lc_application()`.
+- For FOB/CFR, the validator sets B/L freight notation correctly and skips insurance.
 
 ## 6. Limitations
 
-- LLM extraction may miss fields in poorly structured contracts.
-- DOCX template filling does not support all cell formatting variations.
-- Incoterms 2000 and 2010 difference handling is limited to version labelling.
-- No support for amendments (only initial LC issuance).
-- DOCX template filling logic is written for the Vietcombank form structure. Other banks' templates may require additional filler functions if their layout differs.
+- DOCX template filling is implemented for the Vietcombank form layout. Other banks' templates with different table structures may require additional filler functions in `docx_filler.py`.
+- LLM extraction may miss fields in poorly structured or non-standard contracts.
+- Incoterms 2000 and 2010 difference handling is limited to version labelling; rule differences beyond insurance are not fully modelled.
+- No support for LC amendments (only initial issuance).

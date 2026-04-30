@@ -1,84 +1,102 @@
 # LC Application Agent
 
-AI Agent that automatically fills an LC (Letter of Credit) application DOCX from a foreign trade contract.
+**Automatically generate LC (Letter of Credit) applications from foreign trade contracts — works with any bank and any company.**
 
 > Vietnamese version: [README.md](README.md)
 
-## Overview
+---
 
-The system uses **LangGraph** to orchestrate a 4-node sequential pipeline with a self-correction loop when the quality score falls below threshold:
+## Highlights
 
-1. **extract_node** — LLM extracts structured fields from the foreign trade contract
-2. **validate_node** — Pure Python enforces UCP600, ISBP 821, Incoterms, and Vietnamese forex law rules
-3. **quality_review_node** — LLM-as-Judge scores the output (0–10); if < 7.0 → retry back to extract_node (max 1 retry)
-4. **fill_node** — python-docx fills the bank's DOCX template with validated data
+| | |
+|---|---|
+| 🏦 **Any bank** | Add a new bank by dropping a DOCX template into the right folder — no code changes needed |
+| 🏢 **Any company** | Output is automatically organized by company name (slugified) — files never overwrite each other |
+| 📄 **Any contract format** | TXT, PDF, DOCX — auto-extracted, no preprocessing required |
+| ⚖️ **International compliance** | Rule engine enforces UCP600, ISBP 821, Incoterms 2020, Vietnamese forex law |
+| 🔄 **Self-correction** | LLM-as-Judge scores output; if < 7/10 → re-extracts with targeted feedback |
 
-**Input**: foreign trade contract (TXT / PDF / DOCX)
+**Output**: `data/outputs/{bank}/{company}/LC-Application-{contract}.docx`
 
-**Output**: `data/outputs/{bank}/{company_slug}/LC-Application-{contract}.docx`
+---
 
-## Architecture
+## Adding a new bank
+
+Just 2 steps — **no code changes**:
 
 ```
-Contract (TXT/PDF/DOCX)
-         │
-   [extract_node]         ← LLM: llama-3.3-70b-versatile
-         │
-   [validate_node]        ← Pure Python: UCP600 + ISBP821 + Incoterms + Vietnam forex
-         │
-   [quality_review_node]  ← LLM-as-Judge: qwen/qwen3-32b
-         │
-    ┌────┴────┐
-    │  score? │
-  ≥7.0      <7.0 (retry once → extract_node)
-    │
-  [fill_node]             ← python-docx: fill bank-aware DOCX template
-         │
-  LC-Application.docx
-  data/outputs/{bank}/{company_slug}/
+1. Place the DOCX template at:
+   data/templates/docx/{bank-name}/Application-for-LC-issuance.docx
+
+2. Pass the bank name to the call:
+   run_lc_application("contract.txt", bank="bank-name")
 ```
+
+The agent automatically:
+- Finds the correct template for that bank
+- Creates a separate output directory: `data/outputs/{bank}/{company_slug}/`
+- Fills the form according to the provided DOCX structure
+
+---
+
+## Architecture Overview
+
+```
+Foreign trade contract (TXT / PDF / DOCX)
+                │
+          [extract_node]          ← LLM: llama-3.3-70b-versatile
+                │                    Extracts ~30 fields: buyer, seller,
+                │                    amount, dates, Incoterms, ports, documents...
+          [validate_node]         ← Pure Python: UCP600 + ISBP821 + Incoterms + VN forex
+                │                    Applies defaults, validates consistency,
+                │                    adds insurance doc requirement for CIF/CIP
+          [quality_review_node]   ← LLM-as-Judge: openai/gpt-oss-20b (cross-vendor)
+                │
+           ┌────┴────┐
+           │  score? │
+         ≥7.0      <7.0 → retry extraction with feedback
+           │
+          [fill_node]             ← python-docx: fill the selected bank's template
+                │
+   data/outputs/{bank}/{company}/LC-Application-{contract}.docx
+```
+
+**Clean separation**: The LLM only extracts data from the contract. All business rules (UCP600, Incoterms, forex law) are enforced by pure Python — no tokens spent, no hallucination risk.
+
+---
 
 ## Setup
 
-### Requirements
-
-- Python 3.12 (managed via [uv](https://docs.astral.sh/uv))
-- Groq API key (free at [console.groq.com](https://console.groq.com))
-
-### Installation
-
 ```bash
-# Create virtual environment with Python 3.12
-uv venv --python 3.12
-source .venv/bin/activate
-
-# Install dependencies
+uv venv --python 3.12 && source .venv/bin/activate
 uv pip install -r requirements.txt
+cp .env.example .env   # fill in GROQ_API_KEY
 ```
 
-### Environment Configuration
-
-Create a `.env` file:
+Only 1 API key required:
 
 ```env
-GROQ_API_KEY=your_groq_api_key_here          # required
-
-LANGSMITH_API_KEY=your_langsmith_key         # optional, for tracing
-LANGCHAIN_TRACING_V2=true                    # optional, enable LangSmith tracing
+GROQ_API_KEY=your_groq_api_key_here
 ```
 
-> **Note**: `GROQ_API_KEY` is the only required API key. LangSmith is fully optional.
+---
 
 ## Usage
 
 ### CLI
 
 ```bash
-# Basic run
+# Vietcombank (default)
 python -m src.main --contract data/sample/contract.txt
 
-# Specify bank and output directory
-python -m src.main --contract data/sample/contract.txt --bank vietcombank --output-dir data/outputs/ete
+# BIDV
+python -m src.main --contract contract.txt --bank bidv
+
+# Any bank
+python -m src.main --contract contract.txt --bank bank-name
+
+# Override output directory
+python -m src.main --contract contract.txt --bank vietcombank --output-dir /tmp/test
 ```
 
 ### Python API
@@ -86,93 +104,113 @@ python -m src.main --contract data/sample/contract.txt --bank vietcombank --outp
 ```python
 from src.agents.graph import run_lc_application
 
-state = run_lc_application("data/sample/contract.txt", bank="vietcombank")
+# Vietcombank
+state = run_lc_application("contract.txt", bank="vietcombank")
+
+# BIDV
+state = run_lc_application("contract.txt", bank="bidv")
+
+# Results
+print(state["output_docx_path"])   # data/outputs/bidv/company_name/LC-Application-contract.docx
+print(state["quality_score"])      # 8.5
+print(state["company_slug"])       # company_name (auto-derived from applicant in contract)
 ```
+
+---
+
+## Template and Output Structure
+
+```
+data/
+  templates/docx/
+    vietcombank/          ← Vietcombank template (included)
+      Application-for-LC-issuance.docx
+    bidv/                 ← Add BIDV: just place the file here
+      Application-for-LC-issuance.docx
+    any-other-bank/       ← Any bank
+      Application-for-LC-issuance.docx
+
+  outputs/                ← Auto-created, organized by bank + company
+    vietcombank/
+      company_abc/
+        LC-Application-contract-001.docx
+      company_xyz/
+        LC-Application-contract-002.docx
+    bidv/
+      company_abc/
+        LC-Application-contract-003.docx
+```
+
+---
 
 ## Project Structure
 
 ```
 src/
-  config.py              # BANK_VCB/BIDV/VIETINBANK constants, get_bank_template_path(),
-                         #   slugify_company(), get_bank_output_dir()
+  config.py              # BANK_VCB/BIDV/VIETINBANK constants + helper functions:
+                         #   get_bank_template_path(bank)    → Path to template
+                         #   get_bank_output_dir(bank, slug) → Output path (auto-created)
+                         #   slugify_company(name)           → "ABC Corp" → "abc_corp"
   agents/
-    graph.py             # LangGraph pipeline + run_lc_application()
-    node_extract.py      # extract_node: LLM field extraction
-    node_validate.py     # validate_node: rule engine
-    node_quality.py      # quality_review_node: LLM-as-Judge
-    node_fill.py         # fill_node: DOCX template filling
+    graph.py             # run_lc_application(contract, bank, output_dir)
+    node_extract.py      # LLM: extract ~30 fields from contract
+    node_validate.py     # Python: UCP600 / ISBP821 / Incoterms / VN forex rules
+    node_quality.py      # LLM-as-Judge: score + feedback
+    node_fill.py         # python-docx: fill the specified bank's template
   tools/
-    contract_extractor.py  # extract_contract_text + extract_lc_fields_from_contract
-    lc_rules_validator.py  # UCP600 / ISBP821 / Incoterms / Vietnam forex rules
+    contract_extractor.py  # TXT/PDF/DOCX → text → structured JSON
+    lc_rules_validator.py  # Rule engine: UCP600 + ISBP821 + Incoterms + VN forex
   models/
-    state.py             # LCAgentState TypedDict
-    lc_application.py    # LCApplicationData + DocumentRequirements Pydantic models
-  knowledge/
-    loader.py            # YAML knowledge loader
-    rules/               # ucp600_rules.yaml, isbp821_rules.yaml,
+    state.py             # LCAgentState: bank, company_slug, lc_data, quality_score...
+    lc_application.py    # LCApplicationData + DocumentRequirements (Pydantic)
+  knowledge/rules/       # ucp600_rules.yaml, isbp821_rules.yaml,
                          #   incoterms_rules.yaml, vietnam_forex_law.yaml
   utils/
-    docx_filler.py       # Wingdings checkbox filling, run-level text replacement
+    docx_filler.py       # Wingdings checkbox, run-level fill, buyer/seller replace
     llm.py               # get_extraction_llm(), get_judge_llm()
-    logger.py            # colored logging, @timed_node decorator, LangSmith tracing
-  main.py                # CLI entry point
 data/
   sample/contract.txt    # Sample contract (VN-CN-2024-001, USD 450K, CIF)
-  templates/docx/
-    vietcombank/         # Application-for-LC-issuance.docx
-  outputs/{bank}/{slug}/ # Generated DOCX files (gitignored)
-tests/
-  test_config.py         # Multi-bank config tests (8 tests)
-  test_docx_filler.py    # DOCX filling tests
-  test_models.py         # Pydantic model tests
-  test_lc_rules_validator.py  # Rule engine tests (44 tests)
-  test_ete.py            # End-to-end tests (requires GROQ_API_KEY)
+  templates/docx/vietcombank/  # Vietcombank template
+tests/                   # 52 unit tests + ETE tests
 ```
 
-## LLM Models (Groq)
+---
 
-| Node | Model | TPM | Purpose |
-|------|-------|-----|---------|
-| `extract_node` | `llama-3.3-70b-versatile` | 12K | Contract field extraction (~7K tokens/call) |
-| `quality_review_node` | `openai/gpt-oss-20b` | 8K | LLM-as-Judge scoring; cross-vendor (OpenAI) from extractor (Meta) |
+## LLM Models (Groq Free Tier)
 
-`validate_node` and `fill_node` use no LLM (pure Python).
+| Node | Model | TPM | Role |
+|------|-------|-----|------|
+| `extract_node` | `llama-3.3-70b-versatile` | 12K | Field extraction from contract (~5K tokens/call) |
+| `quality_review_node` | `openai/gpt-oss-20b` | 8K | Cross-vendor judge (OpenAI ≠ Meta extractor); uses internal reasoning tokens |
 
-## Knowledge Base (deterministic, no LLM)
+`validate_node` and `fill_node` use no LLM — pure Python, fast, deterministic.
+
+---
+
+## Knowledge Base — Rule Engine (no LLM)
 
 | Source | Key Rules |
 |--------|-----------|
 | **UCP600** | Irrevocable by default (Art.3), 21-day presentation period (Art.14c), clean B/L (Art.27) |
-| **ISBP 821** | Invoice description match, B/L full set, documents in English |
-| **Incoterms 2000/2010/2020** | CIF/CIP → insurance certificate (min 110%, ICC A); FOB → B/L freight collect |
-| **Vietnam forex law** | VN-01 currency ≠ VND (Decree 70/2014 Art.4), VN-02 contract number required (Art.11), VN-03 issuing bank NHNN-authorized (Art.6), VN-04 import LC = current account transaction ✓, VN-05 margin deposit reminder, VN-06 regulated goods check |
+| **ISBP 821** | Invoice description matches LC, full set B/L, documents in English |
+| **Incoterms 2000/2010/2020** | CIF/CIP → insurance ≥ 110% ICC(A); FOB → B/L freight collect |
+| **Vietnamese law** | VN-01 currency ≠ VND (Decree 70/2014 Art.4), VN-02 contract number required (Art.11), VN-03 NHNN-authorized bank (Art.6), VN-04 import LC = current account ✓, VN-05 margin reminder, VN-06 regulated goods |
 
-## Multi-Bank Support
-
-Add a new bank by placing its template at `data/templates/docx/{bank_slug}/Application-for-LC-issuance.docx`, then pass `bank={bank_slug}` to `run_lc_application()`. The output directory is automatically `data/outputs/{bank_slug}/{company_slug}/`.
-
-Bank constants defined in `src/config.py`:
-
-| Constant | Value |
-|----------|-------|
-| `BANK_VCB` | `"vietcombank"` (default) |
-| `BANK_BIDV` | `"bidv"` |
-| `BANK_VIETINBANK` | `"vietinbank"` |
+---
 
 ## Running Tests
 
 ```bash
-# Unit tests (no API key needed)
-python -m pytest tests/ --ignore=tests/test_ete.py -v   # 52 tests
-
-# End-to-end tests (requires GROQ_API_KEY)
-python -m pytest tests/test_ete.py -v
+python -m pytest tests/ --ignore=tests/test_ete.py -v   # 52 unit tests, no API key needed
+python -m pytest tests/test_ete.py -v                   # ETE (requires GROQ_API_KEY)
 ```
+
+---
 
 ## Notes
 
-- **GROQ_API_KEY** is the only required API key
-- **Anti-hallucination**: The LLM only extracts information explicitly stated in the contract — no fabrication
-- **Rule engine**: UCP600 and Incoterms rules are enforced in pure Python, not by the LLM
-- **Wingdings checkbox**: The template uses U+F06F (unchecked) / U+F0FE (checked) — **not** standard Unicode □/■
-- **Security**: Never commit `.env` or API keys to git (already in `.gitignore`)
+- **Adding a bank**: just place the template file — no code changes
+- **Anti-hallucination**: LLM only extracts from contract text, never fabricates
+- **Rule engine**: UCP600 / Incoterms checked in pure Python — deterministic, no tokens spent
+- **Wingdings checkbox**: VCB template uses U+F06F/U+F0FE (Wingdings PUA), not standard Unicode □/■
+- **Security**: Never commit `.env` to git
