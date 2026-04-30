@@ -8,7 +8,7 @@ from langchain_core.messages import SystemMessage, HumanMessage
 
 logger = get_logger("node.quality")
 
-_JUDGE_SYSTEM = """You are an expert in international trade finance and documentary credits (UCP 600, ISBP 821).
+_JUDGE_SYSTEM = """You are an expert in international trade finance, documentary credits, and Vietnamese banking regulations.
 Review the extracted LC application data and score its quality.
 
 DATE FORMAT NOTE: All dates are in dd/mm/yyyy format (day/month/4-digit-year).
@@ -17,8 +17,12 @@ Example: "31/01/2025" = January 31, 2025. "28/02/2025" = February 28, 2025.
 Evaluate:
 1. Completeness: Are all required LC fields present? (applicant, beneficiary, issuing bank, amount, dates, incoterms, documents)
 2. Accuracy: Are the extracted values sensible and internally consistent?
-3. Compliance: Are UCP600/ISBP821/Incoterms rules correctly applied?
-4. Documents: Are the required documents appropriate for the Incoterms term?
+3. Compliance (International): Are UCP600/ISBP821/Incoterms rules correctly applied?
+4. Compliance (Vietnam): Are Vietnam forex law requirements met?
+   - LC currency must be foreign currency, not VND (Pháp lệnh Ngoại hối, NĐ 70/2014)
+   - Import contract number must be present (NĐ 70/2014 Điều 11)
+   - Issuing bank must be NHNN-authorized forex institution
+5. Documents: Are the required documents appropriate for the Incoterms term?
 
 Return ONLY a JSON object:
 {

@@ -1,4 +1,4 @@
-"""Apply UCP600, ISBP821, and Incoterms rules to validate and enhance LC application data."""
+"""Apply UCP600, ISBP821, Incoterms, and Vietnam forex law rules to validate and enhance LC application data."""
 from __future__ import annotations
 import logging
 from datetime import datetime
@@ -215,6 +215,69 @@ def apply_isbp821_defaults(data: dict) -> dict:
     return data
 
 
+def apply_vietnam_forex_rules(data: dict) -> dict:
+    """Apply Vietnam forex law compliance checks.
+
+    Key rules applied:
+    - VN-01: LC currency must be foreign currency, not VND
+              (Điều 22 Pháp lệnh Ngoại hối; Điều 4 NĐ 70/2014)
+    - VN-02: Import contract (contract_number) is mandatory legal basis
+              (Điều 11 NĐ 70/2014)
+    - VN-03: Issuing bank must be NHNN-authorized forex institution
+              (Điều 6 NĐ 70/2014)
+    - VN-04: Import payment via LC is a current account transaction — permitted
+              (Điều 6 Pháp lệnh Ngoại hối; Điều 3 NĐ 70/2014)
+    - VN-05: Margin deposit reminder (no mandatory rate by law)
+    - VN-06: Import licence reminder for regulated goods
+    """
+    from ..knowledge.loader import get_authorized_forex_institutions, get_common_lc_currencies
+
+    # VN-01: Currency must not be VND
+    currency = (data.get("currency") or "").upper()
+    if currency == "VND":
+        _warn(data, "VN-01 (NĐ 70/2014 Điều 4): LC nhập khẩu quốc tế phải phát hành bằng ngoại tệ, không dùng VND.")
+    elif currency:
+        common = get_common_lc_currencies()
+        if currency not in common:
+            _note(data, f"VN-01: Đồng tiền {currency} không phổ biến cho LC nhập khẩu tại VN — xác nhận lại với ngân hàng.")
+        else:
+            _note(data, f"VN-01: Đồng tiền {currency} hợp lệ cho LC nhập khẩu quốc tế. ✓")
+
+    # VN-02: Contract number is mandatory
+    if not data.get("contract_number"):
+        _warn(data, "VN-02 (NĐ 70/2014 Điều 11): Số hợp đồng ngoại thương là cơ sở pháp lý bắt buộc để mở LC — chưa tìm thấy trong hợp đồng.")
+    else:
+        _note(data, f"VN-02: Hợp đồng ngoại thương '{data['contract_number']}' — cơ sở pháp lý hợp lệ. ✓")
+
+    # VN-03: Check issuing bank is authorized forex institution
+    issuing_bank = (data.get("issuing_bank_name") or "").lower()
+    authorized = get_authorized_forex_institutions()
+    authorized_names = [inst["short_name"].lower() for inst in authorized]
+    authorized_bics = [inst["bic"] for inst in authorized]
+    issuing_bic = data.get("issuing_bank_bic") or ""
+    if issuing_bic in authorized_bics or any(name in issuing_bank for name in authorized_names):
+        _note(data, f"VN-03 (NĐ 70/2014 Điều 6): {data.get('issuing_bank_name', 'Ngân hàng phát hành')} là TCTD được phép hoạt động ngoại hối. ✓")
+    elif issuing_bank:
+        _note(data, f"VN-03: Xác nhận {data.get('issuing_bank_name')} có giấy phép hoạt động ngoại hối của NHNN trước khi nộp hồ sơ.")
+
+    # VN-04: Informational — import LC is a permitted current account transaction
+    _note(data, "VN-04 (Điều 6 PL Ngoại hối; Điều 3 NĐ 70/2014): Thanh toán nhập khẩu hàng hóa qua L/C là giao dịch vãng lai — được tự do thực hiện theo pháp luật VN. ✓")
+
+    # VN-05: Margin deposit reminder
+    _note(data, "VN-05 (NĐ 70/2014): Tỷ lệ ký quỹ mở LC do ngân hàng phát hành quyết định (thông thường 0–100% tùy hạng tín dụng). Xác nhận với Vietcombank trước khi nộp hồ sơ.")
+
+    # VN-06: Import licence reminder for potentially regulated goods
+    goods = (data.get("description_of_goods") or "").lower()
+    regulated_keywords = ["chemical", "pharmaceutical", "drug", "weapon", "explosive",
+                          "hóa chất", "dược phẩm", "thuốc", "vũ khí", "chất nổ"]
+    if any(kw in goods for kw in regulated_keywords):
+        _warn(data, "VN-06 (NĐ 69/2018): Hàng hóa có thể thuộc danh mục quản lý nhập khẩu — kiểm tra yêu cầu giấy phép nhập khẩu.")
+    else:
+        _note(data, "VN-06: Mặt hàng không có dấu hiệu thuộc danh mục hàng hóa quản lý nhập khẩu đặc biệt. ✓")
+
+    return data
+
+
 def validate_completeness(data: dict) -> dict:
     """Check that all required LC fields are populated."""
     required_fields = [
@@ -247,11 +310,13 @@ def validate_and_enhance(data: dict) -> dict:
     1. UCP600 defaults and validation
     2. Incoterms-specific document requirements
     3. ISBP 821 document standards
-    4. Completeness check
+    4. Vietnam forex law compliance (PL Ngoại hối, NĐ 70/2014, TT NHNN)
+    5. Completeness check
     """
     data = apply_ucp600_defaults(data)
     data = apply_incoterms_rules(data)
     data = apply_isbp821_defaults(data)
+    data = apply_vietnam_forex_rules(data)
     data = validate_completeness(data)
     warnings = data.get("validation_warnings", [])
     notes = data.get("compliance_notes", [])

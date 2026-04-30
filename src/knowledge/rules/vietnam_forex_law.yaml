@@ -1,0 +1,200 @@
+# Pháp luật Việt Nam về quản lý ngoại hối và thanh toán quốc tế
+# Áp dụng cho: tổ chức mở LC nhập khẩu tại NHTM Việt Nam
+
+# ─── 1. Pháp lệnh Ngoại hối ────────────────────────────────────────────────
+# Pháp lệnh số 28/2005/PL-UBTVQH11 (sửa đổi, bổ sung: 06/2013/UBTVQH13)
+
+phaplenh_ngoai_hoi:
+  so_van_ban: "28/2005/PL-UBTVQH11 (sửa đổi bởi 06/2013/UBTVQH13)"
+  hieu_luc: "2006-06-01"
+  co_quan_ban_hanh: "Ủy ban Thường vụ Quốc hội"
+
+  dieu_4_dinh_nghia:
+    nguoi_cu_tru_to_chuc: >
+      Tổ chức kinh tế thành lập và hoạt động theo pháp luật Việt Nam là
+      người cư trú, được thực hiện giao dịch ngoại hối theo quy định.
+    giao_dich_vang_lai: >
+      Giao dịch thanh toán hàng hóa nhập khẩu là giao dịch vãng lai
+      (current account transaction) — không bị hạn chế về nguyên tắc.
+
+  dieu_6_giao_dich_vang_lai:
+    nguyen_tac: >
+      Người cư trú, người không cư trú được tự do thực hiện giao dịch
+      vãng lai. Tổ chức tín dụng được phép có nghĩa vụ đáp ứng nhu cầu
+      ngoại tệ hợp pháp của khách hàng.
+    thanh_toan_nhap_khau: "Được phép — là giao dịch vãng lai thương mại."
+
+  dieu_22_su_dung_ngoai_te:
+    tren_lanh_tho_vn: >
+      Trên lãnh thổ Việt Nam, mọi giao dịch, thanh toán, niêm yết, quảng
+      cáo của người cư trú không được thực hiện bằng ngoại tệ, trừ các
+      trường hợp được NHNN cho phép.
+    ngoai_le_lc: >
+      Thanh toán qua thư tín dụng (L/C) cho hợp đồng nhập khẩu hàng hóa
+      thực hiện qua tài khoản tại TCTD được phép — là ngoại lệ hợp pháp.
+    dong_tien_lc: "LC nhập khẩu quốc tế phải phát hành bằng ngoại tệ (không dùng VND)."
+
+# ─── 2. Nghị định 70/2014/NĐ-CP ────────────────────────────────────────────
+# Nghị định số 70/2014/NĐ-CP ngày 17/7/2014 (thay thế Nghị định 160/2006/NĐ-CP)
+# Quy định chi tiết thi hành một số điều của Pháp lệnh Ngoại hối
+
+nghi_dinh_70_2014:
+  so_van_ban: "70/2014/NĐ-CP"
+  ngay_ban_hanh: "2014-07-17"
+  co_quan_ban_hanh: "Chính phủ"
+
+  dieu_3_nguyen_tac:
+    tu_do_giao_dich_vang_lai: >
+      Mọi giao dịch vãng lai — bao gồm thanh toán nhập khẩu hàng hóa —
+      được tự do thực hiện thông qua TCTD được phép.
+
+  dieu_6_tctd_duoc_phep:
+    dinh_nghia: >
+      Tổ chức tín dụng được phép là NHTM, chi nhánh ngân hàng nước ngoài
+      được NHNN cấp phép hoạt động ngoại hối.
+    vi_du: >
+      Vietcombank (BFTVVNVX), Vietinbank, BIDV, Agribank, các NHTMCP
+      đều là TCTD được phép hoạt động ngoại hối.
+
+  dieu_11_dieu_kien_mo_lc:
+    ho_so_yeu_cau:
+      - "Hợp đồng ngoại thương (Sales Contract) hợp lệ"
+      - "Đăng ký kinh doanh ngành nghề phù hợp với hàng hóa nhập khẩu"
+      - "Giấy phép nhập khẩu (nếu hàng hóa thuộc danh mục quản lý)"
+      - "Tờ khai hải quan dự kiến (nếu yêu cầu)"
+    nghia_vu_tctd: >
+      TCTD phải thu thập và lưu trữ đầy đủ hồ sơ trước khi phát hành LC.
+      Kiểm tra mục đích sử dụng ngoại tệ hợp pháp.
+
+  ky_quy:
+    quy_dinh: >
+      Tỷ lệ ký quỹ (margin deposit) do TCTD quyết định dựa trên xếp loại
+      tín dụng của khách hàng, thông thường từ 0% đến 100% giá trị LC.
+    luu_y: >
+      Không có tỷ lệ ký quỹ bắt buộc theo quy định pháp luật; TCTD tự
+      quyết định theo chính sách quản lý rủi ro nội bộ.
+
+# ─── 3. Thông tư NHNN liên quan ─────────────────────────────────────────────
+
+thong_tu_nhnn:
+  tt_32_2013:
+    so_van_ban: "32/2013/TT-NHNN"
+    ngay_ban_hanh: "2013-12-26"
+    ten: "Hướng dẫn thực hiện quy định hạn chế sử dụng ngoại hối trên lãnh thổ Việt Nam"
+    lien_quan_lc: >
+      Thanh toán L/C nhập khẩu qua tài khoản tại TCTD được phép không bị
+      hạn chế bởi thông tư này (ngoại lệ khoản 2 Điều 4 Nghị định 70/2014).
+
+  tt_09_2023:
+    so_van_ban: "09/2023/TT-NHNN"
+    ngay_ban_hanh: "2023-07-28"
+    ten: "Sửa đổi, bổ sung một số điều của Thông tư 21/2014/TT-NHNN về quản lý ngoại hối"
+    lien_quan_lc: >
+      Quy định về tài khoản ngoại tệ của tổ chức: dùng để thanh toán L/C
+      nhập khẩu, hoặc cam kết mua ngoại tệ từ TCTD khi đến hạn thanh toán.
+
+  tt_bao_cao_nhnn:
+    co_so: "Thông tư 31/2014/TT-NHNN và các thông tư báo cáo thống kê"
+    quy_dinh: >
+      TCTD phải báo cáo NHNN định kỳ về hoạt động phát hành và thanh toán
+      L/C (không phải nghĩa vụ của khách hàng mở LC).
+
+# ─── 4. Quy tắc kiểm tra thực tiễn ─────────────────────────────────────────
+# Checklist áp dụng tự động trong lc_rules_validator.py
+
+validation_rules:
+
+  rule_VN01:
+    id: "VN-01"
+    ten: "Đồng tiền LC phải là ngoại tệ"
+    can_cu: "Điều 22 Pháp lệnh Ngoại hối; Điều 4 Nghị định 70/2014"
+    kiem_tra: "currency != 'VND'"
+    muc_do: "warning"
+    mo_ta: >
+      LC nhập khẩu quốc tế phải phát hành bằng ngoại tệ. Nếu currency=VND
+      cần xem xét lại — thông thường dùng USD, EUR, JPY, GBP, CNY, v.v.
+
+  rule_VN02:
+    id: "VN-02"
+    ten: "Hợp đồng ngoại thương là cơ sở pháp lý bắt buộc"
+    can_cu: "Điều 11 Nghị định 70/2014"
+    kiem_tra: "contract_number is not None"
+    muc_do: "warning"
+    mo_ta: >
+      TCTD bắt buộc phải có hợp đồng nhập khẩu hợp lệ trước khi phát
+      hành LC. Số hợp đồng phải khớp với hồ sơ lưu tại ngân hàng.
+
+  rule_VN03:
+    id: "VN-03"
+    ten: "Ngân hàng phát hành phải là TCTD được phép hoạt động ngoại hối"
+    can_cu: "Điều 6 Nghị định 70/2014"
+    kiem_tra: "issuing_bank is authorized forex institution"
+    muc_do: "info"
+    mo_ta: >
+      Chỉ TCTD được NHNN cấp phép hoạt động ngoại hối mới được phát hành
+      LC nhập khẩu. Vietcombank (BFTVVNVX) là TCTD được phép.
+
+  rule_VN04:
+    id: "VN-04"
+    ten: "Giao dịch thanh toán nhập khẩu là giao dịch vãng lai — được phép"
+    can_cu: "Điều 6 Pháp lệnh Ngoại hối; Điều 3 Nghị định 70/2014"
+    kiem_tra: "auto_pass — informational only"
+    muc_do: "info"
+    mo_ta: >
+      Thanh toán hàng hóa nhập khẩu qua L/C là giao dịch vãng lai thương
+      mại, được tự do thực hiện theo pháp luật quản lý ngoại hối VN.
+
+  rule_VN05:
+    id: "VN-05"
+    ten: "Ký quỹ — nhắc nhở theo chính sách ngân hàng"
+    can_cu: "Nghị định 70/2014 (không quy định tỷ lệ bắt buộc)"
+    kiem_tra: "informational only"
+    muc_do: "info"
+    mo_ta: >
+      Tỷ lệ ký quỹ mở LC do ngân hàng phát hành quyết định dựa trên
+      hạng tín dụng khách hàng (thường 0–100% giá trị LC). Khách hàng
+      cần xác nhận với ngân hàng trước khi nộp hồ sơ.
+
+  rule_VN06:
+    id: "VN-06"
+    ten: "Giấy phép nhập khẩu cho hàng hóa quản lý"
+    can_cu: "Nghị định 69/2018/NĐ-CP về quản lý ngoại thương"
+    kiem_tra: "goods description contains regulated goods keywords"
+    muc_do: "info"
+    mo_ta: >
+      Một số mặt hàng nhập khẩu cần giấy phép (vũ khí, hóa chất, dược
+      phẩm, hàng tiêu dùng đã qua sử dụng...). TCTD yêu cầu nộp kèm
+      giấy phép nhập khẩu nếu hàng thuộc danh mục quản lý.
+
+# Danh sách TCTD được phép tiêu biểu (không đầy đủ)
+authorized_forex_institutions:
+  - name: "Joint Stock Commercial Bank for Foreign Trade of Vietnam"
+    short_name: "Vietcombank"
+    bic: "BFTVVNVX"
+  - name: "Vietnam Joint Stock Commercial Bank for Industry and Trade"
+    short_name: "Vietinbank"
+    bic: "ICBVVNVX"
+  - name: "Bank for Investment and Development of Vietnam"
+    short_name: "BIDV"
+    bic: "BIDVVNVX"
+  - name: "Vietnam Bank for Agriculture and Rural Development"
+    short_name: "Agribank"
+    bic: "VBAAVNVX"
+  - name: "Asia Commercial Joint Stock Bank"
+    short_name: "ACB"
+    bic: "ASCBVNVX"
+  - name: "Techcombank"
+    short_name: "Techcombank"
+    bic: "VTCBVNVX"
+
+# Các loại ngoại tệ phổ biến dùng trong LC nhập khẩu tại Việt Nam
+common_lc_currencies:
+  - "USD"
+  - "EUR"
+  - "JPY"
+  - "GBP"
+  - "CNY"
+  - "HKD"
+  - "SGD"
+  - "AUD"
+  - "KRW"
