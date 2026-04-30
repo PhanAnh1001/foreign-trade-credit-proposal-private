@@ -240,6 +240,12 @@
 - [x] **Restore `get_judge_llm()` → `openai/gpt-oss-20b`** — điều tra empty response: nguyên nhân là Groq API issue tạm thời, không phải model bug. gpt-oss-20b dùng reasoning_tokens (~520T nội bộ) + ~250T output = ~770T tổng, max_tokens=2048 an toàn. ETE PASS với gpt-oss-20b judge (score=6.5/10, correct issues identified).
 - [x] **Update CLAUDE.md rate limits** — bảng mới từ Groq: thêm llama-prompt-guard-*, gpt-oss-safeguard-20b, groq/compound/compound-mini, allam-2-7b, whisper; qwen3-32b RPM=60; ghi chú reasoning_tokens trên gpt-oss-20b
 
+## Đã hoàn thành — README/design any-bank positioning (2026-04-30)
+
+- [x] **README.md rewrite** — nổi bật "mọi ngân hàng, mọi công ty": thêm bảng Điểm nổi bật, section "Cách thêm ngân hàng mới" (2 bước, không sửa code), cây thư mục template/output theo bank+company, architecture diagram mở rộng
+- [x] **README.en.md rewrite** — bản tiếng Anh đầy đủ, cùng cấu trúc mới
+- [x] **design-document.md rewrite** — Problem Statement nhấn mạnh general-purpose; "General-purpose: any bank, any company" là Key Design Decision đầu tiên; cập nhật architecture diagram; cập nhật Limitations
+
 ## Đang làm / TODO
 - [ ] **Demo video** — Quay 5–10 phút: architecture → live run (`run_lc_application`) → show output DOCX (checkboxes ■, insurance cert CIF) → limitations (rate limits, UCP600 subset)
 - [ ] **ETE với hợp đồng khác loại** — thêm test case FOB (không cần insurance) và CIP để verify rule engine đúng cho cả 3 Incoterms có/không có insurance
