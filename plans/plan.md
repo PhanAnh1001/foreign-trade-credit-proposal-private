@@ -198,7 +198,8 @@
   7. Judge LLM: `gpt-oss-20b` (broken, trả empty) → `qwen/qwen3-32b` (Alibaba, cross-vendor)
   8. `json_repair` fallback cho truncated JSON từ qwen3-32b `<think>` blocks
 - [x] **Tạo lại output và ETE evidence mới (2026-04-30)** — `data/outputs/ete/LC-Application-contract.docx` (27.5 KB); `ete-evidence/ete-run-003.json`; **12/12 DOCX checks pass**; 9.2/10, 4.7s, 0 retries.
-- [x] **Fix presentation period checkbox — split-run Wingdings detection (2026-04-29)** — Root cause: "21 days after shipment date" bị tách thành 8 runs riêng biệt trong DOCX template, `_select_checkbox()` dùng exact per-run text match → không tìm được. Fix: `_fill_presentation_period()` thay vì gọi `_select_checkbox_in_cell()`, trực tiếp replace Run 0 (Wingdings char) trong paragraph đầu tiên của cell. Output: `■ 21 days after shipment date` thay vì `'' 21 days...`. Quality score tick lên **9.5/10** sau fix. Commit `a818e47`.
+- [x] **Fix presentation period checkbox — split-run Wingdings detection (2026-04-30)** — Root cause: "21 days after shipment date" bị tách thành 8 runs riêng biệt trong DOCX template, `_select_checkbox()` dùng exact per-run text match → không tìm được. Fix: `_fill_presentation_period()` thay vì gọi `_select_checkbox_in_cell()`, trực tiếp replace Run 0 (Wingdings char) trong paragraph đầu tiên của cell. Output: `■ 21 days after shipment date` thay vì `'' 21 days...`. Quality score tick lên **9.5/10** sau fix. Commit `a818e47`.
+- [x] **Tạo lại output + ETE evidence ete-run-004.json (2026-04-30)** — Pipeline chạy lại sau tất cả fixes; `data/outputs/LC-Application-contract.docx` (27.5 KB); `ete-evidence/ete-run-004.json`; **13/13 DOCX checks pass** (thêm `presentation_period_checked`); 9.5/10, 4.5s, 0 retries. 35 unit tests + 2 ETE tests đều PASS.
 
 ## Đang làm / TODO
 
@@ -209,7 +210,7 @@
 ## Notes — LC Application Agent (current, 2026-04-30)
 
 - **Git history**: 1 commit duy nhất `4221dc8 v1 code` (2026-04-30). Không còn secrets trong history. Old code: `reference/`
-- **ETE evidence (latest)**: `ete-evidence/ete-run-003.json` — 9.2/10, 4.7s, **12/12 DOCX checks pass**. Checkboxes: `■ Irrevocable`, `■ SWIFT`. Dates: `28/02/2025` / `31/01/2025`. Issuing bank: Vietcombank (BFTVVNVX).
+- **ETE evidence (latest)**: `ete-evidence/ete-run-004.json` — 9.5/10, 4.5s, **13/13 DOCX checks pass**. Checkboxes: `■ Irrevocable`, `■ SWIFT`, `■ 21 days after shipment date`. Dates: `28/02/2025` / `31/01/2025`. Issuing bank: Vietcombank (BFTVVNVX).
 - **Wingdings checkbox quirk**: Template dùng Wingdings `` (U+F06F) cho unchecked, không phải `□` (U+25A1). Fill bằng `■` (U+25A0). Xem `src/utils/docx_filler.py:_select_checkbox()`. **Split-run trap**: "21 days after shipment date" tách thành 8 runs → `_select_checkbox` không match được → `_fill_presentation_period` dùng Run-0 direct replace thay vì text search.
 - **Quality score**: 9.5/10 (2026-04-29, sau fix presentation period). completeness=10.0, compliance=9.5. Không retry.
 - **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM, Meta). `get_judge_llm()` → `qwen/qwen3-32b` (6K TPM, Alibaba, max_tokens=2048). `gpt-oss-20b` broken (trả empty response) — đã bỏ. qwen3-32b emits `<think>` blocks, handled bởi `strip_llm_json()` + `json_repair` fallback.
