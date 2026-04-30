@@ -197,6 +197,7 @@
   6. Insurance: `"Institute Cargo Clauses (A) — All Risks, blank endorsed"` (UCP600 Art.28)
   7. Judge LLM: `gpt-oss-20b` (broken, trả empty) → `qwen/qwen3-32b` (Alibaba, cross-vendor)
   8. `json_repair` fallback cho truncated JSON từ qwen3-32b `<think>` blocks
+- [x] **Tạo lại output và ETE evidence mới (2026-04-30)** — `data/outputs/ete/LC-Application-contract.docx` (27.5 KB); `ete-evidence/ete-run-003.json`; **12/12 DOCX checks pass**; 9.2/10, 4.7s, 0 retries.
 
 ## Đang làm / TODO
 
@@ -207,7 +208,7 @@
 ## Notes — LC Application Agent (current, 2026-04-30)
 
 - **Git history**: 1 commit duy nhất `4221dc8 v1 code` (2026-04-30). Không còn secrets trong history. Old code: `reference/`
-- **ETE evidence**: `ete-evidence/ete-run-002.json` — 7.5/10, 4.1s, 11/11 DOCX checks pass. Checkboxes: `■ Irrevocable`, `■ Telex/SWIFT`. Insurance cert: 110%, ICC A all risks.
+- **ETE evidence (latest)**: `ete-evidence/ete-run-003.json` — 9.2/10, 4.7s, **12/12 DOCX checks pass**. Checkboxes: `■ Irrevocable`, `■ SWIFT`. Dates: `28/02/2025` / `31/01/2025`. Issuing bank: Vietcombank (BFTVVNVX).
 - **Wingdings checkbox quirk**: Template dùng Wingdings `` (U+F06F) cho unchecked, không phải `□` (U+25A1). Fill bằng `■` (U+25A0). Xem `src/utils/docx_filler.py:_select_checkbox()`.
 - **Quality score**: 9.2/10 (2026-04-30). completeness=10.0, compliance=9.0. Không retry.
 - **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM, Meta). `get_judge_llm()` → `qwen/qwen3-32b` (6K TPM, Alibaba, max_tokens=2048). `gpt-oss-20b` broken (trả empty response) — đã bỏ. qwen3-32b emits `<think>` blocks, handled bởi `strip_llm_json()` + `json_repair` fallback.
