@@ -220,6 +220,11 @@
 
 ## Đang làm / TODO
 
+- [ ] **Refactor multi-bank support** — Chi tiết: `plans/refactor-multi-bank.md`. 9 phases:
+  - Phase 1+2 (song song): thêm constants + `get_bank_template_path/get_bank_output_dir/slugify_company` vào `src/config.py`; di chuyển template → `data/templates/docx/vietcombank/`
+  - Phase 3+6 (song song): thêm `bank`/`company_slug` vào `LCAgentState`; xóa hardcoded Vietcombank defaults trong `lc_application.py` + `lc_rules_validator.py`
+  - Phase 4+5: thêm param `bank` vào `run_lc_application()`; cập nhật `fill_node` dùng `get_bank_template_path(bank)`
+  - Phase 7+8: cập nhật unit tests; thêm `test_ete_explicit_bank_vcb`; ghi `ete-run-008.json`
 - [ ] **Demo video** — Quay 5–10 phút: architecture → live run (`run_lc_application`) → show output DOCX (checkboxes ■, insurance cert CIF) → limitations (rate limits, UCP600 subset)
 - [ ] **ETE với hợp đồng khác loại** — thêm test case FOB (không cần insurance) và CIP để verify rule engine đúng cho cả 3 Incoterms có/không có insurance
 - [ ] **Evaluation accuracy** — so sánh field output vs contract gốc: applicant, beneficiary, amount, expiry_date, incoterms
