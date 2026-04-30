@@ -231,6 +231,13 @@
   - Phase 8: `test_ete.py` (thêm `test_ete_multi_bank_vcb`), `ete-evidence/ete-run-008.json`
   - **17 unit tests PASS** + ETE multi-bank PASS. Output path: `data/outputs/vietcombank/{company_slug}/LC-Application-contract.docx`
 
+## Đã hoàn thành — Docs + CLI update (2026-04-30)
+
+- [x] **Rewrite README.md** — hoàn toàn cho LC Application Agent: tổng quan, kiến trúc 4 node, cài đặt, CLI/Python API, cấu trúc dự án, LLM models, knowledge base, multi-bank support, notes
+- [x] **Rewrite README.en.md** — bản tiếng Anh đầy đủ khớp với README.md mới
+- [x] **Update design-document.md** — sửa model names đúng (llama-3.3-70b extract, qwen3-32b judge), thêm section Multi-bank support, thêm config helpers vào tool inventory, cập nhật limitations
+- [x] **Add `--bank` CLI flag** (`src/main.py`) — forward sang `run_lc_application(bank=...)`
+
 ## Đang làm / TODO
 - [ ] **Demo video** — Quay 5–10 phút: architecture → live run (`run_lc_application`) → show output DOCX (checkboxes ■, insurance cert CIF) → limitations (rate limits, UCP600 subset)
 - [ ] **ETE với hợp đồng khác loại** — thêm test case FOB (không cần insurance) và CIP để verify rule engine đúng cho cả 3 Incoterms có/không có insurance
