@@ -1,0 +1,27 @@
+{
+  "run_date": "2026-04-30",
+  "run_id": "492b9304-8807-4c2e-85c0-12c94246dbcc",
+  "quality_score": 9.5,
+  "completeness": 10.0,
+  "compliance": 10.0,
+  "current_step": "filled",
+  "elapsed_s": 8.6,
+  "retries": 0,
+  "output_docx": "data/outputs/ete/LC-Application-contract.docx",
+  "output_size_kb": 26.9,
+  "checkbox_char": "U+F0FE (Wingdings filled box)",
+  "docx_checked_runs": 51,
+  "docx_unchecked_runs": 70,
+  "all_checks_pass": true,
+  "judge_model": "qwen/qwen3-32b",
+  "extraction_model": "llama-3.3-70b-versatile",
+  "date_format": "dd/mm/yyyy",
+  "issuing_bank": "Vietcombank (BFTVVNVX)",
+  "presentation_period": " 21 days after shipment date",
+  "top_issues": [
+    "UCP600 Art.20: 'shipped on board' could be more explicit in B/L wording",
+    "Insurance: ICC(A) clause alignment with CIF requirements (minor)",
+    "Inspection certificate included as optional — acceptable under CIF"
+  ],
+  "improvements_vs_prev": "ete-run-006 → ete-run-007: fix _CHECKED char U+25A0→U+F0FE (Wingdings PUA). Checkboxes now render correctly in Word. 51 ticked runs confirmed."
+}

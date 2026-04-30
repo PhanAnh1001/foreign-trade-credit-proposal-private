@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-04-29T18:58:12",
+  "pipeline": {
+    "input": "data/sample/contract.txt",
+    "output": "data/outputs/ete/LC-Application-contract.docx",
+    "quality_score": 7.5,
+    "step": "filled",
+    "elapsed_s": 4.1,
+    "retries": 0
+  },
+  "extracted_fields": {
+    "applicant_name": "Viet Nam Technology Import-Export Joint Stock Company",
+    "beneficiary_name": "Shenzhen Advanced Electronics Co., Ltd.",
+    "currency": "USD",
+    "amount": "450000.00",
+    "incoterms": "CIF",
+    "incoterms_version": "2020",
+    "port_of_loading": "Shekou Port, Shenzhen, Guangdong, China",
+    "port_of_discharge": "Cat Lai Port, Ho Chi Minh City, Vietnam",
+    "expiry_date": "25/02/28",
+    "latest_shipment_date": "25/01/31",
+    "draft_type": "Sight",
+    "beneficiary_bank_bic": "BKCHCNBJ510",
+    "contract_number": "VN-CN-2024-001"
+  },
+  "rule_engine": {
+    "ucp600_applied": true,
+    "incoterms_applied": true,
+    "isbp821_applied": true,
+    "validation_warnings": 0,
+    "compliance_notes": 7,
+    "insurance_auto_added_for_cif": true,
+    "presentation_period_ucp600_default_21_days": true
+  },
+  "docx_verification": {
+    "applicant_name_in_docx": true,
+    "currency_in_docx": true,
+    "amount_in_docx": true,
+    "irrevocable_checkbox_checked": true,
+    "swift_checkbox_checked": true,
+    "beneficiary_bank_in_docx": true,
+    "bic_in_docx": true,
+    "goods_in_docx": true,
+    "insurance_in_docx": true,
+    "expiry_date_in_docx": true,
+    "shipment_date_in_docx": true,
+    "all_checks_pass": true
+  },
+  "test_results": {
+    "unit_tests_passed": 35,
+    "ete_tests_passed": 2,
+    "total_passed": 37,
+    "failed": 0
+  }
+}
