@@ -65,7 +65,7 @@ Your task is to extract structured LC (Letter of Credit) application data from a
 CRITICAL RULES:
 1. ONLY extract information explicitly stated in the contract. Do NOT infer or fabricate.
 2. If a field is not in the contract, set it to null.
-3. For dates, convert to yy/mm/dd format (e.g., "January 31, 2025" → "25/01/31").
+3. For dates, convert to dd/mm/yyyy format (e.g., "January 31, 2025" → "31/01/2025").
 4. For currency amounts, extract only the numeric value as a string (e.g., "450000.00").
 5. For Incoterms, extract the term code (e.g., "CIF") and version separately.
 6. The amount_in_words should be in uppercase English (e.g., "SAY US DOLLARS FOUR HUNDRED FIFTY THOUSAND ONLY").
@@ -88,9 +88,9 @@ Return ONLY a JSON object with these exact keys (null for missing fields):
   "amount": numeric string or null,
   "amount_in_words": uppercase string or null,
   "amount_tolerance": "0" or other percentage string,
-  "expiry_date": "yy/mm/dd" or null,
+  "expiry_date": "dd/mm/yyyy" or null,
   "expiry_place": string or null,
-  "latest_shipment_date": "yy/mm/dd" or null,
+  "latest_shipment_date": "dd/mm/yyyy" or null,
   "incoterms": "FOB" or "CIF" or "CFR" or "EXW" or "FCA" or "CPT" or "CIP" or other or null,
   "incoterms_version": "2000" or "2010" or "2020" or null,
   "named_port": string or null,
