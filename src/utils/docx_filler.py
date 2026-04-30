@@ -60,7 +60,9 @@ def _replace_in_doc(doc: Document, old: str, new: str) -> bool:
 # The template uses Wingdings font with  (open square) for unchecked boxes.
 # We also handle plain Unicode □ (U+25A1) as a fallback.
 _UNCHECKED = frozenset(['', '□', '◻'])
-_CHECKED = '■'  # U+25A0 Black Square — universally supported
+# Wingdings PUA: U+F06F = open box (unchecked), U+F0FE = filled box (checked).
+# U+25A0 (■) is standard Unicode and renders incorrectly with Wingdings font.
+_CHECKED = ''
 
 
 def _check_run0_in_para(para) -> bool:
