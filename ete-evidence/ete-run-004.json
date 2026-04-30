@@ -1,0 +1,39 @@
+{
+  "run_date": "2026-04-30",
+  "run_id": "ete-run-004",
+  "quality_score": 9.5,
+  "completeness": 10.0,
+  "compliance": 9.5,
+  "current_step": "filled",
+  "elapsed_s": 4.5,
+  "retries": 0,
+  "output_docx": "data/outputs/LC-Application-contract.docx",
+  "output_size_kb": 27.5,
+  "docx_checks": {
+    "applicant": true,
+    "beneficiary": true,
+    "currency_amount": true,
+    "irrevocable": true,
+    "swift": true,
+    "bank_of_china": true,
+    "bic": true,
+    "goods": true,
+    "insurance_110": true,
+    "expiry_date": true,
+    "shipment_date": true,
+    "vietcombank": true,
+    "presentation_period_checked": true
+  },
+  "all_checks_pass": true,
+  "judge_model": "qwen/qwen3-32b",
+  "extraction_model": "llama-3.3-70b-versatile",
+  "date_format": "dd/mm/yyyy",
+  "issuing_bank": "Vietcombank (BFTVVNVX)",
+  "presentation_period": "■ 21 days after shipment date",
+  "top_issues": [
+    "Inspection certificate: copy vs original (UCP600 Art.14(b), minor)",
+    "B/L: 'Shipped on Board' explicit wording (UCP600 Art.20, minor)",
+    "Presentation period: calendar vs banking days (minor)"
+  ],
+  "improvements_vs_prev": "9.2 → 9.5 (+0.3): presentation period checkbox fix (split-run Wingdings)"
+}
