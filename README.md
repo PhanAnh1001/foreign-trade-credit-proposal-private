@@ -134,7 +134,7 @@ tests/
 | Node | Model | TPM | Mục đích |
 |------|-------|-----|----------|
 | `extract_node` | `llama-3.3-70b-versatile` | 12K | Trích xuất trường từ hợp đồng (~7K tokens/call) |
-| `quality_review_node` | `qwen/qwen3-32b` | 6K | LLM-as-Judge chấm điểm; khác vendor so với extractor |
+| `quality_review_node` | `openai/gpt-oss-20b` | 8K | LLM-as-Judge chấm điểm; cross-vendor (OpenAI) so với extractor (Meta) |
 
 `validate_node` và `fill_node` không dùng LLM (Python thuần).
 

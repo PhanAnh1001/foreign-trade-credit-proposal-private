@@ -134,7 +134,7 @@ tests/
 | Node | Model | TPM | Purpose |
 |------|-------|-----|---------|
 | `extract_node` | `llama-3.3-70b-versatile` | 12K | Contract field extraction (~7K tokens/call) |
-| `quality_review_node` | `qwen/qwen3-32b` | 6K | LLM-as-Judge scoring; cross-vendor from extractor |
+| `quality_review_node` | `openai/gpt-oss-20b` | 8K | LLM-as-Judge scoring; cross-vendor (OpenAI) from extractor (Meta) |
 
 `validate_node` and `fill_node` use no LLM (pure Python).
 

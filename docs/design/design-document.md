@@ -15,7 +15,7 @@ Contract (TXT/PDF/DOCX)
           │
     [validate_node]       ← Pure Python: UCP600 + ISBP821 + Incoterms rules
           │
-    [quality_review_node] ← LLM-as-Judge: qwen/qwen3-32b
+    [quality_review_node] ← LLM-as-Judge: openai/gpt-oss-20b
           │
      ┌────┴────┐
      │  score? │
@@ -49,9 +49,9 @@ Contract (TXT/PDF/DOCX)
 
 | Node | Action | Model | Tokens/call |
 |---|---|---|---|
-| `extract_node` | Contract → structured JSON | llama-3.3-70b-versatile | ~7K |
+| `extract_node` | Contract → structured JSON | llama-3.3-70b-versatile | ~5K |
 | `validate_node` | Rules enforcement | (none — pure Python) | 0 |
-| `quality_review_node` | Score 0–10 + feedback | qwen/qwen3-32b | ~3K |
+| `quality_review_node` | Score 0–10 + feedback | openai/gpt-oss-20b | ~3K |
 | `fill_node` | JSON + bank slug → bank-specific DOCX | (none — python-docx) | 0 |
 
 ## 5. Key Design Decisions

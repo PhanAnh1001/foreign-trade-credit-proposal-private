@@ -231,12 +231,14 @@
   - Phase 8: `test_ete.py` (thêm `test_ete_multi_bank_vcb`), `ete-evidence/ete-run-008.json`
   - **17 unit tests PASS** + ETE multi-bank PASS. Output path: `data/outputs/vietcombank/{company_slug}/LC-Application-contract.docx`
 
-## Đã hoàn thành — Docs + CLI update (2026-04-30)
+## Đã hoàn thành — Docs + CLI + model fix (2026-04-30)
 
 - [x] **Rewrite README.md** — hoàn toàn cho LC Application Agent: tổng quan, kiến trúc 4 node, cài đặt, CLI/Python API, cấu trúc dự án, LLM models, knowledge base, multi-bank support, notes
 - [x] **Rewrite README.en.md** — bản tiếng Anh đầy đủ khớp với README.md mới
-- [x] **Update design-document.md** — sửa model names đúng (llama-3.3-70b extract, qwen3-32b judge), thêm section Multi-bank support, thêm config helpers vào tool inventory, cập nhật limitations
+- [x] **Update design-document.md** — thêm section Multi-bank support, thêm config helpers vào tool inventory, cập nhật model names (llama-3.3-70b extraction, gpt-oss-20b judge), cập nhật limitations
 - [x] **Add `--bank` CLI flag** (`src/main.py`) — forward sang `run_lc_application(bank=...)`
+- [x] **Restore `get_judge_llm()` → `openai/gpt-oss-20b`** — điều tra empty response: nguyên nhân là Groq API issue tạm thời, không phải model bug. gpt-oss-20b dùng reasoning_tokens (~520T nội bộ) + ~250T output = ~770T tổng, max_tokens=2048 an toàn. ETE PASS với gpt-oss-20b judge (score=6.5/10, correct issues identified).
+- [x] **Update CLAUDE.md rate limits** — bảng mới từ Groq: thêm llama-prompt-guard-*, gpt-oss-safeguard-20b, groq/compound/compound-mini, allam-2-7b, whisper; qwen3-32b RPM=60; ghi chú reasoning_tokens trên gpt-oss-20b
 
 ## Đang làm / TODO
 - [ ] **Demo video** — Quay 5–10 phút: architecture → live run (`run_lc_application`) → show output DOCX (checkboxes ■, insurance cert CIF) → limitations (rate limits, UCP600 subset)
@@ -249,7 +251,7 @@
 - **ETE evidence (latest)**: `ete-evidence/ete-run-008.json` — `run_id=99fc2df7`, 7.5/10, 5.0s, 0 retries. Multi-bank test: bank=vietcombank, output → `data/outputs/vietcombank/{company_slug}/`. 52 unit tests PASS + ETE test_ete_multi_bank_vcb PASS.
 - **Wingdings checkbox quirk**: Template dùng Wingdings `` (U+F06F) cho unchecked, không phải `□` (U+25A1). Fill bằng `■` (U+25A0). Xem `src/utils/docx_filler.py:_select_checkbox()`. **Split-run trap**: "21 days after shipment date" tách thành 8 runs → `_select_checkbox` không match được → `_fill_presentation_period` dùng Run-0 direct replace thay vì text search.
 - **Quality score**: 9.5/10 (2026-04-29, sau fix presentation period). completeness=10.0, compliance=9.5. Không retry.
-- **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM, Meta). `get_judge_llm()` → `qwen/qwen3-32b` (6K TPM, Alibaba, max_tokens=2048). `gpt-oss-20b` broken (trả empty response) — đã bỏ. qwen3-32b emits `<think>` blocks, handled bởi `strip_llm_json()` + `json_repair` fallback.
+- **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM, Meta). `get_judge_llm()` → `openai/gpt-oss-20b` (8K TPM, OpenAI, max_tokens=2048, **có reasoning_tokens ~520T nội bộ** + ~250T output). Cross-vendor: Meta extract ≠ OpenAI judge. gpt-oss-20b "empty response" trước đây là Groq API issue tạm thời — đã restored sau khi test lại thành công.
 - **Anti-hallucination**: LLM chỉ extract từ contract; UCP600 defaults + Incoterms insurance rules áp dụng bằng Python thuần (`lc_rules_validator.py`).
 - **Knowledge base coverage**: Thông lệ quốc tế ✅ (UCP600/ISBP821/Incoterms 2000/2010/2020). Pháp luật Việt Nam ✅ (PL Ngoại hối, NĐ 70/2014, TT NHNN 32/2013+09/2023) — 6 rules VN-01..VN-06 trong `lc_rules_validator.py`.
 - **Vietnam forex rules**: VN-01 currency≠VND, VN-02 contract_number bắt buộc, VN-03 TCTD được phép (Vietcombank ✓), VN-04 giao dịch vãng lai ✓, VN-05 nhắc ký quỹ, VN-06 hàng hóa quản lý.
