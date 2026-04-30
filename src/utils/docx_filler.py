@@ -368,13 +368,22 @@ def _fill_charges(doc: Document, data: dict) -> None:
 
 def _fill_presentation_period(doc: Document, data: dict) -> None:
     """Table 2: Presentation period."""
-    period = data.get("presentation_period", "21")
+    period = str(data.get("presentation_period") or "21")
+    # Extract leading digits so "21 days after date of shipment" → "21"
+    period_num = period.split()[0] if period else "21"
     t2 = doc.tables[2]
     cell = t2.rows[0].cells[0]
-    if period == "21":
-        _select_checkbox_in_cell(cell, "21 days after shipment date")
+    if period_num == "21":
+        # "21 days after shipment date" is fragmented across many runs so
+        # _select_checkbox can't find it by text match; replace Run 0 directly.
+        for para in cell.paragraphs:
+            if para.runs and any(c in para.runs[0].text for c in _UNCHECKED):
+                for c in _UNCHECKED:
+                    if c in para.runs[0].text:
+                        para.runs[0].text = para.runs[0].text.replace(c, _CHECKED, 1)
+                break
     else:
-        _replace_in_cell(t2.rows[0].cells[1], "Other:", f"Other: {period} days after shipment date")
+        _replace_in_cell(t2.rows[0].cells[1], "Other:", f"Other: {period_num} days after shipment date")
 
 
 def _fill_contract_reference(doc: Document, data: dict) -> None:
