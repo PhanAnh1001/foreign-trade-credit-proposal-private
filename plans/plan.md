@@ -198,6 +198,7 @@
   7. Judge LLM: `gpt-oss-20b` (broken, trả empty) → `qwen/qwen3-32b` (Alibaba, cross-vendor)
   8. `json_repair` fallback cho truncated JSON từ qwen3-32b `<think>` blocks
 - [x] **Tạo lại output và ETE evidence mới (2026-04-30)** — `data/outputs/ete/LC-Application-contract.docx` (27.5 KB); `ete-evidence/ete-run-003.json`; **12/12 DOCX checks pass**; 9.2/10, 4.7s, 0 retries.
+- [x] **Fix presentation period checkbox — split-run Wingdings detection (2026-04-29)** — Root cause: "21 days after shipment date" bị tách thành 8 runs riêng biệt trong DOCX template, `_select_checkbox()` dùng exact per-run text match → không tìm được. Fix: `_fill_presentation_period()` thay vì gọi `_select_checkbox_in_cell()`, trực tiếp replace Run 0 (Wingdings char) trong paragraph đầu tiên của cell. Output: `■ 21 days after shipment date` thay vì `'' 21 days...`. Quality score tick lên **9.5/10** sau fix. Commit `a818e47`.
 
 ## Đang làm / TODO
 
@@ -209,8 +210,8 @@
 
 - **Git history**: 1 commit duy nhất `4221dc8 v1 code` (2026-04-30). Không còn secrets trong history. Old code: `reference/`
 - **ETE evidence (latest)**: `ete-evidence/ete-run-003.json` — 9.2/10, 4.7s, **12/12 DOCX checks pass**. Checkboxes: `■ Irrevocable`, `■ SWIFT`. Dates: `28/02/2025` / `31/01/2025`. Issuing bank: Vietcombank (BFTVVNVX).
-- **Wingdings checkbox quirk**: Template dùng Wingdings `` (U+F06F) cho unchecked, không phải `□` (U+25A1). Fill bằng `■` (U+25A0). Xem `src/utils/docx_filler.py:_select_checkbox()`.
-- **Quality score**: 9.2/10 (2026-04-30). completeness=10.0, compliance=9.0. Không retry.
+- **Wingdings checkbox quirk**: Template dùng Wingdings `` (U+F06F) cho unchecked, không phải `□` (U+25A1). Fill bằng `■` (U+25A0). Xem `src/utils/docx_filler.py:_select_checkbox()`. **Split-run trap**: "21 days after shipment date" tách thành 8 runs → `_select_checkbox` không match được → `_fill_presentation_period` dùng Run-0 direct replace thay vì text search.
+- **Quality score**: 9.5/10 (2026-04-29, sau fix presentation period). completeness=10.0, compliance=9.5. Không retry.
 - **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM, Meta). `get_judge_llm()` → `qwen/qwen3-32b` (6K TPM, Alibaba, max_tokens=2048). `gpt-oss-20b` broken (trả empty response) — đã bỏ. qwen3-32b emits `<think>` blocks, handled bởi `strip_llm_json()` + `json_repair` fallback.
 - **Anti-hallucination**: LLM chỉ extract từ contract; UCP600 defaults + Incoterms insurance rules áp dụng bằng Python thuần (`lc_rules_validator.py`).
 - **Tests**: `python -m pytest tests/ --ignore=tests/test_ete.py` — 35 unit tests PASS (không cần API key). ETE: cần `GROQ_API_KEY`.
