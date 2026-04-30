@@ -1,19 +1,42 @@
-# AI Credit Proposal Agent
+# LC Application Agent
 
-Automated AI agent that generates credit appraisal memos from corporate financial statements.
+AI Agent that automatically fills an LC (Letter of Credit) application DOCX from a foreign trade contract.
 
 > Vietnamese version: [README.md](README.md)
 
-The system uses **LangGraph** to orchestrate a multi-agent pipeline with 3 main subgraphs running in parallel, a self-correction loop, and a human escalation pathway when AI confidence is insufficient:
+## Overview
 
-1. **Subgraph 1 — Company Info**: Reads a Markdown file → LLM extracts structured data (few-shot prompting)
-2. **Subgraph 2 — Sector Analysis**: Web search (Tavily) + LLM synthesizes industry assessment (Chain-of-Thought)
-3. **Subgraph 3 — Financial Analysis**: PDF extraction → financial ratio calculation (pure Python) → LLM narrative (CoT)
+The system uses **LangGraph** to orchestrate a 4-node sequential pipeline with a self-correction loop when the quality score falls below threshold:
 
-Output: 3 files saved to `data/outputs/<company>/`:
-- `credit-proposal.docx` — Credit application form pre-filled with company data (Output 1)
-- `credit-analyst-memo.docx` — Internal credit analyst memo (Output 2+3)
-- `credit-analyst-memo.md` — Full content in Markdown
+1. **extract_node** — LLM extracts structured fields from the foreign trade contract
+2. **validate_node** — Pure Python enforces UCP600, ISBP 821, Incoterms, and Vietnamese forex law rules
+3. **quality_review_node** — LLM-as-Judge scores the output (0–10); if < 7.0 → retry back to extract_node (max 1 retry)
+4. **fill_node** — python-docx fills the bank's DOCX template with validated data
+
+**Input**: foreign trade contract (TXT / PDF / DOCX)
+
+**Output**: `data/outputs/{bank}/{company_slug}/LC-Application-{contract}.docx`
+
+## Architecture
+
+```
+Contract (TXT/PDF/DOCX)
+         │
+   [extract_node]         ← LLM: llama-3.3-70b-versatile
+         │
+   [validate_node]        ← Pure Python: UCP600 + ISBP821 + Incoterms + Vietnam forex
+         │
+   [quality_review_node]  ← LLM-as-Judge: qwen/qwen3-32b
+         │
+    ┌────┴────┐
+    │  score? │
+  ≥7.0      <7.0 (retry once → extract_node)
+    │
+  [fill_node]             ← python-docx: fill bank-aware DOCX template
+         │
+  LC-Application.docx
+  data/outputs/{bank}/{company_slug}/
+```
 
 ## Setup
 
@@ -21,7 +44,6 @@ Output: 3 files saved to `data/outputs/<company>/`:
 
 - Python 3.12 (managed via [uv](https://docs.astral.sh/uv))
 - Groq API key (free at [console.groq.com](https://console.groq.com))
-- Tavily API key (free at [tavily.com](https://tavily.com)) — optional
 
 ### Installation
 
@@ -36,232 +58,121 @@ uv pip install -r requirements.txt
 
 ### Environment Configuration
 
-Create a `.env` file from `.env.example`:
+Create a `.env` file:
 
-```bash
-cp .env.example .env
-# Fill in your API keys
-```
-
-Required variables:
 ```env
-GROQ_API_KEY=your_groq_api_key_here
-TAVILY_API_KEY=your_tavily_api_key_here   # optional (fallback: LLM knowledge)
-LANGSMITH_API_KEY=your_langsmith_key      # optional, for tracing
-LANGCHAIN_TRACING_V2=false               # set true to enable LangSmith tracing
-OCR_ONLINE_DISABLED=false                # set true to skip Vision LLM OCR
+GROQ_API_KEY=your_groq_api_key_here          # required
+
+LANGSMITH_API_KEY=your_langsmith_key         # optional, for tracing
+LANGCHAIN_TRACING_V2=true                    # optional, enable LangSmith tracing
 ```
+
+> **Note**: `GROQ_API_KEY` is the only required API key. LangSmith is fully optional.
 
 ## Usage
 
-### Basic run (MST company)
+### CLI
 
 ```bash
-python -m src.main
+# Basic run
+python -m src.main --contract data/sample/contract.txt
+
+# Specify bank and output directory
+python -m src.main --contract data/sample/contract.txt --bank vietcombank --output-dir data/outputs/ete
 ```
 
-### Full options
+### Python API
 
-```bash
-python -m src.main \
-  --company mst \
-  --company-name "Cong ty Co phan Xay dung MST" \
-  --base-dir data/uploads \
-  --output-dir data/outputs/mst
+```python
+from src.agents.graph import run_lc_application
+
+state = run_lc_application("data/sample/contract.txt", bank="vietcombank")
 ```
-
-### Output
-
-After running, outputs are saved to `data/outputs/mst/`:
-- `credit-proposal.docx` — Credit application form (Output 1)
-- `credit-analyst-memo.docx` — Internal credit analyst memo (Output 2+3)
-- `credit-analyst-memo.md` — Full Markdown content
 
 ## Project Structure
 
 ```
-credit-proposal/
-├── src/
-│   ├── config.py             # Centralized path constants + env-var overrides
-│   ├── agents/
-│   │   ├── graph.py          # LangGraph graph definition + human_escalation_node
-│   │   ├── subgraph1.py      # Company info extraction node
-│   │   ├── subgraph2.py      # Sector analysis node
-│   │   ├── subgraph3.py      # Financial analysis node
-│   │   └── assembler.py      # Report assembly + quality review nodes
-│   ├── tools/
-│   │   ├── company_info.py   # read_md_company_info tool
-│   │   ├── pdf_extractor.py  # extract_pdf_financial_tables tool
-│   │   ├── ratio_calculator.py # calculate_financial_ratios tool
-│   │   ├── web_search.py     # web_search_industry tool
-│   │   └── multi_layer_verifier.py # 4-layer verification (syntax/domain/regulatory/reasonableness)
-│   ├── models/
-│   │   ├── state.py          # AgentState TypedDict
-│   │   ├── company.py        # CompanyInfo Pydantic model
-│   │   ├── financial.py      # FinancialData Pydantic models
-│   │   └── verification.py   # ClaimVerification + VerificationSummary Pydantic models
-│   ├── knowledge/
-│   │   ├── loader.py         # YAML loader with in-process cache + sector normalization
-│   │   └── rules/
-│   │       ├── financial_thresholds.yaml  # Ratio benchmarks by industry
-│   │       └── reasonableness_bounds.yaml # YoY outlier + balance sheet tolerance
-│   ├── utils/
-│   │   ├── llm.py            # LLM factory (Groq)
-│   │   ├── audit.py          # Structured JSONL audit trail
-│   │   ├── checkpoint.py     # Per-node JSON checkpoints
-│   │   ├── circuit_breaker.py # Per-subgraph abort checks
-│   │   ├── validation.py     # Cross-agent validation gates (pure Python)
-│   │   ├── ocr_cache.py      # OCR result cache (file-based)
-│   │   ├── docx_template.py  # DOCX template renderer
-│   │   └── docx_converter.py # Markdown → DOCX converter
-│   └── main.py               # CLI entry point
-├── data/                      # Runtime data (gitignored except uploads + templates)
-│   ├── uploads/{company}/     # Input files: general-information/md + financial-statements/pdf
-│   ├── outputs/{company}/     # AI agent outputs (gitignored)
-│   ├── cache/ocr/             # OCR result cache (gitignored)
-│   ├── checkpoints/           # Per-run node checkpoints (gitignored)
-│   └── templates/             # Reference form templates (docx/md/pdf)
-├── docs/
-│   ├── design/                # Agent design document
-│   └── testing/               # Step-by-step test guides (01–06)
-└── requirements.txt
+src/
+  config.py              # BANK_VCB/BIDV/VIETINBANK constants, get_bank_template_path(),
+                         #   slugify_company(), get_bank_output_dir()
+  agents/
+    graph.py             # LangGraph pipeline + run_lc_application()
+    node_extract.py      # extract_node: LLM field extraction
+    node_validate.py     # validate_node: rule engine
+    node_quality.py      # quality_review_node: LLM-as-Judge
+    node_fill.py         # fill_node: DOCX template filling
+  tools/
+    contract_extractor.py  # extract_contract_text + extract_lc_fields_from_contract
+    lc_rules_validator.py  # UCP600 / ISBP821 / Incoterms / Vietnam forex rules
+  models/
+    state.py             # LCAgentState TypedDict
+    lc_application.py    # LCApplicationData + DocumentRequirements Pydantic models
+  knowledge/
+    loader.py            # YAML knowledge loader
+    rules/               # ucp600_rules.yaml, isbp821_rules.yaml,
+                         #   incoterms_rules.yaml, vietnam_forex_law.yaml
+  utils/
+    docx_filler.py       # Wingdings checkbox filling, run-level text replacement
+    llm.py               # get_extraction_llm(), get_judge_llm()
+    logger.py            # colored logging, @timed_node decorator, LangSmith tracing
+  main.py                # CLI entry point
+data/
+  sample/contract.txt    # Sample contract (VN-CN-2024-001, USD 450K, CIF)
+  templates/docx/
+    vietcombank/         # Application-for-LC-issuance.docx
+  outputs/{bank}/{slug}/ # Generated DOCX files (gitignored)
+tests/
+  test_config.py         # Multi-bank config tests (8 tests)
+  test_docx_filler.py    # DOCX filling tests
+  test_models.py         # Pydantic model tests
+  test_lc_rules_validator.py  # Rule engine tests (44 tests)
+  test_ete.py            # End-to-end tests (requires GROQ_API_KEY)
 ```
 
-## Agent Architecture
+## LLM Models (Groq)
 
-```
-User Input (PDF + MD)
-       │
-extract_company_info          ← Subgraph 1 (circuit breaker + validation gate)
-   /            \
-analyze_sector  analyze_financial   ← Subgraph 2 & 3 run in parallel (fan-out)
-   \            /                     (each has its own circuit breaker + validation)
-  assemble_report              ← fan-in + multi-layer verifier (4 layers)
-       │
-  quality_review               ← LLM-as-Judge + per-claim confidence scoring
-   /    |    \
- END  retry  human_escalation  ← max 1 retry; escalate if score < 7 after retry
-                                   or low-confidence claims > 3
-```
+| Node | Model | TPM | Purpose |
+|------|-------|-----|---------|
+| `extract_node` | `llama-3.3-70b-versatile` | 12K | Contract field extraction (~7K tokens/call) |
+| `quality_review_node` | `qwen/qwen3-32b` | 6K | LLM-as-Judge scoring; cross-vendor from extractor |
 
-**Parallel fan-out**: `analyze_sector` and `analyze_financial` are independent and run concurrently.
-State fields written by each node are disjoint (`section_2_sector` vs `section_3_financial`).
-Shared fields use `Annotated` reducers to prevent `InvalidUpdateError`:
-- `errors`, `messages` — `Annotated[list, add]`: parallel branches append safely
-- `current_step` — `Annotated[str, lambda a, b: b]`: last-write-wins, since both nodes write this field in the same step
+`validate_node` and `fill_node` use no LLM (pure Python).
 
-**Self-correction loop**: `quality_review_node` scores each output section (0–10).
-If the overall score is below 7, `route_after_review()` re-runs the weakest node with `quality_feedback` injected into its prompt — making the retry targeted rather than blind. Maximum 1 retry.
+## Knowledge Base (deterministic, no LLM)
 
-**Human escalation**: If the score remains below 7 after a retry, or more than 3 low-confidence claims are detected by the verifier, the pipeline routes to `human_escalation` — generating a structured Markdown report that lists unresolved issues for a credit analyst to handle manually.
+| Source | Key Rules |
+|--------|-----------|
+| **UCP600** | Irrevocable by default (Art.3), 21-day presentation period (Art.14c), clean B/L (Art.27) |
+| **ISBP 821** | Invoice description match, B/L full set, documents in English |
+| **Incoterms 2000/2010/2020** | CIF/CIP → insurance certificate (min 110%, ICC A); FOB → B/L freight collect |
+| **Vietnam forex law** | VN-01 currency ≠ VND (Decree 70/2014 Art.4), VN-02 contract number required (Art.11), VN-03 issuing bank NHNN-authorized (Art.6), VN-04 import LC = current account transaction ✓, VN-05 margin deposit reminder, VN-06 regulated goods check |
 
-### Tools
+## Multi-Bank Support
 
-| Tool | Description |
-|------|-------------|
-| `read_md_company_info` | Reads MD file → LLM extracts CompanyInfo (name, tax ID, address, board, shareholders…) |
-| `extract_pdf_financial_tables` | PDF → PyMuPDF text / Vision LLM OCR → LLM parse → FinancialStatement dict |
-| `calculate_financial_ratios` | Pure Python calculation of ROE, ROA, D/E, Current Ratio, Profit Margin, Revenue Growth |
-| `web_search_industry` | Tavily search → LLM synthesizes industry assessment (fallback: LLM knowledge) |
+Add a new bank by placing its template at `data/templates/docx/{bank_slug}/Application-for-LC-issuance.docx`, then pass `bank={bank_slug}` to `run_lc_application()`. The output directory is automatically `data/outputs/{bank_slug}/{company_slug}/`.
 
-### Memory & State
+Bank constants defined in `src/config.py`:
 
-`AgentState` TypedDict serves as short-term memory within a single session:
-- **Run identity**: `run_id` (UUID4) — groups all audit events and checkpoints
-- **Input**: `company_name`, `md_company_info_path`, `pdf_dir_path`, `output_dir`
-- **Intermediate**: `company_info`, `sector_info`, `financial_data`
-- **Sections**: `section_1_company`, `section_2_sector`, `section_3_financial`
-- **Output**: `final_report_md`, `final_report_docx_path`, `final_report_memo_docx_path`
-- **Quality loop**: `retry_count`, `quality_review_result`, `quality_feedback`
-- **Verification**: `claim_verifications` (per-claim confidence), `verification_summary` (aggregate)
-- **Escalation**: `escalation_report` (Markdown summary when AI escalates to human)
-- **Control**: `errors` (Annotated `add`), `messages` (Annotated `add`), `current_step` (Annotated last-write-wins)
-
-**Persistent state across sessions**:
-- OCR cache: `data/cache/ocr/{company}/{year}/` — avoids re-OCRing PDFs on subsequent runs
-- Node checkpoints: `data/checkpoints/{run_id}/` — JSON snapshots after each key node
-- Audit trail: `logs/audit_YYYYMMDD.jsonl` — structured events keyed by `run_id`
-
-### PDF Extraction Pipeline
-
-Financial statement PDFs are often scanned image files. The pipeline processes them in priority order:
-
-0. **PDF type detection** — samples 5 representative pages to classify as `"text"` / `"image"` / `"mixed"`:
-   - `"image"` PDFs → skip steps 1–2, go directly to Vision OCR (saves time)
-   - `"text"` or `"mixed"` → try sequentially from step 1
-1. **PyMuPDF text** — fast, for PDFs with a text layer
-2. **markitdown** — broad format support
-3. **TOC-guided Vision LLM OCR** — for scanned PDFs:
-   - **Image preprocessing** before each page: grayscale → auto-contrast → contrast ×2.0 → sharpness ×2.5 → UnsharpMask; improves OCR on blurry or low-quality scans
-   - Renders at zoom 2.0× (~144 DPI) to preserve detail in small figures
-   - Reads table of contents (pages 2–3) to locate balance sheet / income statement / cash flow start pages
-   - OCRs only the relevant pages, not the full document
-   - Results cached at `data/cache/ocr/`
-4. **pdfplumber** — final fallback
-
-### LLM Models (Groq)
-
-Each node uses a dedicated model — no model is shared across two functions:
-
-| Node / Task | Model | TPM | RPD | Reason |
-|-------------|-------|-----|-----|--------|
-| Subgraph 1 — Company info extraction | `qwen/qwen3-32b` | 6K | 1K | Separate Qwen bucket; handles JSON extraction well; sequential → no TPM contention |
-| Subgraph 2 — Sector synthesis | `openai/gpt-oss-120b` | 8K | 1K | Separate OpenAI bucket from SG3; max_tokens=4096 (~6.4K total, fits 120b window) |
-| Subgraph 3 — Financial parse + narrative | `llama-3.3-70b-versatile` | **12K** | 1K | Highest TPM → heaviest task (~79K tokens/run); 128K context; separate Meta bucket |
-| PDF — TOC parsing | `llama-3.1-8b-instant` | 6K | 14.4K | Small input (≤1K chars), high RPD — preserves quota of 1K-RPD models |
-| PDF — Vision OCR | `llama-4-scout-17b-16e` | 30K | 1K | Only model with image input support; OCR cache reduces RPD usage |
-| Quality review (LLM-as-Judge) | `openai/gpt-oss-20b` | 8K | 1K | max_tokens=2048; QR input ~1.3K → 3.3K total, fits ~8K window; OpenAI vendor |
-
-> **Allocation principle**: Each function uses exactly one dedicated model. Highest TPM (`llama-3.3-70b`, 12K) goes to the heaviest task (SG3, ~79K tokens/run). SG2 and SG3 run in parallel using separate TPM buckets (OpenAI vs Meta) to avoid 429 rate limit errors.
->
-> **RPD strategy**: `llama-3.1-8b-instant` (14.4K RPD) handles TOC parsing to preserve the 1K-RPD quota of larger models. All 1K-RPD models are sufficient for demo usage (≤10 runs/day).
->
-> **LLM-as-Judge independence**: `openai/gpt-oss-20b` is the same vendor as SG2 (`gpt-oss-120b`) but a different model size; fully independent from SG1 (Qwen) and SG3 (Meta).
-
-### Prompting Techniques
-
-- **Chain-of-Thought (CoT)**: Financial and sector analysis nodes require the LLM to reason through 5 explicit steps before drawing conclusions
-- **Few-shot examples**: `company_info.py` provides one complete input→output JSON example for LLM format calibration
-- **Quality feedback injection**: On retry, the top-3 issues identified by the reviewer are filtered to match the section being retried and injected into the re-run node's prompt
-
-## Financial Ratios Calculated
-
-| Ratio | Formula |
-|-------|---------|
-| Current Ratio | Current Assets / Current Liabilities |
-| Quick Ratio | (Current Assets − Inventory) / Current Liabilities |
-| D/E Ratio | Total Debt / Equity |
-| D/A Ratio | Total Debt / Total Assets |
-| ROE | Net Income / Equity × 100% |
-| ROA | Net Income / Total Assets × 100% |
-| Net Profit Margin | Net Income / Net Revenue × 100% |
-| Gross Profit Margin | Gross Profit / Net Revenue × 100% |
-| Revenue Growth YoY | (Revenue Year N − Revenue Year N-1) / Revenue Year N-1 × 100% |
-
-## Guardrails & Quality Controls
-
-| Layer | Mechanism | When |
-|-------|-----------|------|
-| **Circuit breaker** | Checks `total_assets=0`, sector text < 200 chars, empty `company_name` | After each subgraph |
-| **Validation gate** | Pure Python: tax code regex, shareholder percentage, established date not in future | After extract/analyze |
-| **Domain knowledge** | YAML thresholds (current_ratio, D/E, ROE by industry sector) | Inside multi-layer verifier |
-| **Multi-layer verifier** | 4 layers: syntax → domain → regulatory → reasonableness | Inside assemble_report |
-| **LLM-as-Judge** | `gpt-oss-20b` (OpenAI) scores output from SG1 (Qwen) + SG3 (Meta) | After assemble_report |
-| **Per-claim confidence** | `ClaimVerification` model: confidence 0.0–1.0 per claim type | Inside quality_review |
-| **Human escalation** | Structured Markdown report when AI confidence is insufficient | When score < 7 after retry or low-confidence claims > 3 |
-
-## Notes
-
-- **Security**: Never commit API keys to git. Use the `.env` file (already in `.gitignore`)
-- **Cost**: Groq free tier is sufficient for demo purposes (14,400 requests/day). Tavily free tier: 1,000 requests/month
-- **Hallucination prevention**: Financial figures are extracted directly from the source PDFs and calculated in pure Python. The LLM is only allowed to use numbers from the provided context — no fabrication
-- **Scanned PDFs**: If the PDF is a scanned image, the Groq vision model is required (controlled by `OCR_ONLINE_DISABLED` env flag)
-- **Audit trail**: All pipeline events are written to `logs/audit_YYYYMMDD.jsonl` keyed by `run_id` for debugging and review
+| Constant | Value |
+|----------|-------|
+| `BANK_VCB` | `"vietcombank"` (default) |
+| `BANK_BIDV` | `"bidv"` |
+| `BANK_VIETINBANK` | `"vietinbank"` |
 
 ## Running Tests
 
 ```bash
-pytest tests/ -v
+# Unit tests (no API key needed)
+python -m pytest tests/ --ignore=tests/test_ete.py -v   # 52 tests
+
+# End-to-end tests (requires GROQ_API_KEY)
+python -m pytest tests/test_ete.py -v
 ```
 
-See step-by-step test guides at [`docs/testing/`](docs/testing/README.md).
+## Notes
+
+- **GROQ_API_KEY** is the only required API key
+- **Anti-hallucination**: The LLM only extracts information explicitly stated in the contract — no fabrication
+- **Rule engine**: UCP600 and Incoterms rules are enforced in pure Python, not by the LLM
+- **Wingdings checkbox**: The template uses U+F06F (unchecked) / U+F0FE (checked) — **not** standard Unicode □/■
+- **Security**: Never commit `.env` or API keys to git (already in `.gitignore`)

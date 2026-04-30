@@ -15,9 +15,14 @@ def main() -> None:
         help="Path to the foreign trade contract (TXT, PDF, or DOCX)",
     )
     parser.add_argument(
+        "--bank",
+        default=None,
+        help="Bank slug (e.g. 'vietcombank'). Determines template and output directory. Defaults to vietcombank.",
+    )
+    parser.add_argument(
         "--output-dir",
         default=None,
-        help="Output directory for the filled LC DOCX (default: data/outputs/default)",
+        help="Override output directory for the filled LC DOCX. Defaults to data/outputs/{bank}/{company}/.",
     )
     args = parser.parse_args()
 
@@ -30,6 +35,7 @@ def main() -> None:
 
     final_state = run_lc_application(
         contract_path=contract_path,
+        bank=args.bank,
         output_dir=args.output_dir,
     )
 
