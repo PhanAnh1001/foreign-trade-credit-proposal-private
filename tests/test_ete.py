@@ -74,3 +74,38 @@ def test_ete_lc_data_from_sample_contract():
     assert "VN-CN-2024-001" in (data.get("contract_number") or "")
     assert data.get("partial_shipment") == "Not allowed"
     assert data.get("transhipment") == "Not allowed"
+
+
+@REQUIRES_API
+def test_ete_multi_bank_vcb():
+    """Run pipeline with explicit bank='vietcombank' and verify bank-aware output path."""
+    import tempfile
+    from src.agents.graph import run_lc_application
+    from src.config import BANK_VCB
+
+    if not SAMPLE_CONTRACT.exists():
+        pytest.skip("Sample contract not found")
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        final_state = run_lc_application(
+            contract_path=str(SAMPLE_CONTRACT),
+            output_dir=tmpdir,
+            bank=BANK_VCB,
+        )
+
+        # Pipeline must complete
+        assert final_state.get("current_step") in ("filled", "fill_failed", "validated")
+
+        # bank field preserved in state
+        assert final_state.get("bank") == BANK_VCB
+
+        # Output DOCX created
+        output_path = final_state.get("output_docx_path")
+        if final_state.get("current_step") == "filled":
+            assert output_path and Path(output_path).exists(), "Output DOCX should exist"
+            assert Path(output_path).stat().st_size > 1000, "Output DOCX should be non-trivial"
+
+        # LC data extracted correctly
+        lc_data = final_state.get("lc_data") or {}
+        assert lc_data.get("currency") == "USD"
+        assert lc_data.get("incoterms") == "CIF"

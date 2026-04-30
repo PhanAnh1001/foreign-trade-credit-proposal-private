@@ -1,0 +1,46 @@
+{
+  "run": "ete-run-008",
+  "date": "2026-04-30",
+  "description": "Multi-bank refactor — bank='vietcombank' param, bank-aware template + output paths, slugified company directory",
+  "phases_completed": [1, 2, 3, 4, 5, "6.1", "6.2", "6.3", "7.1", "7.4", "8.1"],
+  "test_suite": {
+    "unit_tests_passed": 17,
+    "unit_tests_total": 17,
+    "ete_test": "test_ete_multi_bank_vcb — PASSED"
+  },
+  "pipeline_run": {
+    "run_id": "99fc2df7-6aaa-4077-ad69-93b4df83447c",
+    "bank": "vietcombank",
+    "company_slug": "viet_nam_technology_importexport_joint_stock_compa",
+    "current_step": "filled",
+    "quality_score": 7.5,
+    "retry_count": 1,
+    "output_docx_path": "data/outputs/vietcombank/viet_nam_technology_importexport_joint_stock_compa/LC-Application-contract.docx",
+    "output_size_kb": 26.9,
+    "errors": [],
+    "lc_data_summary": {
+      "contract_number": "VN-CN-2024-001",
+      "applicant_name": "Viet Nam Technology Import-Export Joint Stock Company",
+      "beneficiary_name": "Shenzhen Advanced Electronics Co., Ltd.",
+      "lc_type": "Irrevocable",
+      "currency": "USD",
+      "amount": "450000.00",
+      "expiry_date": "28/02/2025",
+      "latest_shipment_date": "31/01/2025",
+      "incoterms": "CIF",
+      "partial_shipment": "Not allowed",
+      "transhipment": "Not allowed"
+    }
+  },
+  "key_changes": {
+    "config.py": "Added BANK_VCB/BIDV/VIETINBANK/DEFAULT constants, get_bank_template_path(), slugify_company(), get_bank_output_dir()",
+    "state.py": "Added bank: str and company_slug: str fields to LCAgentState",
+    "lc_application.py": "issuing_bank_name/bic changed from hardcoded VCB defaults to Optional[str] = None",
+    "lc_rules_validator.py": "Removed block that injected Vietcombank as default issuing bank",
+    "docx_filler.py": "_fill_header uses bank_branch/vcb_branch/'' instead of hardcoded 'Ha Noi Branch'",
+    "graph.py": "run_lc_application() gains bank: str | None param; passes bank and company_slug to initial state",
+    "node_fill.py": "Uses get_bank_template_path(bank) and get_bank_output_dir(bank, company_slug); returns company_slug in state",
+    "templates": "Template moved to data/templates/docx/vietcombank/Application-for-LC-issuance.docx",
+    "tests": "test_docx_filler.py updated template path; test_config.py (8 tests) created; test_ete.py gains test_ete_multi_bank_vcb"
+  }
+}

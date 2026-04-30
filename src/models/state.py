@@ -9,13 +9,15 @@ class LCAgentState(TypedDict):
 
     # ── Input ────────────────────────────────────────────────────────────────
     contract_path: str
-    output_dir: str
+    bank: str         # bank slug, e.g. "vietcombank" — determines template + output path
+    output_dir: str   # explicit override; empty string = derive from bank/company
 
     # ── Extracted & validated data ───────────────────────────────────────────
     lc_data: Optional[dict]   # LCApplicationData as dict (JSON-serialisable)
 
     # ── Output ───────────────────────────────────────────────────────────────
     output_docx_path: Optional[str]
+    company_slug: str  # slugified applicant_name, set by fill_node
 
     # ── Quality feedback loop ────────────────────────────────────────────────
     retry_count: int

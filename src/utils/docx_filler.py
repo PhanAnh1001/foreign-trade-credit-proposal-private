@@ -121,7 +121,8 @@ def _select_nth_checkbox_in_cell(cell, n: int) -> bool:
 def _fill_header(doc: Document, data: dict) -> None:
     """Table 0: Bank branch, applicant name, CIF."""
     t0 = doc.tables[0]
-    _replace_in_cell(t0.rows[0].cells[0], "………………………", data.get("vcb_branch", "Ha Noi Branch"))
+    branch = data.get("bank_branch") or data.get("vcb_branch") or ""
+    _replace_in_cell(t0.rows[0].cells[0], "………………………", branch)
     applicant = data.get("applicant_name", "")
     if applicant:
         cell_name = t0.rows[1].cells[0]

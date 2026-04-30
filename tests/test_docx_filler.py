@@ -5,7 +5,7 @@ import pytest
 from pathlib import Path
 from src.utils.docx_filler import fill_lc_template
 
-TEMPLATE = Path("data/templates/docx/Application-for-LC-issuance.docx")
+TEMPLATE = Path("data/templates/docx/vietcombank/Application-for-LC-issuance.docx")
 
 
 def _sample_data() -> dict:

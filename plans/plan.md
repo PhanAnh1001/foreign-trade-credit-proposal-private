@@ -218,13 +218,20 @@
   - Thêm `_replace_buyer_seller`: per-run regex `\bbuyer\b`→`the applicant`, `\bseller\b`→`the beneficiary` toàn doc, skip T1R11
   - **ETE evidence ete-run-005.json**: **27/27 DOCX checks pass** (tăng từ 13). 46 unit tests PASS.
 
-## Đang làm / TODO
+## Đã hoàn thành — Multi-bank refactor (2026-04-30)
 
-- [ ] **Refactor multi-bank support** — Chi tiết: `plans/refactor-multi-bank.md`. 9 phases:
-  - Phase 1+2 (song song): thêm constants + `get_bank_template_path/get_bank_output_dir/slugify_company` vào `src/config.py`; di chuyển template → `data/templates/docx/vietcombank/`
-  - Phase 3+6 (song song): thêm `bank`/`company_slug` vào `LCAgentState`; xóa hardcoded Vietcombank defaults trong `lc_application.py` + `lc_rules_validator.py`
-  - Phase 4+5: thêm param `bank` vào `run_lc_application()`; cập nhật `fill_node` dùng `get_bank_template_path(bank)`
-  - Phase 7+8: cập nhật unit tests; thêm `test_ete_explicit_bank_vcb`; ghi `ete-run-008.json`
+- [x] **Refactor multi-bank support** — Chi tiết: `plans/refactor-multi-bank.md`. 9 phases hoàn thành:
+  - Phase 1: `src/config.py` — thêm `BANK_VCB/BIDV/VIETINBANK/DEFAULT` constants, `get_bank_template_path()`, `slugify_company()`, `get_bank_output_dir()`; giữ `LC_TEMPLATE_PATH` backward-compat
+  - Phase 2: Template di chuyển → `data/templates/docx/vietcombank/Application-for-LC-issuance.docx`
+  - Phase 3: `LCAgentState` — thêm `bank: str`, `company_slug: str`, `output_dir` đổi sang empty-string default
+  - Phase 4: `graph.py` — `run_lc_application()` nhận thêm `bank: str | None = None`; pass `bank` + `company_slug: ""` vào `initial_state`
+  - Phase 5: `node_fill.py` — dùng `get_bank_template_path(bank)` + `get_bank_output_dir(bank, company_slug)`; return `company_slug` trong state
+  - Phase 6.1+6.2+6.3: `lc_application.py` (issuing_bank → Optional=None), `lc_rules_validator.py` (xóa VCB inject block), `docx_filler.py` (_fill_header dùng bank_branch)
+  - Phase 7.1+7.4: `test_docx_filler.py` (path update), `tests/test_config.py` (mới, 8 tests)
+  - Phase 8: `test_ete.py` (thêm `test_ete_multi_bank_vcb`), `ete-evidence/ete-run-008.json`
+  - **17 unit tests PASS** + ETE multi-bank PASS. Output path: `data/outputs/vietcombank/{company_slug}/LC-Application-contract.docx`
+
+## Đang làm / TODO
 - [ ] **Demo video** — Quay 5–10 phút: architecture → live run (`run_lc_application`) → show output DOCX (checkboxes ■, insurance cert CIF) → limitations (rate limits, UCP600 subset)
 - [ ] **ETE với hợp đồng khác loại** — thêm test case FOB (không cần insurance) và CIP để verify rule engine đúng cho cả 3 Incoterms có/không có insurance
 - [ ] **Evaluation accuracy** — so sánh field output vs contract gốc: applicant, beneficiary, amount, expiry_date, incoterms
@@ -239,8 +246,9 @@
 - **Anti-hallucination**: LLM chỉ extract từ contract; UCP600 defaults + Incoterms insurance rules áp dụng bằng Python thuần (`lc_rules_validator.py`).
 - **Knowledge base coverage**: Thông lệ quốc tế ✅ (UCP600/ISBP821/Incoterms 2000/2010/2020). Pháp luật Việt Nam ✅ (PL Ngoại hối, NĐ 70/2014, TT NHNN 32/2013+09/2023) — 6 rules VN-01..VN-06 trong `lc_rules_validator.py`.
 - **Vietnam forex rules**: VN-01 currency≠VND, VN-02 contract_number bắt buộc, VN-03 TCTD được phép (Vietcombank ✓), VN-04 giao dịch vãng lai ✓, VN-05 nhắc ký quỹ, VN-06 hàng hóa quản lý.
-- **Tests**: `python -m pytest tests/ --ignore=tests/test_ete.py` — **44 unit tests PASS** (không cần API key). ETE: cần `GROQ_API_KEY`.
-- **Run pipeline**: `from src.agents.graph import run_lc_application; run_lc_application("data/sample/contract.txt", output_dir="data/outputs/ete")`
+- **Tests**: `python -m pytest tests/ --ignore=tests/test_ete.py` — **52 unit tests PASS** (44 + 8 test_config mới, không cần API key). ETE: cần `GROQ_API_KEY`.
+- **Run pipeline**: `from src.agents.graph import run_lc_application; run_lc_application("data/sample/contract.txt", bank="vietcombank")` — output → `data/outputs/vietcombank/{company_slug}/LC-Application-contract.docx`
+- **Multi-bank**: thêm bank mới chỉ cần đặt template tại `data/templates/docx/{bank_slug}/Application-for-LC-issuance.docx` và truyền `bank=bank_slug` vào `run_lc_application()`.
 
 ---
 

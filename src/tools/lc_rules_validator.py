@@ -181,12 +181,6 @@ def apply_isbp821_defaults(data: dict) -> dict:
     if docs.get("other_documents") is None:
         docs["other_documents"] = []
 
-    # Issuing bank: always Vietcombank for this template
-    if not data.get("issuing_bank_name"):
-        data["issuing_bank_name"] = "Joint Stock Commercial Bank for Foreign Trade of Vietnam (Vietcombank)"
-        data["issuing_bank_bic"] = "BFTVVNVX"
-        _note(data, "Issuing bank set to Vietcombank (BFTVVNVX) — standard for this LC application template.")
-
     # Ensure standard documents have descriptions
     if not docs.get("commercial_invoice"):
         docs["commercial_invoice"] = "3 originals, signed"

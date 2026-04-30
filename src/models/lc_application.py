@@ -68,9 +68,9 @@ class LCApplicationData(BaseModel):
         "The amount utilized must be endorsed on the reverse of the original L/C."
     )
 
-    # ── Issuing bank (Vietcombank — fixed for this template) ───────────────
-    issuing_bank_name: str = "Joint Stock Commercial Bank for Foreign Trade of Vietnam (Vietcombank)"
-    issuing_bank_bic: str = "BFTVVNVX"
+    # ── Issuing bank (set by caller via bank param or extracted from contract) ─
+    issuing_bank_name: Optional[str] = None
+    issuing_bank_bic: Optional[str] = None
 
     # ── Charges ────────────────────────────────────────────────────────────
     issuing_bank_charges_for: str = "Applicant"    # "Applicant" | "Beneficiary"
