@@ -206,6 +206,7 @@
 - [ ] **Demo video** — Quay 5–10 phút: architecture → live run (`run_lc_application`) → show output DOCX (checkboxes ■, insurance cert CIF) → limitations (rate limits, UCP600 subset)
 - [ ] **ETE với hợp đồng khác loại** — thêm test case FOB (không cần insurance) và CIP để verify rule engine đúng cho cả 3 Incoterms có/không có insurance
 - [ ] **Evaluation accuracy** — so sánh field output vs contract gốc: applicant, beneficiary, amount, expiry_date, incoterms
+- [ ] **Bổ sung kiến thức pháp luật Việt Nam** — hiện chỉ có thông lệ quốc tế (UCP600/ISBP821/Incoterms). Cần thêm: `src/knowledge/rules/vietnam_forex_law.yaml` + rules tương ứng trong validator. Nội dung: (1) Pháp lệnh ngoại hối 2005 (sửa đổi 2013) — nghĩa vụ kết hối, giới hạn giao dịch; (2) Nghị định 70/2014/NĐ-CP — điều kiện TCTD hoạt động ngoại hối; (3) Thông tư NHNN (07/2023, 01/2023, 11/2015...) — quy trình mở LC, hồ sơ, điều kiện mở LC nhập khẩu. Ảnh hưởng đến: điều kiện mở LC, tỷ lệ ký quỹ, mục đích sử dụng ngoại tệ, hạn mức tín dụng.
 
 ## Notes — LC Application Agent (current, 2026-04-30)
 
@@ -215,6 +216,7 @@
 - **Quality score**: 9.5/10 (2026-04-29, sau fix presentation period). completeness=10.0, compliance=9.5. Không retry.
 - **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM, Meta). `get_judge_llm()` → `qwen/qwen3-32b` (6K TPM, Alibaba, max_tokens=2048). `gpt-oss-20b` broken (trả empty response) — đã bỏ. qwen3-32b emits `<think>` blocks, handled bởi `strip_llm_json()` + `json_repair` fallback.
 - **Anti-hallucination**: LLM chỉ extract từ contract; UCP600 defaults + Incoterms insurance rules áp dụng bằng Python thuần (`lc_rules_validator.py`).
+- **Knowledge base coverage**: Thông lệ quốc tế ✅ đầy đủ (UCP600 Art.2/6/7/9/14c/20/27/28/38; ISBP821 A/B/E/K paragraphs; Incoterms 2000/2010/2020 tất cả 8 terms). Pháp luật Việt Nam ❌ chưa có (Pháp lệnh ngoại hối, Nghị định 70/2014, Thông tư NHNN về mở LC).
 - **Tests**: `python -m pytest tests/ --ignore=tests/test_ete.py` — 35 unit tests PASS (không cần API key). ETE: cần `GROQ_API_KEY`.
 - **Run pipeline**: `from src.agents.graph import run_lc_application; run_lc_application("data/sample/contract.txt", output_dir="data/outputs/ete")`
 
