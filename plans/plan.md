@@ -239,7 +239,7 @@
 ## Notes — LC Application Agent (current, 2026-04-30)
 
 - **Git history**: 1 commit duy nhất `4221dc8 v1 code` (2026-04-30). Không còn secrets trong history. Old code: `reference/`
-- **ETE evidence (latest)**: `ete-evidence/ete-run-007.json` — `run_id=492b9304`, 9.5/10, 8.6s, 0 retries. Fix `_CHECKED` U+25A0→**U+F0FE** (Wingdings PUA filled box — renders đúng trong Word). 51 ticked runs, compliance=10.0.
+- **ETE evidence (latest)**: `ete-evidence/ete-run-008.json` — `run_id=99fc2df7`, 7.5/10, 5.0s, 0 retries. Multi-bank test: bank=vietcombank, output → `data/outputs/vietcombank/{company_slug}/`. 52 unit tests PASS + ETE test_ete_multi_bank_vcb PASS.
 - **Wingdings checkbox quirk**: Template dùng Wingdings `` (U+F06F) cho unchecked, không phải `□` (U+25A1). Fill bằng `■` (U+25A0). Xem `src/utils/docx_filler.py:_select_checkbox()`. **Split-run trap**: "21 days after shipment date" tách thành 8 runs → `_select_checkbox` không match được → `_fill_presentation_period` dùng Run-0 direct replace thay vì text search.
 - **Quality score**: 9.5/10 (2026-04-29, sau fix presentation period). completeness=10.0, compliance=9.5. Không retry.
 - **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM, Meta). `get_judge_llm()` → `qwen/qwen3-32b` (6K TPM, Alibaba, max_tokens=2048). `gpt-oss-20b` broken (trả empty response) — đã bỏ. qwen3-32b emits `<think>` blocks, handled bởi `strip_llm_json()` + `json_repair` fallback.
