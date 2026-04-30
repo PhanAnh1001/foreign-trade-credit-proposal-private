@@ -11,9 +11,17 @@ Khi ở nhánh khác master và main thì không cần tạo nhánh mới mà pu
 | `llama-3.1-8b-instant` | 30 | 14.4K | 6K | 500K |
 | `llama-3.3-70b-versatile` | 30 | 1K | 12K | 100K |
 | `meta-llama/llama-4-scout-17b-16e-instruct` | 30 | 1K | 30K | 500K |
+| `meta-llama/llama-prompt-guard-2-22m` | 30 | 14.4K | 15K | 500K |
+| `meta-llama/llama-prompt-guard-2-86m` | 30 | 14.4K | 15K | 500K |
 | `openai/gpt-oss-120b` | 30 | 1K | 8K | 200K |
 | `openai/gpt-oss-20b` | 30 | 1K | 8K | 200K |
-| `qwen/qwen3-32b` | 60 | 1K | 6K | 500K |
+| `openai/gpt-oss-safeguard-20b` | 30 | 1K | 8K | 200K |
+| `qwen/qwen3-32b` | **60** | 1K | 6K | 500K |
+| `groq/compound` | 30 | 250 | 70K | — |
+| `groq/compound-mini` | 30 | 250 | 70K | — |
+| `allam-2-7b` | 30 | 7K | 6K | 500K |
+| `whisper-large-v3` | 20 | 2K | — | — |
+| `whisper-large-v3-turbo` | 20 | 2K | — | — |
 
 ## Context window
 
@@ -24,9 +32,9 @@ Khi ở nhánh khác master và main thì không cần tạo nhánh mới mà pu
 | `llama-3.3-70b-versatile` | 128K | |
 | `qwen/qwen3-32b` | 32K | |
 | `openai/gpt-oss-120b` | ~8K | Ước tính từ hành vi trên Groq |
-| `openai/gpt-oss-20b` | ~8K | Confirmed: input+max_tokens > ~8K → 413 |
+| `openai/gpt-oss-20b` | ~8K | Confirmed: input+max_tokens > ~8K → 413. **Có reasoning_tokens** (~520T nội bộ) + ~250T output ≈ 770T completion; max_tokens=2048 đủ an toàn |
 
-**Hệ quả**: `gpt-oss-*` chỉ dùng được khi `input_tokens + max_tokens ≤ ~8K`. SG2 dùng `gpt-oss-120b` với `max_tokens=4096` + input ~2.3K = ~6.4K ✓. QR dùng `gpt-oss-20b` với `max_tokens=2048` + input ~1.3K = ~3.3K ✓.
+**Hệ quả**: `gpt-oss-*` chỉ dùng được khi `input_tokens + max_tokens ≤ ~8K`. SG2 dùng `gpt-oss-120b` với `max_tokens=4096` + input ~2.3K = ~6.4K ✓. QR dùng `gpt-oss-20b` với `max_tokens=2048` + input ~0.7K = ~2.7K ✓ (LC Agent judge prompt nhỏ hơn credit proposal agent).
 
 ---
 
@@ -105,4 +113,5 @@ SG2 + SG3 chạy song song → phải dùng **2 TPM bucket riêng**.
 | `groq/compound` + `groq/compound-mini` | User preference — tránh `groq/` prefix | → `gpt-oss-120b` / `gpt-oss-20b` |
 | `openai/gpt-oss-20b` trên SG2 | 413 — max_tokens=8192 + input ~2.3K > ~8K window | → swap sang QR; SG2 dùng `gpt-oss-120b` max_tokens=4096 |
 | `openai/gpt-oss-20b` trên QR (max_tokens=1024) | Output bị cắt — 1024 quá nhỏ cho judge response | → tăng max_tokens=2048; input ~1.3K + 2048 = ~3.3K ✓ |
+| `openai/gpt-oss-20b` trả response rỗng (tạm thời) | Groq API issue tạm thời — model dùng **reasoning_tokens** (~520T nội bộ). Đã test lại: hoạt động bình thường, max_tokens=2048 đủ. | → Restored làm judge. Nếu gặp lại: kiểm tra reasoning_tokens trong response_metadata |
 | `llama-3.3-70b` trên SG2 (trước swap) | 429 TPM — SG2+SG3 cùng bucket khi song song | → SG3 dùng `llama-3.3-70b` (bucket riêng) |

@@ -71,12 +71,14 @@ def build_lc_graph():
 def run_lc_application(
     contract_path: str,
     output_dir: str | None = None,
+    bank: str | None = None,
 ) -> dict:
     """Run the full LC application pipeline end-to-end.
 
     Args:
         contract_path: Path to the foreign trade contract (TXT/PDF/DOCX).
-        output_dir:    Directory for output DOCX. Defaults to data/outputs/default.
+        output_dir:    Directory for output DOCX. Empty string = derive from bank/company.
+        bank:          Bank slug (e.g. "vietcombank"). Defaults to BANK_DEFAULT.
 
     Returns:
         Final LCAgentState dict.
@@ -84,16 +86,18 @@ def run_lc_application(
     setup_langsmith_tracing()
     graph = build_lc_graph()
 
-    from ..config import get_output_dir
-    resolved_output = output_dir or str(get_output_dir("default"))
+    from ..config import BANK_DEFAULT
+    resolved_bank = bank or BANK_DEFAULT
 
     run_id = str(uuid.uuid4())
     initial: LCAgentState = {
         "run_id": run_id,
         "contract_path": contract_path,
-        "output_dir": resolved_output,
+        "bank": resolved_bank,
+        "output_dir": output_dir or "",
         "lc_data": None,
         "output_docx_path": None,
+        "company_slug": "",
         "retry_count": 0,
         "quality_score": None,
         "quality_feedback": None,
@@ -105,7 +109,8 @@ def run_lc_application(
     logger.info("=" * 60)
     logger.info(f"LC Application Agent  run_id={run_id}")
     logger.info(f"  contract  : {contract_path}")
-    logger.info(f"  output_dir: {resolved_output}")
+    logger.info(f"  bank      : {resolved_bank}")
+    logger.info(f"  output_dir: {output_dir or '(derive from bank/company)'}")
     logger.info("=" * 60)
 
     t0 = _time.perf_counter()
