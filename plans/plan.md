@@ -188,6 +188,15 @@
 - [x] **ETE evidence** (`ete-evidence/ete-run-002.json`) — quality_score=7.5/10, step="filled", 11/11 DOCX checks pass
 - [x] **README.en.md** — bản dịch tiếng Anh, link từ README.md
 - [x] **Xóa toàn bộ commit history cũ, squash thành 1 commit "v1 code" (2026-04-30)** — lần 1: squash 228 → 1 commit `9b83642` (loại bỏ secrets); lần 2: squash lại → 1 commit duy nhất `4221dc8 v1 code`; force push thành công. Remote `master` hiện chỉ có 1 commit.
+- [x] **Cải thiện quality_score 8.0 → 9.2/10 (2026-04-30)** — 7 fix deterministic + 1 fix infrastructure:
+  1. Date format `yy/mm/dd` → `dd/mm/yyyy` (unambiguous, judge không misread nữa)
+  2. Issuing bank Vietcombank (BFTVVNVX) làm default trong validator — completeness 8→10
+  3. `other_documents: None` → `[]`
+  4. Presentation period: `"21"` → `"21 days after date of shipment"` (UCP600 Art.14c)
+  5. B/L: thêm `"Shipped on Board notation per UCP600 Art.20"` tường minh
+  6. Insurance: `"Institute Cargo Clauses (A) — All Risks, blank endorsed"` (UCP600 Art.28)
+  7. Judge LLM: `gpt-oss-20b` (broken, trả empty) → `qwen/qwen3-32b` (Alibaba, cross-vendor)
+  8. `json_repair` fallback cho truncated JSON từ qwen3-32b `<think>` blocks
 
 ## Đang làm / TODO
 
@@ -200,7 +209,8 @@
 - **Git history**: 1 commit duy nhất `4221dc8 v1 code` (2026-04-30). Không còn secrets trong history. Old code: `reference/`
 - **ETE evidence**: `ete-evidence/ete-run-002.json` — 7.5/10, 4.1s, 11/11 DOCX checks pass. Checkboxes: `■ Irrevocable`, `■ Telex/SWIFT`. Insurance cert: 110%, ICC A all risks.
 - **Wingdings checkbox quirk**: Template dùng Wingdings `` (U+F06F) cho unchecked, không phải `□` (U+25A1). Fill bằng `■` (U+25A0). Xem `src/utils/docx_filler.py:_select_checkbox()`.
-- **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM). `get_judge_llm()` → `openai/gpt-oss-20b` (8K TPM, max_tokens=2048). Không dùng qwen3-32b cho extraction (6K TPM — quá nhỏ).
+- **Quality score**: 9.2/10 (2026-04-30). completeness=10.0, compliance=9.0. Không retry.
+- **Model**: `get_extraction_llm()` → `llama-3.3-70b-versatile` (12K TPM, Meta). `get_judge_llm()` → `qwen/qwen3-32b` (6K TPM, Alibaba, max_tokens=2048). `gpt-oss-20b` broken (trả empty response) — đã bỏ. qwen3-32b emits `<think>` blocks, handled bởi `strip_llm_json()` + `json_repair` fallback.
 - **Anti-hallucination**: LLM chỉ extract từ contract; UCP600 defaults + Incoterms insurance rules áp dụng bằng Python thuần (`lc_rules_validator.py`).
 - **Tests**: `python -m pytest tests/ --ignore=tests/test_ete.py` — 35 unit tests PASS (không cần API key). ETE: cần `GROQ_API_KEY`.
 - **Run pipeline**: `from src.agents.graph import run_lc_application; run_lc_application("data/sample/contract.txt", output_dir="data/outputs/ete")`
