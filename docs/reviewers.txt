@@ -1,0 +1,12 @@
+# Danh sách reviewer hợp lệ — chống lỗ hổng #1 (§6.5 workflow.md): AI tự tick "approved".
+# Pre-commit hook reject commit chứa "## Approved by <name>" mà <name> không có trong danh sách này.
+#
+# Format: 1 dòng = 1 reviewer. Bắt đầu bằng `#` để comment.
+# Tên phải khớp chính xác (case-sensitive) với chuỗi sau "Approved by ".
+
+# tech-lead
+anh
+# product-owner
+anh
+# domain-sme
+anh
