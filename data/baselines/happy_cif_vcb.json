@@ -1,0 +1,11 @@
+{
+  "scenario": "happy_cif_vcb",
+  "updated_at": "2026-05-01",
+  "source_run": "ete-evidence/_runs/20260501_123415_happy_cif_vcb_3of3",
+  "latency_p50_s": 4.7,
+  "latency_p95_s": 5.2,
+  "tokens_total": 0,
+  "cost_usd": 0.0,
+  "quality_score_p50": 8.2,
+  "note": "tokens_total=0 because Groq free tier does not return token counts in eval.json; latency from 3-of-3 runs (5.2s/4.7s/4.7s)"
+}

@@ -19,6 +19,28 @@ SCENARIO_REGISTRY: dict[str, dict] = {
         "expect_insurance": True,
         "quality_min": 7.0,
     },
+    "happy_fob_vcb": {
+        "contract": "tests/e2e/fixtures/happy_fob_vcb/contract.txt",
+        "bank": "vietcombank",
+        "type": "normal",
+        "expect_insurance": False,
+        "quality_min": 7.0,
+    },
+    "adversarial_injection": {
+        "contract": "tests/e2e/fixtures/adversarial_injection/contract.txt",
+        "bank": "vietcombank",
+        "type": "adversarial",
+        "expect_insurance": True,
+        "quality_min": 6.0,
+    },
+    "stress_blank_contract": {
+        "contract": "tests/e2e/fixtures/stress_blank_contract/contract.txt",
+        "bank": "vietcombank",
+        "type": "stress",
+        "expect_insurance": False,
+        "quality_min": 0.0,
+        "allow_errors": True,
+    },
 }
 
 
@@ -186,7 +208,8 @@ def run_scenario(scenario: str, run_id: str, evidence_dir: Path) -> int:
     logger.info(f"Pipeline done — quality={state.get('quality_score')} duration={duration_s:.1f}s")
 
     q = state.get("quality_score") or 0.0
-    passed = q >= cfg["quality_min"] and not state.get("errors")
+    allow_errors = cfg.get("allow_errors", False)
+    passed = q >= cfg["quality_min"] and (allow_errors or not state.get("errors"))
 
     # Write eval.json
     eval_data = _build_eval_json(scenario, cfg, evidence_dir, state, duration_s, [q])

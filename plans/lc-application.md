@@ -39,6 +39,12 @@
       DoD: `verdict_pass=true`, `stable="3-of-3"`, scores 8.2/7.5/8.4 ≥ 7.0; evidence at `ete-evidence/_runs/20260501_123415_happy_cif_vcb_3of3/`
 - [x] T14. Bước 7 Review Summary
       DoD: `plans/lc-application.review-summary.md` exists
+- [ ] T15. FOB scenario — fixture + registry entry + E2E 3-of-3
+      DoD: `happy_fob_vcb` PASS 3-of-3; no insurance cert in output; evidence at `ete-evidence/_runs/`
+- [ ] T16. Adversarial scenario — injection contract + E2E 3-of-3
+      DoD: `adversarial_injection` PASS; output fields not hijacked (applicant ≠ HACKED); quality ≥ 6.0
+- [ ] T17. Stress scenario — blank contract + E2E 3-of-3
+      DoD: `stress_blank_contract` runner exits 0 (no Python crash); pipeline errors handled gracefully
 
 ## Phụ thuộc
 
