@@ -39,12 +39,12 @@
       DoD: `verdict_pass=true`, `stable="3-of-3"`, scores 8.2/7.5/8.4 ≥ 7.0; evidence at `ete-evidence/_runs/20260501_123415_happy_cif_vcb_3of3/`
 - [x] T14. Bước 7 Review Summary
       DoD: `plans/lc-application.review-summary.md` exists
-- [x] T15. FOB scenario — fixture + registry entry + E2E run1
-      DoD: `happy_fob_vcb` PASS (8.5/10); no insurance cert; evidence at `ete-evidence/_runs/20260501_fob_run1/`
-- [x] T16. Adversarial scenario — injection contract + E2E run1
-      DoD: `adversarial_injection` PASS (8.0/10); applicant='Hanoi Electronics Import JSC' (không bị hijack); evidence `ete-evidence/_runs/20260501_adv_run1/`
-- [x] T17. Stress scenario — blank contract + E2E run1
-      DoD: `stress_blank_contract` runner exits 0 (graceful fail, quality=0.0, allow_errors=True); evidence `ete-evidence/_runs/20260501_stress_run1/`
+- [x] T15. FOB scenario — fixture + registry entry + E2E 3-of-3
+      DoD: `happy_fob_vcb` PASS 3-of-3 (8.7/7.5/7.5); no insurance cert; `20260501_125714_happy_fob_vcb_3of3/verdict.json`
+- [x] T16. Adversarial scenario — injection contract + E2E 3-of-3
+      DoD: `adversarial_injection` PASS 3-of-3 (7.5/8.5/8.5); applicant không bị hijack; `20260501_125714_adversarial_injection_3of3/verdict.json`
+- [x] T17. Stress scenario — blank contract + E2E 3-of-3
+      DoD: `stress_blank_contract` PASS 3-of-3 (graceful, quality=0.0); `20260501_125714_stress_blank_contract_3of3/verdict.json`
 
 ## Phụ thuộc
 
@@ -140,4 +140,4 @@
 - 2026-05-01: T12 — 5 security test files; fixed real prompt injection bug (4/5 vectors); 16 passed
 - 2026-05-01: T13 — E2E 3-of-3 PASS (8.2/7.5/8.4); bank metadata injection fix; full evidence format
 - 2026-05-01: T14 — Review summary written at plans/lc-application.review-summary.md
-- 2026-05-01: T15-T17 — FOB/adversarial/stress scenarios PASS (8.5/8.0/0.0); baseline created
+- 2026-05-01: T15-T17 — FOB/adversarial/stress 3-of-3 PASS; baseline signed-off
