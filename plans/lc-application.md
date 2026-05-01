@@ -33,6 +33,8 @@
       DoD: `pytest tests/test_ete.py` pass; `ete-evidence/ete-run-008.json` recorded; quality ≥ 7.0
 - [x] T11. Adopt ai-agent-workflow — scaffold + epic artifacts
       DoD: `docs/workflow.md` exists; intent/PRD/plan created; design §2a added
+- [x] T12. Bước 5.5 security tests (5 files, 16 passed + 10 skipped no-key)
+      DoD: `pytest tests/security/` — 16 passed, 0 failed
 
 ## Phụ thuộc
 
@@ -51,11 +53,11 @@
 
 ## Security tests (`tests/security/`)
 
-- [ ] `test_prompt_injection.py` — ≥ 5 vector
-- [ ] `test_pii_redaction.py`
-- [ ] `test_hallucination_probe.py`
-- [ ] `test_tool_whitelist.py`
-- [ ] `test_output_schema.py`
+- [x] `test_prompt_injection.py` — 5 vectors (skip without GROQ_API_KEY)
+- [x] `test_pii_redaction.py`
+- [x] `test_hallucination_probe.py` — skip without GROQ_API_KEY
+- [x] `test_tool_whitelist.py`
+- [x] `test_output_schema.py`
 - [ ] `test_rate_limit.py`
 
 ## E2E scenarios
@@ -115,9 +117,9 @@
 
 ## Last session — 2026-05-01 10:00 (resume pointer)
 
-- **Ended at**: T10 — ETE pass, multi-bank complete
-- **Status**: PASS unit (52) + PASS ETE (ete-run-008, quality=7.5/10)
-- **Next**: Security tests (`tests/security/`) — Bước 5.5; sau đó E2E 3-of-3 với FOB + CIP scenarios
+- **Ended at**: T12 — Bước 5.5 security tests complete
+- **Status**: PASS unit (52) + PASS security (16 passed, 10 skipped no-key)
+- **Next**: Bước 6 — E2E 3-of-3 với evidence format chuẩn (inputs.json + eval.json + security.json + REPORT.md)
 - **Blockers**: none
 
 ## Session log
