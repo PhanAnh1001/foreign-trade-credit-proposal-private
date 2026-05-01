@@ -33,18 +33,6 @@
           }
         ]
       }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "PLAN=\"plans/plan.md\"; if [ -f \"$PLAN\" ]; then jq -n --rawfile content \"$PLAN\" '{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":$content}}'; fi",
-            "timeout": 10,
-            "statusMessage": "Loading session plan..."
-          }
-        ]
-      }
     ]
   },
   "permissions": {

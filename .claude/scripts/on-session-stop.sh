@@ -7,11 +7,6 @@ if [[ "$stop_hook_active" = "true" ]]; then
   exit 0
 fi
 
-PLAN="plans/plan.md"
-if [ ! -f "$PLAN" ]; then
-  exit 0
-fi
-
 # Skip if no changes this session: clean working tree AND no commits in last 2 hours
 has_uncommitted=$(git status --porcelain 2>/dev/null)
 recent_commits=$(git log --since="2 hours ago" --oneline 2>/dev/null | head -1)
@@ -20,5 +15,5 @@ if [[ -z "$has_uncommitted" && -z "$recent_commits" ]]; then
   exit 0
 fi
 
-echo "Session ending. Update $PLAN before finishing: move completed tasks to 'Đã hoàn thành', add new TODOs, update Notes. Then commit and push plan.md." >&2
+echo "Session ending. Then commit and push." >&2
 exit 2
