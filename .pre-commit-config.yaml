@@ -50,7 +50,7 @@ repos:
     hooks:
       # Lỗ hổng #6.5.9: mỗi commit phải có T<n>:
       - id: enforce-task-id
-        name: Commit msg must start with T<n>:
+        name: "Commit msg must start with T<n>:"
         entry: python tools/check_t_in_commit.py
         language: system
         stages: [commit-msg]
