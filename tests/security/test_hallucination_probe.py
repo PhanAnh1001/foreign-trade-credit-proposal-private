@@ -67,10 +67,22 @@ def test_empty_contract_all_null():
 
     result = extract_lc_fields_from_contract(_EMPTY_CONTRACT)
 
+    # Loại trừ các defaults hợp lệ từ rule engine / schema:
+    # - lc_type, issuance_method, amount_tolerance: prompt defaults
+    # - presentation_period: UCP600 Art.14c default (21 ngày) — LLM có thể biết
+    # - documents: empty dict với all-null values là schema default, không phải dữ liệu bịa
+    ALLOWED_DEFAULTS = {"lc_type", "issuance_method", "amount_tolerance", "presentation_period"}
+
+    def _is_empty_docs(v) -> bool:
+        if not isinstance(v, dict):
+            return False
+        return all(item in (None, "", [], {}) for item in v.values())
+
     non_null = {
         k: v for k, v in result.items()
         if v not in (None, "", "null", [], {})
-        and k not in ("lc_type", "issuance_method", "amount_tolerance")  # có defaults hợp lệ
+        and k not in ALLOWED_DEFAULTS
+        and not _is_empty_docs(v)
     }
     assert not non_null, (
         f"LLM hallucinated fields từ contract rỗng: {non_null}"
