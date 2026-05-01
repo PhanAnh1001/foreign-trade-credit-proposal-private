@@ -35,6 +35,10 @@
       DoD: `docs/workflow.md` exists; intent/PRD/plan created; design §2a added
 - [x] T12. Bước 5.5 security tests (5 files, 16 passed + 10 skipped no-key)
       DoD: `pytest tests/security/` — 16 passed, 0 failed
+- [x] T13. Bước 6 E2E 3-of-3 PASS — happy_cif_vcb scenario
+      DoD: `verdict_pass=true`, `stable="3-of-3"`, scores 8.2/7.5/8.4 ≥ 7.0; evidence at `ete-evidence/_runs/20260501_123415_happy_cif_vcb_3of3/`
+- [x] T14. Bước 7 Review Summary
+      DoD: `plans/lc-application.review-summary.md` exists
 
 ## Phụ thuộc
 
@@ -115,15 +119,18 @@
 
 ---
 
-## Last session — 2026-05-01 10:00 (resume pointer)
+## Last session — 2026-05-01 (resume pointer)
 
-- **Ended at**: T12 — Bước 5.5 security tests complete
-- **Status**: PASS unit (52) + PASS security (16 passed, 10 skipped no-key)
-- **Next**: Bước 6 — E2E 3-of-3 với evidence format chuẩn (inputs.json + eval.json + security.json + REPORT.md)
-- **Blockers**: none
+- **Ended at**: T14 — Bước 7 Review Summary complete
+- **Status**: ALL GATES PASS — 52 unit + 16 security + 3-of-3 E2E (8.2/7.5/8.4) + review-summary written
+- **Next**: Human reviewer reads `plans/lc-application.review-summary.md`, then deep-dives REPORT if needed. Open: create `data/baselines/happy_cif_vcb.json`, add FOB scenario.
+- **Blockers**: none — awaiting human review sign-off
 
 ## Session log
 
 - 2026-04-30: T1–T9 completed, v1 code + multi-bank refactor
 - 2026-04-30: T10 ETE pass — ete-run-008.json recorded, quality=7.5/10
-- 2026-05-01: Adopted ai-agent-workflow; created intent, PRD, plan artifacts
+- 2026-05-01: Adopted ai-agent-workflow; created intent, PRD, plan artifacts (T11)
+- 2026-05-01: T12 — 5 security test files; fixed real prompt injection bug (4/5 vectors); 16 passed
+- 2026-05-01: T13 — E2E 3-of-3 PASS (8.2/7.5/8.4); bank metadata injection fix; full evidence format
+- 2026-05-01: T14 — Review summary written at plans/lc-application.review-summary.md
