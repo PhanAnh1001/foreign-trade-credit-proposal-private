@@ -310,7 +310,9 @@ def _fill_incoterms(doc: Document, data: dict) -> None:
     for para in cell.paragraphs:
         ft = _full_text(para)
         if "INCOTERMS" in ft.upper() or "Shipping Terms" in ft:
-            new_text = ft.rstrip()
+            # Fix hardcoded template version (e.g. "INCOTERMS 2000") to match contract
+            ft_fixed = re.sub(r"INCOTERMS \d{4}", f"INCOTERMS {version}", ft)
+            new_text = ft_fixed.rstrip()
             if inco:
                 new_text += f"\nSelected: {inco} {named_port} (INCOTERMS {version})"
             _set_para_text(para, new_text)
@@ -329,20 +331,29 @@ def _fill_goods(doc: Document, data: dict) -> None:
                 break
 
 
+def _fill_doc_run(para, exact_text: str, replacement: str) -> bool:
+    """Replace the first non-checkbox run whose text exactly equals exact_text."""
+    for run in para.runs[1:]:
+        if run.text == exact_text:
+            run.text = replacement
+            return True
+    return False
+
+
 def _fill_documents(doc: Document, data: dict) -> None:
-    """Table 1 Row 12: Tick Wingdings checkboxes for required documents.
+    """Table 1 Row 12: Tick Wingdings checkboxes and fill document details.
 
     Template paragraphs in T1R12 cell0:
       para0 = "Document required" (no checkbox)
       para1 = "This documentary credit is available against..." (no checkbox)
-      para2 = \\uf06f signed commercial invoice
-      para3 = \\uf06f full set ocean B/L
+      para2 = \\uf06f signed commercial invoice, \\toriginal, \\tcopies_ \\t
+      para3 = \\uf06f full set ocean B/L, made out to \\tnotifying\\t
       para4 = \\uf06f air waybill
-      para5 = \\uf06f Inspection certificate
+      para5 = \\uf06f Inspection certificate issued by\\tin\\toriginal, \\tcopies \\t
       para6 = \\uf06f Certificate of quality
-      para7 = \\uf06f full set insurance certificate/policy
-      para8 = \\uf06f certificate of origin
-      para9 = \\uf06f packing list
+      para7 = \\uf06f full set insurance certificate, covering \\trisks\\t
+      para8 = \\uf06f certificate of origin, ... 1 original, \\tcopies \\t
+      para9 = \\uf06f packing list, \\t-fold \\t
       para10 = \\uf06f Beneficiary's Certificate
       para11 = \\uf06f Other documents
     """
@@ -351,30 +362,73 @@ def _fill_documents(doc: Document, data: dict) -> None:
     docs_data = data.get("documents") or {}
     paras = cell.paragraphs
 
-    # Map para index → data key (None means skip auto-tick)
     doc_para_map = {
         2: bool(docs_data.get("commercial_invoice")),
         3: bool(docs_data.get("bill_of_lading")),
-        4: False,   # air waybill — only tick if explicitly present in other_documents
+        4: False,
         5: bool(docs_data.get("inspection_certificate")),
-        6: False,   # quality certificate — not a standard field
+        6: False,
         7: bool(docs_data.get("insurance_certificate")),
         8: bool(docs_data.get("certificate_of_origin")),
         9: bool(docs_data.get("packing_list")),
-        10: False,  # beneficiary cert — not a standard extracted field
-        11: False,  # other documents — handled below
+        10: False,
+        11: False,
     }
 
     for para_idx, should_tick in doc_para_map.items():
         if should_tick and para_idx < len(paras):
             _check_run0_in_para(paras[para_idx])
 
+    # ── Fill document detail fields ──────────────────────────────────────────
+
+    # para[2] — Commercial invoice: originals and copies counts
+    if docs_data.get("commercial_invoice") and len(paras) > 2:
+        inv = docs_data["commercial_invoice"]       # e.g. "3 originals" or "3 originals + 2 copies"
+        nums = re.findall(r"\d+", inv)
+        originals = nums[0] if nums else "3"
+        copies = nums[1] if len(nums) > 1 else ""
+        _fill_doc_run(paras[2], "original, ", f"{originals} originals, ")
+        _fill_doc_run(paras[2], "copies_ ", f"{copies} copies " if copies else "")
+
+    # para[3] — B/L: made out to issuing bank, notifying applicant
+    if docs_data.get("bill_of_lading") and len(paras) > 3:
+        bank_name = data.get("issuing_bank_name") or "issuing bank"
+        applicant = data.get("applicant_name") or "applicant"
+        _fill_doc_run(paras[3], "notifying",
+                      f"order of {bank_name}, notifying {applicant}")
+
+    # para[7] — Insurance: coverage type and percentage
+    if docs_data.get("insurance_certificate") and len(paras) > 7:
+        ins = docs_data["insurance_certificate"]
+        if "ICC(A)" in ins or "All Risks" in ins:
+            coverage = "All Risks (ICC-A)"
+        elif "ICC(B)" in ins:
+            coverage = "ICC(B)"
+        elif "ICC(C)" in ins:
+            coverage = "ICC(C) minimum"
+        else:
+            coverage = "All Risks"
+        pct_m = re.search(r"(\d+)%", ins)
+        pct_str = f" at {pct_m.group(1)}% of invoice value" if pct_m else ""
+        _fill_doc_run(paras[7], "risks", f"{coverage}{pct_str}")
+
+    # para[8] — Certificate of origin: copies count
+    if docs_data.get("certificate_of_origin") and len(paras) > 8:
+        _fill_doc_run(paras[8], "copies ", "1 copy ")
+
+    # para[9] — Packing list: N-fold (total copies = originals + copies)
+    if docs_data.get("packing_list") and len(paras) > 9:
+        pl = docs_data["packing_list"]              # e.g. "1 original + 2 copies"
+        nums = re.findall(r"\d+", pl)
+        fold = str(sum(int(n) for n in nums)) if nums else "3"
+        _fill_doc_run(paras[9], "-", f"{fold}-")
+
+    # para[11] — Other documents
     other_docs = docs_data.get("other_documents") or []
     if other_docs and len(paras) > 11:
         _check_run0_in_para(paras[11])
-        # Append the list of other documents after the run text
         last_run = paras[11].runs[-1] if paras[11].runs else None
-        if last_run and other_docs:
+        if last_run:
             last_run.text = last_run.text.rstrip() + ": " + "; ".join(other_docs)
 
 
