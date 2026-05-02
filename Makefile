@@ -10,8 +10,8 @@ help:
 	@echo "Workflow targets (theo docs/workflow.md):"
 	@echo ""
 	@echo "  Setup:"
-	@echo "    install            - Cài deps + pre-commit hooks"
-	@echo "    hooks              - Cài lại hooks"
+	@echo "    install            - Cài deps + git hooks (pre-commit, commit-msg)"
+	@echo "    hooks              - Symlink lại git hooks từ tools/git-hooks/"
 	@echo ""
 	@echo "  Test layered (Bước 5):"
 	@echo "    01..05             - Từng tầng test, fail-fast"
@@ -42,9 +42,7 @@ install:
 	$(MAKE) hooks
 
 hooks:
-	pre-commit install
-	pre-commit install --hook-type commit-msg
-	@echo ">> hooks: gitleaks + ruff + bandit + mypy + check_approver + check_t + check_golden"
+	@bash scripts/install-git-hooks.sh
 
 # Bước 5 — Test layered
 01:
