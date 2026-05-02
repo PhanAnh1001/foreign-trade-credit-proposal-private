@@ -111,6 +111,12 @@
 ### WIP commit hygiene (#6.6.7)
 48. Commit `wip:` chỉ tồn tại cục bộ. Pre-push → squash vào commit `T<n>` gần nhất, hoặc tắt auto-save khi đang giữa task.
 
+### Git hook bypass
+49. **CẤM `git commit --no-verify` và `git push --no-verify`.** Hook trong `tools/git-hooks/` là gate primary (workflow §5.5 + §6.7). Nếu hook báo lỗi:
+    - Lỗi đúng → fix code/artifact, commit lại.
+    - Hook sai → sửa `tools/git-hooks/` trong commit riêng (`T<n>: fix git hook X`), KHÔNG bypass.
+    - Tool không cài (`gitleaks`, `ruff`, `mypy`, `bandit`) → cài tool, KHÔNG bypass.
+
 ## Anti-patterns
 
 - ❌ Code trước, design sau.
