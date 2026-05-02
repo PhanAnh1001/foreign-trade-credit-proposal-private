@@ -18,6 +18,21 @@ BANK_DEFAULT    = BANK_VCB
 # Legacy constant — kept for backward compatibility (points to VCB template).
 LC_TEMPLATE_PATH = TEMPLATES_DIR / BANK_VCB / "Application-for-LC-issuance.docx"
 
+# Bank display metadata — used to populate issuing_bank_name/BIC in lc_data.
+BANK_METADATA: dict[str, dict] = {
+    BANK_VCB:        {"display_name": "Joint Stock Commercial Bank for Foreign Trade of Vietnam (Vietcombank)",
+                      "short_name": "Vietcombank", "bic": "BFTVVNVX"},
+    BANK_BIDV:       {"display_name": "Bank for Investment and Development of Vietnam (BIDV)",
+                      "short_name": "BIDV", "bic": "BIDVVNVX"},
+    BANK_VIETINBANK: {"display_name": "Vietnam Joint Stock Commercial Bank for Industry and Trade (VietinBank)",
+                      "short_name": "VietinBank", "bic": "ICBVVNVX"},
+}
+
+
+def get_bank_metadata(bank: str) -> dict:
+    """Return display_name, short_name, bic for the given bank slug (or empty dict)."""
+    return BANK_METADATA.get(bank, {})
+
 
 def get_bank_template_path(bank: str) -> Path:
     """Return Path to the LC issuance template for the given bank slug.

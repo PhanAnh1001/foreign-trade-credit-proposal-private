@@ -1,0 +1,53 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main, "cascade/*"]
+
+jobs:
+  pre-commit:
+    name: Pre-commit hooks (workflow §5.5)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pre-commit
+        run: pip install pre-commit
+      - name: Run all hooks on changed files
+        run: pre-commit run --from-ref origin/main --to-ref HEAD --show-diff-on-failure
+
+  reviewer-whitelist:
+    name: Approver whitelist (lỗ hổng #6.5.1)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check approver names in changed MD files
+        run: |
+          git diff --name-only origin/main...HEAD -- '*.md' > /tmp/changed.txt || true
+          while read -r f; do
+            [ -z "$f" ] && continue
+            python tools/check_approver.py --file "$f"
+          done < /tmp/changed.txt
+
+  evidence-verify:
+    name: Verify evidence not confabulated (lỗ hổng #6.6.1)
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.changed_files, 'ete-evidence/')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify each evidence dir under PR
+        run: |
+          for d in $(git diff --name-only origin/main...HEAD -- 'ete-evidence/**/REPORT.md' | xargs -n1 dirname | sort -u); do
+            python tools/verify_evidence.py --evidence-dir "$d"
+          done

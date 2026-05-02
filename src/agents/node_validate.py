@@ -1,5 +1,6 @@
 """Node 2: Apply UCP600 / ISBP821 / Incoterms rules to validate and enhance LC data."""
 from __future__ import annotations
+from ..config import BANK_DEFAULT, get_bank_metadata
 from ..models.state import LCAgentState
 from ..tools.lc_rules_validator import validate_and_enhance
 from ..utils.logger import get_logger, timed_node
@@ -16,9 +17,18 @@ def validate_node(state: LCAgentState) -> dict:
         logger.error(msg)
         return {"errors": [msg], "current_step": "validate_failed"}
 
+    bank = state.get("bank") or BANK_DEFAULT
+    bank_meta = get_bank_metadata(bank)
+
     logger.info("Applying UCP600 / ISBP821 / Incoterms rules...")
     try:
-        enhanced = validate_and_enhance(dict(lc_data))
+        data = dict(lc_data)
+        # Inject issuing bank info from bank param (not extractable from contract)
+        if bank_meta:
+            data.setdefault("issuing_bank_name", bank_meta["display_name"])
+            data.setdefault("issuing_bank_bic", bank_meta["bic"])
+            data.setdefault("vcb_branch", bank_meta["short_name"])
+        enhanced = validate_and_enhance(data)
         warnings = enhanced.get("validation_warnings", [])
         notes = enhanced.get("compliance_notes", [])
         logger.info(
