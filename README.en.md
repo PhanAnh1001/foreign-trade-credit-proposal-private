@@ -122,23 +122,22 @@ print(state["company_slug"])       # company_name (auto-derived from applicant i
 
 ```
 data/
-  templates/docx/
-    vietcombank/          ← Vietcombank template (included)
-      Application-for-LC-issuance.docx
-    bidv/                 ← Add BIDV: just place the file here
-      Application-for-LC-issuance.docx
-    any-other-bank/       ← Any bank
-      Application-for-LC-issuance.docx
-
-  outputs/                ← Auto-created, organized by bank + company
-    vietcombank/
-      company_abc/
-        LC-Application-contract-001.docx
-      company_xyz/
-        LC-Application-contract-002.docx
-    bidv/
-      company_abc/
-        LC-Application-contract-003.docx
+├── templates/docx/
+│   ├── vietcombank/          ← Vietcombank template (included)
+│   │   └── Application-for-LC-issuance.docx
+│   ├── bidv/                 ← Add BIDV: just place the file here
+│   │   └── Application-for-LC-issuance.docx
+│   └── any-other-bank/       ← Any bank
+│       └── Application-for-LC-issuance.docx
+└── outputs/                  ← Auto-created, organized by bank + company
+    ├── vietcombank/
+    │   ├── company_abc/
+    │   │   └── LC-Application-contract-001.docx
+    │   └── company_xyz/
+    │       └── LC-Application-contract-002.docx
+    └── bidv/
+        └── company_abc/
+            └── LC-Application-contract-003.docx
 ```
 
 ---
@@ -147,31 +146,31 @@ data/
 
 ```
 src/
-  config.py              # BANK_VCB/BIDV/VIETINBANK constants + helper functions:
-                         #   get_bank_template_path(bank)    → Path to template
-                         #   get_bank_output_dir(bank, slug) → Output path (auto-created)
-                         #   slugify_company(name)           → "ABC Corp" → "abc_corp"
-  agents/
-    graph.py             # run_lc_application(contract, bank, output_dir)
-    node_extract.py      # LLM: extract ~30 fields from contract
-    node_validate.py     # Python: UCP600 / ISBP821 / Incoterms / VN forex rules
-    node_quality.py      # LLM-as-Judge: score + feedback
-    node_fill.py         # python-docx: fill the specified bank's template
-  tools/
-    contract_extractor.py  # TXT/PDF/DOCX → text → structured JSON
-    lc_rules_validator.py  # Rule engine: UCP600 + ISBP821 + Incoterms + VN forex
-  models/
-    state.py             # LCAgentState: bank, company_slug, lc_data, quality_score...
-    lc_application.py    # LCApplicationData + DocumentRequirements (Pydantic)
-  knowledge/rules/       # ucp600_rules.yaml, isbp821_rules.yaml,
-                         #   incoterms_rules.yaml, vietnam_forex_law.yaml
-  utils/
-    docx_filler.py       # Wingdings checkbox, run-level fill, buyer/seller replace
-    llm.py               # get_extraction_llm(), get_judge_llm()
+├── config.py              # BANK_VCB/BIDV/VIETINBANK constants + helper functions:
+│                          #   get_bank_template_path(bank)    → Path to template
+│                          #   get_bank_output_dir(bank, slug) → Output path (auto-created)
+│                          #   slugify_company(name)           → "ABC Corp" → "abc_corp"
+├── agents/
+│   ├── graph.py           # run_lc_application(contract, bank, output_dir)
+│   ├── node_extract.py    # LLM: extract ~30 fields from contract
+│   ├── node_validate.py   # Python: UCP600 / ISBP821 / Incoterms / VN forex rules
+│   ├── node_quality.py    # LLM-as-Judge: score + feedback
+│   └── node_fill.py       # python-docx: fill the specified bank's template
+├── tools/
+│   ├── contract_extractor.py  # TXT/PDF/DOCX → text → structured JSON
+│   └── lc_rules_validator.py  # Rule engine: UCP600 + ISBP821 + Incoterms + VN forex
+├── models/
+│   ├── state.py           # LCAgentState: bank, company_slug, lc_data, quality_score...
+│   └── lc_application.py  # LCApplicationData + DocumentRequirements (Pydantic)
+├── knowledge/rules/       # ucp600_rules.yaml, isbp821_rules.yaml,
+│                          #   incoterms_rules.yaml, vietnam_forex_law.yaml
+└── utils/
+    ├── docx_filler.py     # Wingdings checkbox, run-level fill, buyer/seller replace
+    └── llm.py             # get_extraction_llm(), get_judge_llm()
 data/
-  sample/contract.txt    # Sample contract (VN-CN-2024-001, USD 450K, CIF)
-  templates/docx/vietcombank/  # Vietcombank template
-tests/                   # 52 unit tests + ETE tests
+├── sample/contract.txt    # Sample contract (VN-CN-2024-001, USD 450K, CIF)
+└── templates/docx/vietcombank/  # Vietcombank template
+tests/                     # 52 unit tests + ETE tests
 ```
 
 ---
