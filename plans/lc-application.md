@@ -45,6 +45,12 @@
       DoD: `adversarial_injection` PASS 3-of-3 (7.5/8.5/8.5); applicant không bị hijack; `20260501_125714_adversarial_injection_3of3/verdict.json`
 - [x] T17. Stress scenario — blank contract + E2E 3-of-3
       DoD: `stress_blank_contract` PASS 3-of-3 (graceful, quality=0.0); `20260501_125714_stress_blank_contract_3of3/verdict.json`
+- [x] T18. Fix DOCX output — Incoterms 2000→2020 + document details
+      DoD: `_fill_incoterms()` replaces header year; `_fill_documents()` fills originals/copies/B/L/insurance runs; `pytest tests/test_docx_filler.py` pass
+- [x] T19. Sync `.pre-commit-config.yaml` — quote hook name (bundle update)
+      DoD: committed `b38f6bb`; hook YAML valid
+- [x] T20. Sync plugin bundle — migrate pre-commit → native git hooks
+      DoD: `tools/git-hooks/` + `scripts/install-git-hooks.sh` applied; obsolete files removed; gitleaks+ruff+hooks pass
 
 ## Phụ thuộc
 
@@ -125,12 +131,12 @@
 
 ---
 
-## Last session — 2026-05-01 (resume pointer)
+## Last session — 2026-05-02 (resume pointer)
 
-- **Ended at**: T14 — Bước 7 Review Summary complete
-- **Status**: ALL GATES PASS — 52 unit + 16 security + 3-of-3 E2E (8.2/7.5/8.4) + review-summary written
-- **Next**: Human reviewer reads `plans/lc-application.review-summary.md`, then deep-dives REPORT if needed. Open: create `data/baselines/happy_cif_vcb.json`, add FOB scenario.
-- **Blockers**: none — awaiting human review sign-off
+- **Ended at**: T20 — plugin bundle migration complete (pre-commit → native git hooks)
+- **Status**: ALL GATES PASS — 52 unit + 16 security + 3-of-3 E2E (all 4 scenarios) + DOCX output fixed + hooks migrated
+- **Next**: Optional — merge `.claude/CLAUDE.md` diff manually; install `mypy` (`uv tool install mypy`)
+- **Blockers**: none
 
 ## Session log
 
@@ -141,3 +147,6 @@
 - 2026-05-01: T13 — E2E 3-of-3 PASS (8.2/7.5/8.4); bank metadata injection fix; full evidence format
 - 2026-05-01: T14 — Review summary written at plans/lc-application.review-summary.md
 - 2026-05-01: T15-T17 — FOB/adversarial/stress 3-of-3 PASS; baseline signed-off
+- 2026-05-02: T18 — DOCX fix: Incoterms year + document details (originals/copies/B/L/insurance)
+- 2026-05-02: T19 — pre-commit YAML quote fix (bundle sync)
+- 2026-05-02: T20 — plugin bundle migration: native git hooks, gitleaks+ruff installed
